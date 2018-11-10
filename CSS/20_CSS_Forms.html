@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS forms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.min.css">
+    <style>
+        body{
+             font-family: Arial, sans-serif;
+            background: white url("img/image5.jpeg") no-repeat fixed top left;
+        }
+        .form-div img{
+            width: 100px;
+            height: 100px;
+            margin-top: -50px; /* to make the higher than the border*/
+        }
+        .form-div{
+            width: 250px;
+            text-align: center;
+            margin: 150px auto;
+            background-color: rgba(0,0,0,0.5) ;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00aeef;
+        }
+        .form-div h2{
+            color: white;
+            margin-top: 8px;
+        }
+        input[type='text'],
+        input[type='password']{
+            font-size: 18px;
+            text-align: center;
+            outline:none;
+            border: none;
+            border-bottom:  3px solid teal;
+            background: transparent;
+            color: white;
+            height: 35px;
+            width: 180px;
+        }
+        ::placeholder{
+            color: lightgray;
+        }
+        input[type='text']:focus,
+        input[type='password']:focus{
+            border-bottom: 3px solid #00aeef;
+        }
+        input[type='submit']{
+            background-color: teal;
+            color: white;
+            font-size: 18px;
+            border: none;
+            margin: 15px 0 20px 0;
+            padding: 8px 45px;
+            border-radius: 50px;
+            outline: none;
+        }
+        input[type='submit']:hover{
+            box-shadow: 0 0 15px black;
+            cursor: pointer;
+            background-color: #00aeef;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="form-div">
+        <img src="img/user.png">
+        <h2>Login Here</h2>
+        <form>
+            <input type="text" placeholder="User Name">
+            <br>
+            <input type="password" placeholder="Password">
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
