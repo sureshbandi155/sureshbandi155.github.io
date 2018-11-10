@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Form Elements</title>
+    <style>
+        body{
+            font-family: "Comic Sans MS", sans-serif;
+        }
+        h2{
+            font-size: 14px;
+        }
+        form{
+            background-color: lightgreen;
+            padding: 15px;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px black;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Simple Login Form -->
+    <h2>Simple Login Form</h2>
+    <form>
+        <label for="user">User Name</label>
+        <input type="text" id="user">
+        <br>
+        <label for="pass">Password</label>
+        <input type="password" id="pass">
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" id="Reset">
+    </form>
+
+    <!-- Login form with Table -->
+    <h2>Login Form with Table</h2>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>User Name</label>
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password</label>
+                </td>
+                <td>
+                    <input type="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+                <td>
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <!-- Select box with Options -->
+    <h2>Select Box with Options</h2>
+    <form>
+        <label for="tech">select a technology</label>
+            <select id="tech">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JAVASCRIPT</option>
+                <option>AJAX</option>
+                <option>JQUERY</option>
+                <option>BOOTSTRAP</option>
+                <option>ANGULAR JS</option>
+            </select>
+    </form>
+    <!---Select box with optgroup--->
+    <h2>Select Box with optgroup</h2>
+    <form>
+        <label for="tech1">select a technology</label>
+            <select id="tech1">
+                <optgroup label="Languages">
+                    <option>JAVA</option>
+                    <option>.NET</option>
+                    <option>PHP</option>
+                    <option>PYTHON</option>
+                </optgroup>
+                <optgroup label="Scripts">
+                    <option>JAVASCRIPT</option>
+                    <option>SHELLL SCRIPT</option>
+            </select>
+
+    </form>
+    <!-- Textarea box -->
+    <h2>Textarea box</h2>
+    <form>
+        <label for="msg">Your message</label>
+        <textarea rows="5" cols="30" id="msg"></textarea>
+    </form>
+
+    <!-- Datalist (HTML5) -->
+    <h2>Datalist (HTML5)</h2>
+    <form>
+        <label for="technologies">select a technologies</label>
+        <input list="technologies">
+        <datalist id="technologies">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JAVASCRIPT</option>
+            <option>AJAX</option>
+            <option>JQUERY</option>
+            <option>BOOTSTRAP</option>
+            <option>ANGULAR JS</option>
+        </datalist>
+    </form>
+
+<br><br><br>
+
+
+</body>
+</html>
