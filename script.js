@@ -1,18 +1,11 @@
 var chartListArea = document.querySelector('#chat-list-area');
-console.log(chartListArea);
+// console.log(chartListArea);
 var messageArea = document.querySelector('#message-area');
-console.log(messageArea);
+// console.log(messageArea);
 
-// if(window.innerWidth <= 575) {
-//     messageArea.removeClass('d-flex').addClass('d-none');
-// }
-
-// if (window.innerWidth <= 575) {
-//     mClassList(DOM.chatListArea).remove("d-flex").add("d-none");
-//     mClassList(DOM.messageArea).remove("d-none").add("d-flex");
-//     areaSwapped = true;
-// } 
 if (window.innerWidth <= 575) {
+    // window.onresize = function(){ location.reload(); }
+    
     messageArea.style.display = 'none';
 }
 else{
@@ -20,3 +13,10 @@ else{
     messageArea.style.display = 'block';
 
 }
+// if ($(window).width() <= 575) {
+//     $('#message-area').removeClass('d-none');
+// } else {
+//     $('#chat-list-area').addClass('d-flex');
+//     $('#message-area').addClass('d-flex');
+
+// }
