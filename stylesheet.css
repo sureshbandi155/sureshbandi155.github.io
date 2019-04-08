@@ -1,0 +1,177 @@
+body{
+    margin: 0 auto;
+    font-family: 'Muli', sans-serif;
+}
+/* #header-section{
+    display: flex;
+}
+#logo{
+    font-size: 16.99px;
+    color: #8e1838;
+    justify-content: space-between;
+} */
+/* #head{
+    display: flex;
+} */
+#img-section{
+    background: url(images/BANNER.png) no-repeat center /cover;
+    padding: 40px;
+    text-align: center;
+}
+#banner{
+    color: white;
+}
+#banner-text{
+    font-size: 40.12px;
+    line-height: 15px;
+}
+.button{
+    margin: 20px;
+    background-color: black;
+    color: white;
+    padding: 14px 25px;
+    outline: none;
+    border: none;
+}
+.button:hover{
+    cursor: pointer;
+}
+/* flex box */
+/* #container{
+    display: flex;
+}
+#container .bold{
+    font-weight: bold;
+}
+#container #flex1{
+    margin: 0 auto;
+    background-color: #e6eaeb;
+}
+#container #flex2{
+    margin: 0 auto;   
+    background-color: #cdd1d1;
+}
+#container #flex3{
+    margin: 0 auto;
+    background-color: #b4b7b8;
+} */
+.wraper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    text-align: center;
+
+}
+#flex1{
+    padding: 20px;
+    background: #e6eaeb;
+}
+#flex2{
+    padding: 20px;
+    background: #cdd1d1;
+}
+#flex3{
+    padding: 20px;
+    background: #b4b7b8;
+}
+#flex4{
+    background: #e6eaeb;
+    
+}
+#flex5{
+    background: #b4b7b8;
+}
+.bold{
+    font-weight: bold;
+}
+.all{
+    /* margin:0 auto; */
+    text-align: center;
+    padding: 60px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+}
+#item1{
+    /* justify-items: end; */
+    background: #f0f0f0;    
+}
+#item2{
+    margin-bottom: 0;
+}
+#item3{
+    margin-bottom: 0;
+}
+#item4{
+    margin: 0;
+    color: white;
+    background: #3d4040;
+} 
+#item5{
+    background: #f0f0f0;
+}
+#item6{
+    padding: 50px;
+    background: #b4b7b8;
+}
+.textbox{
+    background: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 70%;
+    outline: none;
+}
+.placeholder-bold::placeholder{
+    font-weight: bold;
+    color: black;
+}
+.btn-lg{
+    width: 70%;
+}
+.flex{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 16px;
+    /* display: inline; */
+
+}
+.flex #company{
+    font-weight: bold;
+
+}
+.fontawesome{
+    margin-top: 40px;
+    text-align: center;
+    /* margin: 0 auto; */
+
+}
+.fa-lg{
+    padding: 15px;
+    margin: 10px;
+    background: #b4b7b8;
+    border-radius: 50%;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+.review-btn{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+footer{
+    padding: 50px;
+    text-align: center;
+    font-size: 15px;
+}
+.footer{
+    color: #68878a;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
