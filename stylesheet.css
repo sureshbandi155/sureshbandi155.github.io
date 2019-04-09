@@ -63,6 +63,10 @@ body {
     font-size: 16px;
 
 }
+.fa-lg:hover{
+    background: #3d4040;
+    color: white;
+}
 
 .review-btn {
     border: none;
@@ -353,7 +357,7 @@ figure {
 .all {
     /* margin:0 auto; */
     text-align: center;
-    padding: 60px;
+    padding: 80px;
 }
 
 .responsive-img {
@@ -425,17 +429,17 @@ figure {
     }
     
     #flex1 {
-        padding: 20px;
+        padding: 33px;
         background: #e6eaeb;
     }
     
     #flex2 {
-        padding: 20px;
+        padding: 33px;
         background: #cdd1d1;
     }
     
     #flex3 {
-        padding: 20px;
+        padding: 33px;
         background: #b4b7b8;
     }
     
@@ -471,17 +475,17 @@ figure {
         text-align: center;
     }
     #flex1 {
-        padding: 20px;
+        padding: 33px;
         background: #e6eaeb;
     }
     
     #flex2 {
-        padding: 20px;
+        padding: 33px;
         background: #cdd1d1;
     }
     
     #flex3 {
-        padding: 20px;
+        padding: 33px;
         background: #b4b7b8;
     }
     
@@ -538,9 +542,6 @@ figure {
         display: block;
         padding: 15px;
     }
-    /* body{
-        background-color: black;
-    } */
 }
 
 
