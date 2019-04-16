@@ -1,0 +1,32 @@
+#navbar {
+	/* background: whitesmoke; */
+	background-color: rgb(238,238,238);
+	/* width: 100%; */
+}
+
+
+.chat-list-item {
+	background: white;
+	cursor: pointer;
+}
+
+.chat-list-item:hover {
+	background: hsl(0, 0%, 95%);
+}
+
+.chat-list-item:active {
+	background: hsl(0, 0%, 85%);
+}
+
+
+#message-area {
+	border-left: 1px solid white;
+}
+#type-message{
+	background: whitesmoke;
+}
+#type-message #input{
+	border-radius: 50px;
+	outline: none;
+	border: none;
+}
