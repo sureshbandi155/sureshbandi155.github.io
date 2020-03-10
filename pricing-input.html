@@ -39,8 +39,7 @@
     <meta name="twitter:card" content="summary">
     <link rel="stylesheet"
         href="//cdn2.hubspot.net/hub/-1/hub_generated/template_assets/1495141902003/hubspot_default/shared/responsive/layout.min.css">
-    <link rel="stylesheet"
-        href="//cdn2.hubspot.net/hub/418612/hub_generated/template_assets/1544215318697/custom/styles/default/hs_default_custom_style.min.css">
+
 
     <link rel="stylesheet"
         href="//cdn2.hubspot.net/hub/418612/hub_generated/template_assets/6638253753/1572280337025/TCTemplate/templates/styles/style_pricing_update.min.css">
@@ -51,10 +50,9 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"
         integrity="sha256-q0n+9D8QsUkzE5U/IH/sSEE3dpXs6tz44QyFkQjkd+w=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="stylesheet.css">
 
 </head>
-
 
 <body
     class="   hs-content-id-1 hs-landing-page hs-page hs-content-path-7dea362b-3fac-3e00-956a-4952a3d4f474 hs-content-name-  ">
@@ -71,28 +69,13 @@
                             <div class="row-fluid ">
                                 <div class="span12 widget-span widget-type-custom_widget "
                                     data-widget-type="custom_widget" data-x="0" data-w="12">
-                                    <div id="hs_cos_wrapper_module_158376269624947"
+                                    <div id="hs_cos_wrapper_module_158380828100113"
                                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"
                                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    <a href="/">Pricing Slider</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pricing-addons.html">Pricing Addons</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pricing-addons-no-discount.html">Pricing Addons NoDiscount</a>
-                                                </li><li>
-                                                    <a href="/pricing-input.html">Pricing Input</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="pricing-section slider-cal-module">
+                                        <div class="pricing-section">
                                             <div class="pricing-header">
 
-                                                <div id="hs_cos_wrapper_module_158376269624947_"
+                                                <div id="hs_cos_wrapper_module_158380828100113_"
                                                     class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text"
                                                     data-hs-cos-general-type="widget"
                                                     data-hs-cos-type="inline_rich_text" data-hs-cos-field="add_heading">
@@ -106,16 +89,20 @@
                                                 <div class="row-fluid-wrapper">
                                                     <div class="row-fluid">
                                                         <div class="slider span12">
-                                                            <div class="span12">
+                                                            <div class="span3">
                                                                 <h3 class="userno">Number of Users</h3>
                                                             </div>
-                                                            <div class="slider-modulez span12" style="margin:0px">
-                                                                <input type="number" min="1" maxlength="4" value="1"
-                                                                    class="irs-hidden-input"
-                                                                    id="price-calculation-range">
+                                                            <div class="span2">
+                                                                <input type="number" min="1" max="1000" value="1000"
+                                                                    class="form-control form-control-lg"
+                                                                    id="price-calculation-input">
                                                             </div>
-
-
+                                                            <div class="span7 pricing-module">
+                                                                you pay <strong
+                                                                    id="price-calculation-output">$75</strong> per User
+                                                                / Monthly Cost &nbsp;&nbsp;<strong
+                                                                    id="price-calculation-monthly-output">$5000</strong>
+                                                            </div>
                                                         </div>
 
                                                     </div>
@@ -124,36 +111,13 @@
 
 
                                             </div>
-                                            <div class="above-100 row-fluid" style="display:none;">
-                                                <div class="span6">
-                                                    <div id="hs_cos_wrapper_module_158376269624947_"
-                                                        class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_text"
-                                                        data-hs-cos-general-type="widget" data-hs-cos-type="inline_text"
-                                                        data-hs-cos-field="add_text_left">When give you even more
-                                                        discount</div>
-                                                </div>
-                                                <div class="span6 align-right">
-                                                    Monthly Cost<br>
-                                                    <div class="contact-popup get-table-popup">
-                                                        Contact us
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row-fluid results-slider">
-                                                <div class="span4 align-left">Discount&nbsp;<span
-                                                        id="price-discount"></span></div>
-                                                <div class="span4 align-center"><span
-                                                        id="price-calculation-output2"></span>&nbsp;Per user/month</div>
-                                                <div class="span4 align-right">Monthly Cost<br><span
-                                                        id="price-calculation-monthly-output2"></span></div>
-                                                <div class="bottom-cta align-right">
-                                                    <div id="hs_cos_wrapper_module_158376269624947_"
-                                                        class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text"
-                                                        data-hs-cos-general-type="widget"
-                                                        data-hs-cos-type="inline_rich_text"
-                                                        data-hs-cos-field="add_bottom_cta"></div>
+                                            <div class="bottom-cta align-right">
+                                                <div id="hs_cos_wrapper_module_158380828100113_"
+                                                    class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text"
+                                                    data-hs-cos-general-type="widget"
+                                                    data-hs-cos-type="inline_rich_text"
+                                                    data-hs-cos-field="add_bottom_cta"></div>
 
-                                                </div>
                                             </div>
 
                                         </div>

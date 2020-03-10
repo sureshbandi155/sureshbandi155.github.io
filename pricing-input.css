@@ -1,0 +1,78 @@
+.pricing-section{
+    padding:60px 20px;
+    max-width:770px;
+    margin:0 auto;
+  }
+  .hidden-field{
+    display:none;
+  }
+
+  .pricing-section .irs-slider{
+    border: 1px solid #d24d53;
+    background: #d24d53;
+  }
+
+  .pricing-section .irs-slider.state_hover, .pricing-section .irs-slider:hover{
+    background: #ddd;
+    border: 1px solid #ddd;
+  }
+
+  .pricing-section .irs-bar-edge,.pricing-section .irs-bar {
+    border: 1px solid #d24d53;
+    background: #d24d53;
+  }
+  .pricing-section .irs-from,.pricing-section .irs-single,.pricing-section .irs-to{
+    background: #d24d53;
+  }
+
+.pricing-header{
+  text-align:center;
+}
+
+.pricing-header h1{
+font-weight: 400;
+  
+  
+}
+
+input#price-calculation-input {
+    -webkit-appearance: none;
+    height: 50px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 10px;
+}
+
+
+h3.percent-header {
+    margin: 0px;
+}
+
+.userno {
+    margin: 0px;
+    font-size:20px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 14px 0px;
+}
+
+.pricing-top {
+    border-bottom: 1px solid #666;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+.span7.pricing-module {
+    padding: 13px 0px;
+    font-size: 18px;
+}
+
+.bottom-cta .cta_button {
+    padding: 15px 35px;
+}
+
+.bottom-cta {
+    margin-top: 20px;
+}
