@@ -19,7 +19,10 @@ $(document).ready(function () {
     nextButton.click(function () {
         let currentButton = $(this);
         let nextFilter = $(this).closest('.demo-content').attr('data-filter');
+        console.log(nextFilter);
         setTimeout(function () {
+            $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).removeClass('current');
+            $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).next().addClass('current');
             currentButton.closest('.demo-content').removeClass('current');
             currentButton.closest('.demo-content').next().addClass('current');
         }, 500);
