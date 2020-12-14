@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #ffffff;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Khula', sans-serif;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    text-transform: initial;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    margin-bottom: 15px;
+    color: #002657;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #002657;
+    font-family: "Titillium web";
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+a {
+    margin-bottom: 0
+}
+
+h1 {
+    font-size: 59px;
+    color: #002657;
+    text-align: center;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 44px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p,
+li {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000000;
+    font-weight: normal
+}
+
+.align-center {
+    text-align: center;
+}
+
+.keypad-tutorial-sec {
+    background: #E2F1F6;
+    padding: 108px 0 127px;
+}
+
+.keypad-tutorial-sec .keypad-tutorial-box {
+    background-color: #fff;
+    overflow: auto;
+    border-top: 2px solid #FFC200;
+
+    box-shadow: 0 2px 15px 0 #CECECE;
+}
+
+.keypad-tutorial-sec .section-heading {
+    margin: 56px 0;
+}
+
+.keypad-tutorial-sec .section-heading h1 {
+    text-align: center;
+    line-height: 1.49;
+}
+
+.three-col-outer-layer {
+    display: flex;
+    align-items: stretch;
+    background: #103745;
+    margin: 30px 129px 149px 126px;
+    padding: 15px 40px;
+}
+
+
+.three-col-outer-layer .left-col {
+    flex-basis: 60%;
+}
+
+.three-col-outer-layer .center-col {
+    flex-basis: 30%;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, #c5c5c5, #fff);
+}
+
+.three-col-outer-layer .right-col {
+    flex-basis: 25%;
+    text-align: right;
+    background: linear-gradient(180deg, lightblue, transparent);
+    padding: 15px;
+}
+
+/*============== Left col =================*/
+
+
+/*============== Center col =================*/
+
+
+.three-col-outer-layer .center-col .demo-content {
+    display: none;
+}
+
+.three-col-outer-layer .center-col .demo-content.current {
+    display: inherit;
+}
+
+.three-col-outer-layer .center-col p {
+    color: #000;
+}
+
+.three-col-outer-layer .center-col .heading {
+    padding: 0 0 15px;
+    position: relative;
+}
+
+.three-col-outer-layer .center-col .heading:before {
+    position: absolute;
+    content: '';
+    width: 120%;
+    left: 0;
+    height: 1px;
+    background: #000;
+    left: -15px;
+    bottom: 0;
+}
+
+.three-col-outer-layer .center-col .description {
+    padding: 20px 0 0;
+}
+
+.three-col-outer-layer .center-col h4 {
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0;
+}
+
+.three-col-outer-layer .center-col button {
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.three-col-outer-layer .center-col .btn {
+    text-align: center;
+}
+
+.three-col-outer-layer .replay {
+    background: #cacaca;
+    padding: 16px 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    min-height: 56px;
+}
+
+
+.three-col-outer-layer .replay p {
+    margin: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*============== Right col =================*/
+
+
+.three-col-outer-layer .tabber-sec p,
+.three-col-outer-layer .tabber-sec ul li {
+    font-weight: 600;
+    color: #fff;
+}
+
+.three-col-outer-layer .tabber-sec ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.three-col-outer-layer .tabber-sec ul li {
+    border-bottom: 1px solid #fff;
+    min-height: 36px;
+    padding: 10px 10px 6px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.three-col-outer-layer .tabber-sec ul li:nth-child(4) {
+    margin-bottom: 36px;
+    position: relative;
+}
+
+.three-col-outer-layer .tabber-sec ul li:nth-child(4):before {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid #fff;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    bottom: -37px;
+}
+
+.three-col-outer-layer .tabber-sec ul li.current {
+    color: rgb(255 255 255 / 0.5);
+}
