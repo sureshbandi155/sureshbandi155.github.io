@@ -34,6 +34,25 @@ $(document).ready(function () {
     }
     let replayDiv = $('.three-col-outer-layer .replay');
     replayDiv.click(replayDivHandler);
+
+    function playSound(e) {
+        const audio = $(`audio[data-key="${e.keyCode}"]`);
+        console.log(audio);
+        const key = $(`.key[data-key="${e.keyCode}"]`);
+        console.log(keys);
+        if (!audio) return; //stop the fun all together
+        audio.currentTime = 0; //rewind to the start
+        audio.play();
+        key.addClass('playing');
+    }
+    function removeTransition(e) {
+        if (e.propertyName !== "transform") return;
+        // console.log(this);
+        this.removeClass('playing');
+    }
+    const keys = $('.three-col-outer-layer .left-col .keys ul li');
+    // keys.foreach(key => key.click('transitionend', removeTransition));
+    keys.click(playSound);
 });
 
 

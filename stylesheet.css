@@ -134,6 +134,11 @@ li {
 
 .three-col-outer-layer .left-col {
     flex-basis: 60%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
 }
 
 .three-col-outer-layer .center-col {
@@ -153,6 +158,95 @@ li {
 
 /*============== Left col =================*/
 
+
+.three-col-outer-layer .left-col .keypad-box {
+    background: #fff;
+    padding: 40px 30px;
+}
+
+.three-col-outer-layer .left-col .keypad-left-col {
+    width: 40%;
+    float: left;
+}
+
+.three-col-outer-layer .left-col .indicator .light {
+    width: 27px;
+    height: 14px;
+    display: inline-block;
+    background: #d4d6c3;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.three-col-outer-layer .left-col .indicator .light.green {
+    background: #00ff00;
+}
+
+.three-col-outer-layer .left-col .indicator .light.red {
+    background: red;
+}
+
+.three-col-outer-layer .left-col .indicator span {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 4px black;
+    vertical-align: middle;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.three-col-outer-layer .left-col .indicator {
+    padding: 0 0 7px;
+}
+
+.three-col-outer-layer .left-col .keypad-right-col {
+    width: 55%;
+    float: left;
+}
+
+.three-col-outer-layer .left-col .logo h2 {
+    display: inline-block;
+    margin: 0;
+    border: 1px solid #000;
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 1;
+    padding: 0 4px;
+    color: #0065a4;
+    height: 52px;
+    vertical-align: middle;
+    padding-top: 4px;
+}
+
+
+
+.three-col-outer-layer .left-col .keys ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.three-col-outer-layer .left-col .keys ul li:not(:first-child) {
+    margin-left: 10px;
+}
+
+.three-col-outer-layer .left-col .keys ul li {
+    width: 35px;
+    height: 21px;
+    background: #d4d6c3;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.three-col-outer-layer .left-col .keys .top-keys {
+    margin: 10px 0;
+}
+
+.three-col-outer-layer .left-col .display-stauts {
+    height: 50px;
+    background: black;
+}
 
 /*============== Center col =================*/
 
@@ -223,6 +317,7 @@ li {
     margin: 0;
     font-size: 20px;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 /*============== Right col =================*/
