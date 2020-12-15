@@ -237,6 +237,7 @@ li {
     background: #d4d6c3;
     border-radius: 50%;
     display: inline-block;
+    cursor: pointer;
 }
 
 .three-col-outer-layer .left-col .keys .top-keys {
@@ -246,6 +247,23 @@ li {
 .three-col-outer-layer .left-col .display-stauts {
     height: 50px;
     background: black;
+}
+
+/* bottom keyss */
+.three-col-outer-layer .left-col .keys ul li kbd {
+    display: block;
+    font-weight: 600;
+}
+
+.three-col-outer-layer .left-col .keys ul li span {
+    position: relative;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 4px black;
+    top: -3px;
+    right: -21px;
+    transform: rotate(-41deg);
+    display: inline-block;
 }
 
 /*============== Center col =================*/

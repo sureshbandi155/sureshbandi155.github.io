@@ -36,22 +36,29 @@ $(document).ready(function () {
     replayDiv.click(replayDivHandler);
 
     function playSound(e) {
-        const audio = $(`audio[data-key="${e.keyCode}"]`);
+        const keyCode = $(this).attr('data-key');;
+        console.log(keyCode);
+        const audio = $(`audio[data-key="${keyCode}"]`);
         console.log(audio);
-        const key = $(`.key[data-key="${e.keyCode}"]`);
-        console.log(keys);
+        const key = $(`.key[data-key="${keyCode}"]`);
+        console.log(key);
         if (!audio) return; //stop the fun all together
         audio.currentTime = 0; //rewind to the start
-        audio.play();
+        audio.get(0).play();
         key.addClass('playing');
     }
-    function removeTransition(e) {
-        if (e.propertyName !== "transform") return;
-        // console.log(this);
-        this.removeClass('playing');
-    }
+    // function removeTransition(e) {
+    //     if (e.propertyName !== "transform") return;
+    //     // console.log(this);
+    //     this.removeClass('playing');
+    // }
     const keys = $('.three-col-outer-layer .left-col .keys ul li');
-    // keys.foreach(key => key.click('transitionend', removeTransition));
+    // console.log(keys);
+    // keys.each(key => {
+    //     console.log(key);
+    //     // key.on('transitionend', removeTransition);
+
+    // });
     keys.click(playSound);
 });
 
