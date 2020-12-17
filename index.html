@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="stylesheet.css">
     <title>Keypad Tutorial</title>
 </head>
@@ -25,90 +26,623 @@
                 <div class="three-col-outer-layer">
 
                     <div class="left-col">
-                        <div class="keypad-box">
-                            <div class="keypad-left-col">
-                                <div class="power-btns">
-                                    <!-- Power light -->
-                                    <div class="indicator">
-                                        <div class="green light"></div>
-                                        <span>Power</span>
+                        <div class="keypad-step keypad1 current" id="keypad1">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
                                     </div>
-                                    <!-- Armed light -->
-                                    <!-- red -->
-                                    <div class="indicator">
-                                        <div class=" light"></div>
-                                        <span>Armed</span>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
                                     </div>
                                 </div>
-                                <div class="logo">
-                                    <h2>DGA</h2>
-                                </div>
-                            </div>
-                            <div class="keypad-right-col">
+                                <div class="keypad-right-col">
 
-                                <div class="keypad">
-                                    <div class="display-stauts"></div>
-                                    <div class="keys">
-                                        <ul class="top-keys">
-                                            <li data-key="1" class="key"></li>
-                                            <li data-key="1" class="key"></li>
-                                            <li data-key="1" class="key"></li>
-                                            <li data-key="1" class="key"></li>
-                                        </ul>
-                                        <ul class="bottom-keys">
-                                            <li data-key="1" class="key">
-                                                <kbd>1</kbd>
-                                                <span>ABC</span>
-                                            </li>
-                                            <li data-key="1" class="key">
-                                                <kbd>2</kbd>
-                                                <span>DEF</span>
-                                            </li>
-                                            <li data-key="1" class="key">
-                                                <kbd>3</kbd>
-                                                <span>GHI</span>
-                                            </li>
-                                            <li data-key="1" class="key">
-                                                <kbd>4</kbd>
-                                                <span>JKL</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>5</kbd>
-                                                <span>MNO</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>6</kbd>
-                                                <span>PQR</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>7</kbd>
-                                                <span>STU</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>8</kbd>
-                                                <span>VWX</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>9</kbd>
-                                                <span>YZ</span>
-                                            </li>
-                                            <li data-key="2" class="key">
-                                                <kbd>0</kbd>
-                                                <span></span>
-                                            </li>
-                                            <li data-key="1" class="key">
-                                                <kbd>&lt;-</kbd>
-                                                <span>BACK</span>
-                                            </li>
-                                            <li data-key="1" class="key">
-                                                <kbd>CMD</kbd>
-                                                <span>ENTER</span>
-                                            </li>
-                                        </ul>
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="keypad-step keypad2" id="keypad2">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                                <li class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keypad-step clickable-keys keypad3" id="keypad3">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li data-key="1" class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keypad-step keypad4" id="keypad4">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li data-key="1" class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keypad-step keypad5" id="keypad5">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li data-key="1" class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keypad-step keypad6" id="keypad6">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li data-key="1" class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keypad-step keypad7" id="keypad7">
+                            <div class="keypad-box">
+                                <div class="keypad-left-col">
+                                    <div class="power-btns">
+                                        <!-- Power light -->
+                                        <div class="indicator">
+                                            <div class="green light"></div>
+                                            <span>Power</span>
+                                        </div>
+                                        <!-- Armed light -->
+                                        <!-- red -->
+                                        <div class="indicator">
+                                            <div class=" light"></div>
+                                            <span>Armed</span>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <h2>DGA</h2>
+                                    </div>
+                                </div>
+                                <div class="keypad-right-col">
+
+                                    <div class="keypad">
+                                        <div class="display-stauts">
+                                            <p><span>FRI</span> <span>6PM</span></p>
+                                        </div>
+                                        <div class="keys">
+                                            <ul class="top-keys">
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                                <li data-key="1" class="key"></li>
+                                            </ul>
+                                            <ul class="bottom-keys">
+                                                <li data-key="1" class="key">
+                                                    <kbd>1</kbd>
+                                                    <span>ABC</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>2</kbd>
+                                                    <span>DEF</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>3</kbd>
+                                                    <span>GHI</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>4</kbd>
+                                                    <span>JKL</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>5</kbd>
+                                                    <span>MNO</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>6</kbd>
+                                                    <span>PQR</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>7</kbd>
+                                                    <span>STU</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>8</kbd>
+                                                    <span>VWX</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>9</kbd>
+                                                    <span>YZ</span>
+                                                </li>
+                                                <li data-key="2" class="key">
+                                                    <kbd>0</kbd>
+                                                    <span></span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>&lt;-</kbd>
+                                                    <span>BACK</span>
+                                                </li>
+                                                <li data-key="1" class="key">
+                                                    <kbd>CMD</kbd>
+                                                    <span>ENTER</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
 
                         <!-- Audio Keys -->
@@ -118,7 +652,7 @@
                         <audio data-key="4" src="Assets/sounds/tink.wav"></audio>
                     </div>
 
-                    <div class="center-col">
+                    <div class="center-col animate__animated animate__slideInDown">
                         <div class="center-col-content">
                             <div id="introduction" class="demo-content current" data-filter=".step1">
                                 <div class="card">
@@ -159,8 +693,11 @@
                                         <h4>How to arm your alaram system</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Yout DGA keyboard is ease to use. The green light at the upper left
-                                            <b>(POWER)</b> tells you that your system has a power.</p>
+                                        <p>Follow instruction by using your mouse and keypad show here</p>
+                                        <ol>
+                                            <li>Prss the <b>CMD</b> key untill the display reads: <b>ARM DISARAM</b>
+                                            </li>
+                                        </ol>
                                     </div>
                                     <div class="btn">
                                         <button>Next Section</button>
@@ -257,19 +794,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="right-col tabber-sec">
+                    <div class="right-col tabber-sec ">
                         <ul>
-                            <li class="current step1" data-tab="introduction">Introduction</li>
-                            <li class="step2" data-tab="keypad-tutorial">Keypad tutorial</li>
-                            <li class="step3" data-tab="arm-your-alaram-system">How to arm your alaram system</li>
-                            <li class="step4" data-tab="disarm-your-alaram-system">How to disarm your alaram system
+                            <li class="current step1" data-keypad="keypad1" data-tab="introduction">Introduction</li>
+                            <li class="step2" data-keypad="keypad2" data-tab="keypad-tutorial">Keypad tutorial</li>
+                            <li class="step3" data-keypad="keypad3" data-tab="arm-your-alaram-system">How to arm your
+                                alaram system</li>
+                            <li class="step4" data-keypad="keypad4" data-tab="disarm-your-alaram-system">How to disarm
+                                your alaram system
                             </li>
-                            <li class="step5" data-tab="buypass-a-zone">How to buypass a zone</li>
-                            <li class="step6" data-tab="reset-your-alaram-systems-sensors">How to reset your alaram
+                            <li class="step5" data-keypad="keypad4" data-tab="buypass-a-zone">How to buypass a zone</li>
+                            <li class="step6" data-keypad="keypad5" data-tab="reset-your-alaram-systems-sensors">How to
+                                reset your alaram
                                 system's sensors
                             </li>
-                            <li class="step7" data-tab="monitor-a-zone">How to monitor a zone</li>
-                            <li class="step8" data-tab="test-your-alaram-system">How to test your alaram system
+                            <li class="step7" data-keypad="keypad6" data-tab="monitor-a-zone">How to monitor a zone</li>
+                            <li class="step8" data-keypad="keypad7" data-tab="test-your-alaram-system">How to test your
+                                alaram system
                             </li>
                         </ul>
                     </div>

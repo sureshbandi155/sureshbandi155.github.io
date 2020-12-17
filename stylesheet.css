@@ -158,15 +158,25 @@ li {
 
 /*============== Left col =================*/
 
+/* step keypad show and hide */
+.three-col-outer-layer .left-col .keypad-step {
+    display: none;
+}
+
+.three-col-outer-layer .left-col .keypad-step.current {
+    display: block;
+}
 
 .three-col-outer-layer .left-col .keypad-box {
     background: #fff;
     padding: 40px 30px;
+    display: flex;
 }
 
 .three-col-outer-layer .left-col .keypad-left-col {
     width: 40%;
     float: left;
+    position: relative;
 }
 
 .three-col-outer-layer .left-col .indicator .light {
@@ -202,6 +212,14 @@ li {
 .three-col-outer-layer .left-col .keypad-right-col {
     width: 55%;
     float: left;
+
+}
+
+/* DGA Logo */
+.three-col-outer-layer .left-col .logo {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
 }
 
 .three-col-outer-layer .left-col .logo h2 {
@@ -218,7 +236,7 @@ li {
     padding-top: 4px;
 }
 
-
+/* Keys styling starts here */
 
 .three-col-outer-layer .left-col .keys ul {
     list-style: none;
@@ -237,19 +255,15 @@ li {
     background: #d4d6c3;
     border-radius: 50%;
     display: inline-block;
-    cursor: pointer;
 }
 
 .three-col-outer-layer .left-col .keys .top-keys {
     margin: 10px 0;
 }
 
-.three-col-outer-layer .left-col .display-stauts {
-    height: 50px;
-    background: black;
-}
+/* bottom keys */
 
-/* bottom keyss */
+
 .three-col-outer-layer .left-col .keys ul li kbd {
     display: block;
     font-weight: 600;
@@ -265,6 +279,38 @@ li {
     transform: rotate(-41deg);
     display: inline-block;
 }
+
+/* end of bottom keys */
+
+.playing {
+    box-shadow: 0 0 13px green;
+    cursor: pointer;
+}
+
+/* Display Status */
+.three-col-outer-layer .left-col .display-stauts {
+    height: 50px;
+    background: darkgrey;
+    position: relative;
+    padding: 15px;
+
+}
+
+.three-col-outer-layer .left-col .display-stauts p {
+    margin: 0;
+    bottom: -5px;
+    position: absolute;
+}
+
+.three-col-outer-layer .left-col .display-stauts p span {
+    font-weight: 600;
+}
+
+.three-col-outer-layer .left-col .display-stauts p span:not(:first-child) {
+    margin-left: 50px;
+}
+
+
 
 /*============== Center col =================*/
 
