@@ -5,7 +5,10 @@ $(document).ready(function () {
     let keypadSteps = $('.three-col-outer-layer .left-col .keypad-step');
     let step3ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(3)');
 
-    step3ListItem.click(initialKeyHightlight);
+
+
+
+    step3ListItem.click(cmdKeyHightlight);
 
     function tutorialListItemsHandler(e) {
         var tab_id = $(this).attr('data-tab');
@@ -26,7 +29,7 @@ $(document).ready(function () {
     nextButton.click(function () {
         let currentButton = $(this);
         let nextFilter = $(this).closest('.demo-content').attr('data-filter');
-        console.log(nextFilter);
+        // console.log(nextFilter);
         setTimeout(function () {
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).removeClass('current');
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).next().addClass('current');
@@ -44,90 +47,106 @@ $(document).ready(function () {
 
     function playSound(e) {
         const keyCode = $(this).attr('data-key');;
-        console.log(keyCode);
+        // console.log(keyCode);
         const audio = $(`audio[data-key="${keyCode}"]`);
-        console.log(audio);
+        // console.log(audio);
         const key = $(`.key[data-key="${keyCode}"]`);
-        console.log(key);
+        // console.log(key);
         if (!audio) return; //stop the fun all together
         audio.currentTime = 0; //rewind to the start
         audio.get(0).play();
 
     }
-    function initialKeyHightlight() {
-        let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
+    let topOptionKeyImgSrc = './Assets/images/Key-btn.png';
+    let cmdKeySrc = './Assets/images/Key-1.png';
+    let cmdHigKeyImgSrc = './Assets/images/CMD-btn.png';
+
+    let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
+    let step3NextList = $('.three-col-outer-layer .center-col ol li:nth-child(2)');
+
+    let topRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
+    let firstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
+
+    function cmdKeyHightlight() {
         cmdKey.addClass('playing');
-        topLetKeyHightlight();
-    }
-    function topLetKeyHightlight() {
-        let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
+        cmdKey.find('img').attr('src', cmdHigKeyImgSrc);
         cmdKey.click(function () {
-            cmdKey.removeClass('playing');
-            let topRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
-            topRowFirstKeyItem.addClass('playing');
+            cmdKey.find('img').attr('src', cmdKeySrc);
+            step3NextList.slideDown(500);
+            topRowFirstKeyItem.parent().addClass('playing');
+            topRowFirstKeyItem.find('img').attr('src', cmdHigKeyImgSrc);
+            topLeftKeyHightlight();
+        });
+
+    }
+    function topLeftKeyHightlight() {
+        // cmdKey.parent().removeClass('.playing');
+        topRowFirstKeyItem.click(function () {
+            topRowFirstKeyItem.removeClass('playing');
+            topRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+            step3NextList.next().slideDown(500);
+            firstNumKey.addClass('playing');
+            firstNumKey.find('img').attr('src', cmdHigKeyImgSrc);
             firstKeyHightlight();
         });
 
     }
     function firstKeyHightlight() {
-        let topRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3 ul.top-keys li:first-child');
-        topRowFirstKeyItem.click(function () {
-            topRowFirstKeyItem.removeClass('playing');
-            let firstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
-            firstNumKey.addClass('playing');
+        firstNumKey.click(function () {
+            $(this).removeClass('playing');
+            $(this).find('img').attr('src', cmdKeySrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
             secondKeyHightlight();
         });
 
     }
     function secondKeyHightlight() {
-        let firstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
-        firstNumKey.click(function () {
+        firstNumKey.next().click(function () {
             $(this).removeClass('playing');
-            let secondNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:nth-child(2)');
-            secondNumKey.addClass('playing');
+            $(this).find('img').attr('src', cmdKeySrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
             thirdKeyHightlight();
         });
-
     }
     function thirdKeyHightlight() {
-        let secondNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:nth-child(2)');
-        secondNumKey.click(function () {
+        firstNumKey.next().next().click(function () {
             $(this).removeClass('playing');
-            let thirdNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:nth-child(3)');
-            thirdNumKey.addClass('playing');
+            $(this).find('img').attr('src', cmdKeySrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
             fourthKeyHightlight();
         });
 
     }
     function fourthKeyHightlight() {
-        let thirdNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:nth-child(3)');
-        thirdNumKey.click(function () {
+        firstNumKey.next().next().next().click(function () {
             $(this).removeClass('playing');
-            let FourthNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:nth-child(4)');
-            FourthNumKey.addClass('playing');
+            $(this).find('img').attr('src', cmdKeySrc);
+            console.log('Sequence done.');
+            step3NextList.next().next().slideDown(500);
+            cmdKey.addClass('playing');
+            cmdKey.find('img').attr('src', cmdHigKeyImgSrc);
+            finalCmdKeyHightlight();
         });
 
     }
-    // function firstKeyHightlight() {
-    //     let topRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3 ul.top-keys li:first-child');
-    //     topRowFirstKeyItem.click(function () {
-    //         topRowFirstKeyItem.removeClass('playing');
-    //         let firstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
-    //         firstNumKey.addClass('playing');
-    //     });
+    function finalCmdKeyHightlight() {
+        cmdKey.click(function () {
+            alert('test');
+            return;
+        });
+        // cmdKey.removeClass('playing');
+        // cmdKey.find('img').attr('src', cmdKeySrc);
+    }
 
-    // }
-    // function topRightKeyHightlight() {
-    //     let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
-    //     cmdKey.addClass('playing');
-    // }
 
     const keys = $('.three-col-outer-layer .left-col .clickable-keys .keys ul li');
 
     keys.click(playSound);
 
 
-    $("p").slideDown("slow");
 });
 
 

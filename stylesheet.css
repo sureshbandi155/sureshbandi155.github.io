@@ -101,6 +101,10 @@ li {
     text-align: center;
 }
 
+.d-none {
+    display: none !important;
+}
+
 .keypad-tutorial-sec {
     background: #E2F1F6;
     padding: 108px 0 127px;
@@ -139,6 +143,8 @@ li {
     flex-direction: column;
     vertical-align: middle;
     justify-content: center;
+    background: url(./Assets/images/Original-blue-background.png) no-repeat center center /cover;
+    background: linear-gradient(180deg, lightblue, transparent);
 }
 
 .three-col-outer-layer .center-col {
@@ -157,6 +163,11 @@ li {
 }
 
 /*============== Left col =================*/
+/* keypad1 */
+.three-col-outer-layer .left-col .keypad1 img,
+.three-col-outer-layer .left-col .keypad2 img {
+    max-width: 418px;
+}
 
 /* step keypad show and hide */
 .three-col-outer-layer .left-col .keypad-step {
@@ -245,29 +256,56 @@ li {
     text-align: center;
 }
 
-.three-col-outer-layer .left-col .keys ul li:not(:first-child) {
-    margin-left: 10px;
+.three-col-outer-layer .left-col .keys ul.top-keys li:not(:first-child) {
+    margin-left: 9px;
+}
+
+.three-col-outer-layer .left-col .keys ul.bottom-keys li:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.three-col-outer-layer .left-col .keys ul.bottom-keys li {
+    margin-left: 7px;
+    margin-bottom: 12px;
+
 }
 
 .three-col-outer-layer .left-col .keys ul li {
-    width: 35px;
+    /* width: 35px;
     height: 21px;
     background: #d4d6c3;
-    border-radius: 50%;
+    border-radius: 50%; */
     display: inline-block;
+    max-height: 20px;
+    vertical-align: middle;
+}
+
+.three-col-outer-layer .left-col .keys ul li img {
+    max-width: 40px;
+    vertical-align: middle;
+}
+
+.three-col-outer-layer .left-col .outline-btn img {
+    max-width: 137px;
+    margin: 0 auto;
+    display: block;
+}
+
+.three-col-outer-layer .left-col .outline-btn {
+    margin: 0 0 12px;
 }
 
 .three-col-outer-layer .left-col .keys .top-keys {
-    margin: 10px 0;
+    margin: 10px 0 0;
 }
 
 /* bottom keys */
 
 
-.three-col-outer-layer .left-col .keys ul li kbd {
+/* .three-col-outer-layer .left-col .keys ul li kbd {
     display: block;
     font-weight: 600;
-}
+} */
 
 .three-col-outer-layer .left-col .keys ul li span {
     position: relative;
@@ -277,13 +315,14 @@ li {
     top: -3px;
     right: -21px;
     transform: rotate(-41deg);
-    display: inline-block;
+    display: block;
+    font-size: 14px;
 }
 
 /* end of bottom keys */
 
 .playing {
-    box-shadow: 0 0 13px green;
+    /* box-shadow: 0 0 13px green; */
     cursor: pointer;
 }
 
@@ -382,6 +421,17 @@ li {
     font-size: 20px;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+/* list items */
+.three-col-outer-layer .center-col ol {
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:nth-child(n+2) {
+    display: none;
 }
 
 /*============== Right col =================*/
