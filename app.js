@@ -7,7 +7,8 @@ $(document).ready(function () {
 
 
 
-
+    // initial slidedown 
+    slideDownHandler();
     step3ListItem.click(cmdKeyHightlight);
 
     function tutorialListItemsHandler(e) {
@@ -19,6 +20,9 @@ $(document).ready(function () {
         $(this).addClass('current');
         $("#" + tab_id).addClass('current');
         $("#" + tab_keypad).addClass('current');
+
+        // slidedown onclick of list items
+        slideDownHandler();
     }
     // tutorialListItems Click action - right col items
     tutorialList.click(tutorialListItemsHandler);
@@ -29,15 +33,29 @@ $(document).ready(function () {
     nextButton.click(function () {
         let currentButton = $(this);
         let nextFilter = $(this).closest('.demo-content').attr('data-filter');
-        // console.log(nextFilter);
+        let nextFilterforKeypad = $(this).closest('.demo-content').attr('data-keypad');
+        console.log(nextFilterforKeypad);
         setTimeout(function () {
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).removeClass('current');
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).next().addClass('current');
             currentButton.closest('.demo-content').removeClass('current');
             currentButton.closest('.demo-content').next().addClass('current');
+            $('#' + nextFilterforKeypad).removeClass('current');
+            $('#' + nextFilterforKeypad).next().addClass('current');
         }, 500);
     });
 
+    // slideDownHandler
+    function slideDownHandler() {
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .description').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .description').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .description').slideDown(1500);
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .description').slideDown(1500);
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn').slideDown(1500);
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn').slideDown(1500);
+    }
     // Replay Button Oncick Action
     function replayDivHandler() {
         alert('Replay Action');
@@ -60,29 +78,38 @@ $(document).ready(function () {
     let topOptionKeyImgSrc = './Assets/images/Key-btn.png';
     let cmdKeySrc = './Assets/images/Key-1.png';
     let cmdHigKeyImgSrc = './Assets/images/CMD-btn.png';
+    let armDisArmImgSrc = './Assets/images/Arm-disarm.png';
+    let enterCodeKeyImgSrc = './Assets/images/Enter-code.png';
+    let enterCodeKey1ImgSrc = './Assets/images/Enter-code-1.png';
+    let enterCodeKey2ImgSrc = './Assets/images/Enter-code-2.png';
+    let exitImgSrc = './Assets/images/Enter-code-2.png';
 
     let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
     let step3NextList = $('.three-col-outer-layer .center-col ol li:nth-child(2)');
 
     let topRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
     let firstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
+    let displayStatus = $('.three-col-outer-layer .left-col .display-stauts img');
 
+    function firstTimeCmdKeyHandler() {
+        // alert('test');
+        displayStatus.attr('src', armDisArmImgSrc);
+        cmdKey.find('img').attr('src', cmdKeySrc);
+        step3NextList.slideDown(500);
+        topRowFirstKeyItem.parent().addClass('playing');
+        topRowFirstKeyItem.find('img').attr('src', cmdHigKeyImgSrc);
+        topLeftKeyHightlight();
+    }
     function cmdKeyHightlight() {
         cmdKey.addClass('playing');
         cmdKey.find('img').attr('src', cmdHigKeyImgSrc);
-        cmdKey.click(function () {
-            cmdKey.find('img').attr('src', cmdKeySrc);
-            step3NextList.slideDown(500);
-            topRowFirstKeyItem.parent().addClass('playing');
-            topRowFirstKeyItem.find('img').attr('src', cmdHigKeyImgSrc);
-            topLeftKeyHightlight();
-        });
-
+        cmdKey.click(firstTimeCmdKeyHandler);
     }
     function topLeftKeyHightlight() {
         // cmdKey.parent().removeClass('.playing');
         topRowFirstKeyItem.click(function () {
             topRowFirstKeyItem.removeClass('playing');
+            displayStatus.attr('src', enterCodeKeyImgSrc);
             topRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step3NextList.next().slideDown(500);
             firstNumKey.addClass('playing');
@@ -94,6 +121,7 @@ $(document).ready(function () {
     function firstKeyHightlight() {
         firstNumKey.click(function () {
             $(this).removeClass('playing');
+            displayStatus.attr('src', enterCodeKey1ImgSrc);
             $(this).find('img').attr('src', cmdKeySrc);
             $(this).next().addClass('playing');
             $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
@@ -104,6 +132,7 @@ $(document).ready(function () {
     function secondKeyHightlight() {
         firstNumKey.next().click(function () {
             $(this).removeClass('playing');
+            displayStatus.attr('src', enterCodeKey2ImgSrc);
             $(this).find('img').attr('src', cmdKeySrc);
             $(this).next().addClass('playing');
             $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
@@ -113,6 +142,7 @@ $(document).ready(function () {
     function thirdKeyHightlight() {
         firstNumKey.next().next().click(function () {
             $(this).removeClass('playing');
+            displayStatus.attr('src', enterCodeKey2ImgSrc);
             $(this).find('img').attr('src', cmdKeySrc);
             $(this).next().addClass('playing');
             $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
@@ -132,16 +162,36 @@ $(document).ready(function () {
         });
 
     }
+    let step3NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn');
+
     function finalCmdKeyHightlight() {
+        cmdKey.off('click');
         cmdKey.click(function () {
-            alert('test');
-            return;
+            $(this).find('img').attr('src', cmdKeySrc);
+            console.log('test');
+            displayStatus.attr('src', exitImgSrc);
+            $(this).removeClass('playing');
+            step3NextList.next().next().next().slideDown(500);
+            step3NextSectionBtn.slideDown(500);
+
         });
+        // cmdKey.click(function () {
+        //     firstTimeCmdKeyHandler.stop();
+
+        // });
         // cmdKey.removeClass('playing');
         // cmdKey.find('img').attr('src', cmdKeySrc);
     }
+    let step2NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] button');
+    step2NextSectionBtn.click(function () {
+        alert('click');
 
-
+        slideDownHandler();
+        cmdKeyHightlight();
+    });
+    // if ($('.three-col-outer-layer .tabber-sec ul li:nth-child(3).current')) {
+    //     console.log('true');
+    // }
     const keys = $('.three-col-outer-layer .left-col .clickable-keys .keys ul li');
 
     keys.click(playSound);
