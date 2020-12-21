@@ -75,13 +75,27 @@ $(document).ready(function () {
         audio.get(0).play();
 
     }
-    let topOptionKeyImgSrc = './Assets/images/Key-btn.png';
-    let cmdKeySrc = './Assets/images/Key-1.png';
-    let cmdHigKeyImgSrc = './Assets/images/CMD-btn.png';
-    let armDisArmImgSrc = './Assets/images/Arm-disarm.png';
-    let enterCodeKeyImgSrc = './Assets/images/Enter-code.png';
-    let enterCodeKey1ImgSrc = './Assets/images/Enter-code-1.png';
-    let enterCodeKey2ImgSrc = './Assets/images/Enter-code-2.png';
+    // keys 
+    let cmdKeySrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key.png';
+    let topOptionKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-btn.png';
+    let topOptionHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm-hightlight-key.png';
+    let cmdKeyHigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-highlight-key.png';
+    let Key1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1.png';
+    let Key2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-new.png';
+    let Key3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3.png';
+    let Key4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4.png';
+    let Key1HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1-highlight.png';
+    let Key2HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-highlight.png';
+    let Key3HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3-highlight.png';
+    let Key4HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4-hightlight.png';
+
+    // Display status images
+    let armDisArmImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm.png';
+    let enterCodeKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code.png';
+    let enterCodeKey1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-1.png';
+    let enterCodeKey2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-2.png';
+    let enterCodeKey3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-3.png';
+    let enterCodeKey4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-4.png';
     let exitImgSrc = './Assets/images/Enter-code-2.png';
 
     let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
@@ -92,17 +106,17 @@ $(document).ready(function () {
     let displayStatus = $('.three-col-outer-layer .left-col .display-stauts img');
 
     function firstTimeCmdKeyHandler() {
-        // alert('test');
         displayStatus.attr('src', armDisArmImgSrc);
         cmdKey.find('img').attr('src', cmdKeySrc);
         step3NextList.slideDown(500);
+        // $('.three-col-outer-layer .center-col ol li:nth-child(-n+2)').hide();
         topRowFirstKeyItem.parent().addClass('playing');
-        topRowFirstKeyItem.find('img').attr('src', cmdHigKeyImgSrc);
+        topRowFirstKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
         topLeftKeyHightlight();
     }
     function cmdKeyHightlight() {
         cmdKey.addClass('playing');
-        cmdKey.find('img').attr('src', cmdHigKeyImgSrc);
+        cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         cmdKey.click(firstTimeCmdKeyHandler);
     }
     function topLeftKeyHightlight() {
@@ -113,7 +127,7 @@ $(document).ready(function () {
             topRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step3NextList.next().slideDown(500);
             firstNumKey.addClass('playing');
-            firstNumKey.find('img').attr('src', cmdHigKeyImgSrc);
+            firstNumKey.find('img').attr('src', Key1HigImgSrc);
             firstKeyHightlight();
         });
 
@@ -122,9 +136,9 @@ $(document).ready(function () {
         firstNumKey.click(function () {
             $(this).removeClass('playing');
             displayStatus.attr('src', enterCodeKey1ImgSrc);
-            $(this).find('img').attr('src', cmdKeySrc);
+            $(this).find('img').attr('src', Key1ImgSrc);
             $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
+            $(this).next().find('img').attr('src', Key2HigImgSrc);
             secondKeyHightlight();
         });
 
@@ -133,19 +147,19 @@ $(document).ready(function () {
         firstNumKey.next().click(function () {
             $(this).removeClass('playing');
             displayStatus.attr('src', enterCodeKey2ImgSrc);
-            $(this).find('img').attr('src', cmdKeySrc);
+            $(this).find('img').attr('src', Key2ImgSrc);
             $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
+            $(this).next().find('img').attr('src', Key3HigImgSrc);
             thirdKeyHightlight();
         });
     }
     function thirdKeyHightlight() {
         firstNumKey.next().next().click(function () {
             $(this).removeClass('playing');
-            displayStatus.attr('src', enterCodeKey2ImgSrc);
-            $(this).find('img').attr('src', cmdKeySrc);
+            displayStatus.attr('src', enterCodeKey3ImgSrc);
+            $(this).find('img').attr('src', Key3ImgSrc);
             $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', cmdHigKeyImgSrc);
+            $(this).next().find('img').attr('src', Key4HigImgSrc);
             fourthKeyHightlight();
         });
 
@@ -153,11 +167,12 @@ $(document).ready(function () {
     function fourthKeyHightlight() {
         firstNumKey.next().next().next().click(function () {
             $(this).removeClass('playing');
-            $(this).find('img').attr('src', cmdKeySrc);
+            displayStatus.attr('src', enterCodeKey4ImgSrc);
+            $(this).find('img').attr('src', Key4ImgSrc);
             console.log('Sequence done.');
             step3NextList.next().next().slideDown(500);
             cmdKey.addClass('playing');
-            cmdKey.find('img').attr('src', cmdHigKeyImgSrc);
+            cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
             finalCmdKeyHightlight();
         });
 
@@ -175,17 +190,9 @@ $(document).ready(function () {
             step3NextSectionBtn.slideDown(500);
 
         });
-        // cmdKey.click(function () {
-        //     firstTimeCmdKeyHandler.stop();
-
-        // });
-        // cmdKey.removeClass('playing');
-        // cmdKey.find('img').attr('src', cmdKeySrc);
     }
     let step2NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] button');
     step2NextSectionBtn.click(function () {
-        alert('click');
-
         slideDownHandler();
         cmdKeyHightlight();
     });
