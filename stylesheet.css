@@ -190,6 +190,10 @@ li {
     position: relative;
 }
 
+/* indicators */
+/* .three-col-outer-layer .left-col .power-indicatiors img {
+    max-width: 84px;
+} */
 .three-col-outer-layer .left-col .indicator .light {
     width: 27px;
     height: 14px;
@@ -227,6 +231,16 @@ li {
 }
 
 /* DGA Logo */
+.three-col-outer-layer .left-col .dga-logo img {
+    max-width: 89px;
+}
+
+.three-col-outer-layer .left-col .dga-logo img {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+
 .three-col-outer-layer .left-col .logo {
     position: absolute;
     bottom: 0;
@@ -394,7 +408,10 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .description,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .description,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn,
+.three-col-outer-layer .center-col .heading,
+.three-col-outer-layer .center-col .description,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:first-child {
     display: none;
 }
 
@@ -415,7 +432,7 @@ li {
 
 .three-col-outer-layer .center-col .btn {
     text-align: center;
-    padding-bottom: 56px;
+    padding: 10px 0 56px;
 }
 
 .three-col-outer-layer .replay {
