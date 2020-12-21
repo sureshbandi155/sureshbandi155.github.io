@@ -9,7 +9,10 @@ $(document).ready(function () {
 
     // initial slidedown 
     slideDownHandler();
-    step3ListItem.click(cmdKeyHightlight);
+    step3ListItem.click(function () {
+        displayStatus.attr('src', fridayDisplayImgSrc);
+        cmdKeyHightlight();
+    });
 
     function tutorialListItemsHandler(e) {
         var tab_id = $(this).attr('data-tab');
@@ -74,6 +77,7 @@ $(document).ready(function () {
     let replayDivForStep3 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .replay');
 
     replayDivForStep3.click(function () {
+        displayStatus.attr('src', fridayDisplayImgSrc);
         slideDownHandler();
         keys.removeClass('playing');
         cmdKeyHightlight();
