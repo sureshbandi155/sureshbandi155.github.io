@@ -310,6 +310,8 @@ $(document).ready(function () {
         step3FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step3FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step3FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        keys.click(playSound);
+
     }
     function step4ResetExistingStateActions() {
         step4CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
@@ -318,6 +320,8 @@ $(document).ready(function () {
         step4FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step4FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step4FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        keys.click(playSound);
+
     }
     function cmdKeyHightlight() {
         step3NextList.nextAll().hide();
@@ -418,7 +422,7 @@ $(document).ready(function () {
                 setTimeout(() => {
                     let currentImage = exitArray[i - 1];
                     step3DisplayStatus.attr('src', currentImage);
-                    console.log(currentImage);
+                    // console.log(currentImage);
                     if (i === 2) {
                         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
                     }
