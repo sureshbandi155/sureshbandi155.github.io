@@ -443,9 +443,14 @@ li {
     text-transform: uppercase;
 }
 
+.three-col-outer-layer .center-col .btn img {
+    max-width: 138px;
+    cursor: pointer;
+}
+
 .three-col-outer-layer .center-col .btn {
     text-align: center;
-    padding: 10px 0 56px;
+    padding: 10px 0 43px;
 }
 
 .three-col-outer-layer .replay {
@@ -480,7 +485,7 @@ li {
 }
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:nth-child(n+2),
-.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn img {
     display: none;
 }
 
