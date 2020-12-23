@@ -207,7 +207,7 @@ li {
     background: #00ff00;
 }
 
-.three-col-outer-layer .left-col .indicator .light.red {
+.three-col-outer-layer .left-col .indicator .light.red-active {
     background: red;
 }
 
@@ -385,6 +385,12 @@ li {
     color: #000;
 }
 
+.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p {
+    margin-bottom: 1px;
+    ;
+}
+
 .three-col-outer-layer .center-col .heading {
     padding: 0 0 15px;
     position: relative;
@@ -402,7 +408,7 @@ li {
 }
 
 .three-col-outer-layer .center-col .description {
-    padding: 20px 0 0;
+    padding: 10px 0 0;
 }
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .description,
@@ -459,7 +465,11 @@ li {
 .three-col-outer-layer .center-col ol {
     margin: 0;
     padding: 0;
-    margin-left: 15px;
+    margin: 10px 0 0 15px;
+}
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol {
+    padding-bottom: 56px;
 }
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:nth-child(n+2),
