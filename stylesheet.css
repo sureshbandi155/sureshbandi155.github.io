@@ -489,6 +489,12 @@ li {
     display: none;
 }
 
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:nth-child(n+2),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p {
+    display: none;
+}
+
 /*============== Right col =================*/
 
 
