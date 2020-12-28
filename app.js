@@ -25,6 +25,87 @@ $(document).ready(function () {
     let nextBtnHoverImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Next-section-button-hover.png';
 
 
+
+
+
+    // Get keys Image src
+
+    let cmdKeySrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key.png';
+    let topOptionKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-btn.png';
+    let topOptionHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm-hightlight-key.png';
+    let cmdKeyHigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-highlight-key.png';
+    let Key1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1.png';
+    let Key2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-new.png';
+    let Key3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3.png';
+    let Key4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4.png';
+    let Key1HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1-highlight.png';
+    let Key2HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-highlight.png';
+    let Key3HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3-highlight.png';
+    let Key4HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4-hightlight.png';
+    let Key7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7.png';
+    let Key7HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7-highlight.png';
+
+    // Display status images
+    let fridayDisplayImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Fri-06.png';
+    let armDisArmImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm.png';
+    let enterCodeKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code.png';
+    let enterCodeKey1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-1.png';
+    let enterCodeKey2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-2.png';
+    let enterCodeKey3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-3.png';
+    let enterCodeKey4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-4.png';
+
+    let exitImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit.png';
+
+
+    // step3 elements 
+    let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
+    let step3NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol li:nth-child(2)');
+    let step3NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn img');
+    let step3TopRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
+    let step3FirstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
+    let step3DisplayStatus = $('.three-col-outer-layer .left-col .keypad3 .display-stauts img');
+    let Step3RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad3 .indicator .light.red');
+
+    // step4 elements 
+    let step4CmdKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:last-child');
+    let step4NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol li:nth-child(2)');
+    let step4TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad4  ul.top-keys li:nth-child(4)');
+    let step4FirstNumKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:first-child');
+    let step4DisplayStatus = $('.three-col-outer-layer .left-col .keypad4 .display-stauts img');
+    let Step4RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad4 .indicator .light.red');
+
+    // Get step5 elements
+    let step5CmdKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:last-child');
+    let step5NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(2)');
+    let step5TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(4)');
+    let step5TopRowAllKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(-n+4)');
+    let step5BypKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(3)');
+    let step5FirstNumKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:first-child');
+    let step5BackKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:nth-last-child(2)');
+    let step5DisplayStatus = $('.three-col-outer-layer .left-col .keypad5 .display-stauts img');
+    let step5DescriptionPare = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .description>p');
+    let step5NextStepButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img');
+    let step5FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(-n+4)');
+    let step5BackBtnHelpText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p.back-btn-text');
+    let step5Key7Key = $('.three-col-outer-layer .left-col .keypad5  ul.bottom-keys li:nth-child(7)');
+    let replayDivForStep5 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .replay');
+    let step5CmdKeyCount = 0;
+    let menuNoYesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Menu-no-yes.png';
+    let alaramSilenceImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Alarm-silence.png';
+    let sensorResetImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Sensor-reset.png';
+    let doorAccessImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Door-access.png';
+    let armedAreasImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Armed-areas.png';
+    let outputsOnOffImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Outputs-on-off.png';
+    let zoneStatusImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-status.png';
+    let byPasszonesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zones.png';
+    let byPasszoneRstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-rst-byp.png';
+    let byPasszoneWith7RstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-7-rst-byp.png';
+    let backKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key.png';
+    let backHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/backKey-highlight.png';
+
+
+
+    // Next Button Hover function
     nextButton.hover(function () {
         nextButton.attr('src', nextBtnHoverImgSrc);
     }, function () {
@@ -48,6 +129,11 @@ $(document).ready(function () {
 
         // slidedown onclick of list items
         slideDownHandler();
+        // if ($(this).hasClass('current')) {
+        //     $(this).off('click');
+        // }
+        // else return;
+        // console.log($(this).hasClass('current'));
     }
     // tutorialListItems Click action - right col items
     tutorialList.click(tutorialListItemsHandler);
@@ -97,6 +183,13 @@ $(document).ready(function () {
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] li:first-child').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] li:nth-child(2)').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] li:first-child').slideDown(1500);
+        // step5 slideDown 
+        step5DescriptionPare.show();
+        step5NextStepButton.hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:first-child').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:nth-child(n+2)').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:first-child').slideDown(1500);
     }
 
 
@@ -122,51 +215,6 @@ $(document).ready(function () {
 
     keys.click(playSound);
 
-    // Get keys Image src
-
-    let cmdKeySrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key.png';
-    let topOptionKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-btn.png';
-    let topOptionHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm-hightlight-key.png';
-    let cmdKeyHigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-highlight-key.png';
-    let Key1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1.png';
-    let Key2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-new.png';
-    let Key3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3.png';
-    let Key4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4.png';
-    let Key1HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1-highlight.png';
-    let Key2HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-highlight.png';
-    let Key3HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3-highlight.png';
-    let Key4HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4-hightlight.png';
-    let Key7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7.png';
-    let Key7HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7-highlight.png';
-
-    // Display status images
-    let fridayDisplayImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Fri-06.png';
-    let armDisArmImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm.png';
-    let enterCodeKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code.png';
-    let enterCodeKey1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-1.png';
-    let enterCodeKey2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-2.png';
-    let enterCodeKey3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-3.png';
-    let enterCodeKey4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Enter-code-4.png';
-
-    let exitImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit.png';
-
-
-    // step3 elements 
-    let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
-    let step3NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol li:nth-child(2)');
-    let step3NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn img');
-    let step3TopRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
-    let step3FirstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
-    let step3DisplayStatus = $('.three-col-outer-layer .left-col .keypad3 .display-stauts img');
-    let Step3RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad3 .indicator .light.red');
-
-    // step4 elements 
-    let step4CmdKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:last-child');
-    let step4NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol li:nth-child(2)');
-    let step4TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad4  ul.top-keys li:nth-child(4)');
-    let step4FirstNumKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:first-child');
-    let step4DisplayStatus = $('.three-col-outer-layer .left-col .keypad4 .display-stauts img');
-    let Step4RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad4 .indicator .light.red');
 
     // step2 next btn onclick handler 
     step2NextSectionBtn.click(function () {
@@ -464,43 +512,15 @@ $(document).ready(function () {
     });
 
 
-    // Get step5 elements
-    let step5CmdKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:last-child');
-    let step5NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(2)');
-    let step5TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(4)');
-    let step5TopRowAllKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(-n+4)');
-    let step5BypKeyItem = $('.three-col-outer-layer .left-col .keypad5  ul.top-keys li:nth-child(3)');
-    let step5FirstNumKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:first-child');
-    let step5BackKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:nth-last-child(2)');
-    let step5DisplayStatus = $('.three-col-outer-layer .left-col .keypad5 .display-stauts img');
-    let step5DescriptionPare = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .description>p');
-    let step5NextStepButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img');
-    let step5FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(-n+4)');
-    let step5BackBtnHelpText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p.back-btn-text');
-    let step5Key7Key = $('.three-col-outer-layer .left-col .keypad5  ul.bottom-keys li:nth-child(7)');
-    let replayDivForStep5 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .replay');
-    let menuNoYesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Menu-no-yes.png';
-    let alaramSilenceImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Alarm-silence.png';
-    let sensorResetImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Sensor-reset.png';
-    let doorAccessImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Door-access.png';
-    let armedAreasImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Armed-areas.png';
-    let outputsOnOffImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Outputs-on-off.png';
-    let zoneStatusImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-status.png';
-    let byPasszonesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zones.png';
-    let byPasszoneRstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-rst-byp.png';
-    let byPasszoneWith7RstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-7-rst-byp.png';
-    let backKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key.png';
-    let backHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/backKey-highlight.png';
+
     // Below functions will reach once user reach to step5
     // step5 list item onclick handler 
     step5ListItem.click(function () {
-        // redArmIndicationON(Step4RedArmedIndicator);
+        step5ResetExistingStateActions();
         step5CmdKeyHightlight();
-        // step4ResetExistingStateActions();
     });
 
     function step5CmdKeyHightlight() {
-        let step5CmdKeyCount = 0;
         step5CmdKey.addClass('playing');
         step5CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step5CmdKey.click(function () {
@@ -678,7 +698,6 @@ $(document).ready(function () {
     }
     // Replay Button for step5 Onclick Action
     replayDivForStep5.click(function () {
-        step5DisplayStatus.attr('src', fridayDisplayImgSrc);
         slideDownHandler();
         keys.removeClass('playing');
         step5CmdKeyHightlight();
@@ -687,6 +706,8 @@ $(document).ready(function () {
     });
     // clear all functions and actions once you click replaybutton
     function step5ResetExistingStateActions() {
+        step5DisplayStatus.attr('src', fridayDisplayImgSrc);
+        step5CmdKeyCount = 0;
         step5CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step5TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
         step5Key7Key.find('img').attr('src', Key7ImgSrc);
