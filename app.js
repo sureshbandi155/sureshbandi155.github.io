@@ -105,6 +105,20 @@ $(document).ready(function () {
 
 
 
+    // Get step6 elements
+    let step6CmdKey = $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:last-child');
+    let step6NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(2)');
+    let step6TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad6  ul.top-keys li:nth-child(4)');
+    let step6TopRowAllKeyItem = $('.three-col-outer-layer .left-col .keypad6  ul.top-keys li:nth-child(-n+4)');
+    let step6FirstNumKey = $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:first-child');
+    let step6DisplayStatus = $('.three-col-outer-layer .left-col .keypad6 .display-stauts img');
+    let step6DescriptionPare = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .description>p');
+    let step6NextStepButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .btn img');
+    let step6FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(-n+4)');
+    let replayDivForStep6 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .replay');
+    let step6CmdKeyCount = 0;
+
+
     // Next Button Hover function
     nextButton.hover(function () {
         nextButton.attr('src', nextBtnHoverImgSrc);
@@ -513,7 +527,7 @@ $(document).ready(function () {
 
 
 
-    // Below functions will reach once user reach to step5
+    // Below functions will run once user reach to step5
     // step5 list item onclick handler 
     step5ListItem.click(function () {
         step5ResetExistingStateActions();
@@ -718,6 +732,96 @@ $(document).ready(function () {
         step5FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
         keys.click(playSound);
 
+    }
+
+
+
+
+    // Below functions will run once user reach to step6
+    // step6 list item onclick handler 
+    step6ListItem.click(function () {
+        // step5ResetExistingStateActions();
+        step6CmdKeyHightlight();
+    });
+
+    function step6CmdKeyHightlight() {
+        step6CmdKey.addClass('playing');
+        step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+        step6CmdKey.click(function () {
+            step6CmdKeyCount++;
+            step6DisplayStatus.attr('src', armDisArmImgSrc);
+            // display menu image 
+            if (step6CmdKeyCount === 2) {
+                step6DisplayStatus.attr('src', menuNoYesImgSrc);
+                $(this).off('click');
+                step6CmdKey.find('img').attr('src', cmdKeySrc);
+                step6NextList.slideDown(500);
+                $(this).removeClass('playing');
+                $(this).off('click');
+                step6TopRowLastKeyItem.addClass('playing');
+                step6TopRowLastKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+                step6TopRowRightKeyHightlight();
+            }
+        });
+    }
+
+    function step6TopRowRightKeyHightlight() {
+        step6TopRowLastKeyItem.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', enterCodeKeyImgSrc);
+            $(this).find('img').attr('src', topOptionKeyImgSrc);
+            step6FirstNumKey.addClass('playing');
+            step6FirstNumKey.find('img').attr('src', Key1HigImgSrc);
+            step6FirstKeyHightlight();
+        });
+    }
+    function step6FirstKeyHightlight() {
+        step6FirstNumKey.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', enterCodeKey1ImgSrc);
+            $(this).find('img').attr('src', Key1ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key2HigImgSrc);
+            step6SecondKeyHightlight();
+        });
+
+    }
+    function step6SecondKeyHightlight() {
+        step6FirstNumKey.next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', enterCodeKey2ImgSrc);
+            $(this).find('img').attr('src', Key2ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key3HigImgSrc);
+            step6ThirdKeyHightlight();
+        });
+    }
+    function step6ThirdKeyHightlight() {
+        step6FirstNumKey.next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', enterCodeKey3ImgSrc);
+            $(this).find('img').attr('src', Key3ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key4HigImgSrc);
+            step6FourthKeyHightlight();
+        });
+
+    }
+    function step6FourthKeyHightlight() {
+        step6FirstNumKey.next().next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', enterCodeKey4ImgSrc);
+            $(this).find('img').attr('src', Key4ImgSrc);
+            step6NextList.next().slideDown(500);
+            step6CmdKey.addClass('playing');
+            step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+            // step6MenuImgShowsHandler();
+        });
     }
 
 
