@@ -137,8 +137,8 @@ li {
 
 
 .three-col-outer-layer .left-col {
-    flex-basis: 60%;
-    margin-right: 1%;
+    flex-basis: 51%;
+    margin-right: 4px;
     display: flex;
     flex-direction: column;
     vertical-align: middle;
@@ -148,7 +148,7 @@ li {
 }
 
 .three-col-outer-layer .center-col {
-    flex-basis: 30%;
+    flex-basis: 25%;
     padding: 15px;
     overflow: hidden;
     position: relative;
@@ -156,7 +156,7 @@ li {
 }
 
 .three-col-outer-layer .right-col {
-    flex-basis: 25%;
+    flex-basis: 23%;
     text-align: right;
     background: linear-gradient(180deg, lightblue, transparent);
     padding: 15px;
@@ -179,9 +179,10 @@ li {
 }
 
 .three-col-outer-layer .left-col .keypad-box {
-    background: #fff;
+    background: url(https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/White-keypad-BG.png) no-repeat;
     padding: 40px 30px;
     display: flex;
+    background-size: contain;
 }
 
 .three-col-outer-layer .left-col .keypad-left-col {
@@ -383,12 +384,12 @@ li {
 
 .three-col-outer-layer .center-col p {
     color: #000;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
 .three-col-outer-layer .center-col li {
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
@@ -520,14 +521,19 @@ li {
 .three-col-outer-layer .tabber-sec ul li {
     border-bottom: 1px solid #fff;
     min-height: 36px;
-    padding: 10px 10px 6px;
+    padding: 10px 8px 6px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .three-col-outer-layer .tabber-sec ul li:nth-child(4) {
     margin-bottom: 36px;
     position: relative;
+}
+
+.three-col-outer-layer .tabber-sec ul li:nth-child(6) {
+    padding: 10px 3px 6px;
 }
 
 .three-col-outer-layer .tabber-sec ul li:nth-child(4):before {
