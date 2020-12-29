@@ -181,7 +181,9 @@ li {
 
 .three-col-outer-layer .left-col .keypad-box {
     background: url(https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/White-keypad-BG.png) no-repeat;
-    padding: 40px 30px;
+    /* padding: 40px 30px 54px 52px; */
+    /* padding: 45px 46px 51px 43px; */
+    padding: 44px 46px 48px 43px;
     display: flex;
     background-size: contain;
 }
@@ -193,9 +195,12 @@ li {
 }
 
 /* indicators */
-/* .three-col-outer-layer .left-col .power-indicatiors img {
-    max-width: 84px;
-} */
+
+.three-col-outer-layer .left-col .power-btns img {
+    max-width: 86px;
+    margin-left: 3px;
+}
+
 .three-col-outer-layer .left-col .indicator .light {
     width: 27px;
     height: 14px;
@@ -229,6 +234,7 @@ li {
 .three-col-outer-layer .left-col .keypad-right-col {
     width: 55%;
     float: left;
+    padding-top: 4px;
 
 }
 
@@ -240,7 +246,7 @@ li {
 .three-col-outer-layer .left-col .dga-logo img {
     position: absolute;
     bottom: 0;
-    right: 20px;
+    right: 16px;
 }
 
 .three-col-outer-layer .left-col .logo {
@@ -269,11 +275,11 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .three-col-outer-layer .left-col .keys ul.top-keys li:not(:first-child) {
-    margin-left: 9px;
+    margin-left: 4px;
 }
 
 .three-col-outer-layer .left-col .keys ul.bottom-keys li:nth-child(4n+1) {
@@ -281,8 +287,9 @@ li {
 }
 
 .three-col-outer-layer .left-col .keys ul.bottom-keys li {
-    margin-left: 7px;
+    margin-left: 4px;
     margin-bottom: 12px;
+    position: relative;
 
 }
 
@@ -308,7 +315,7 @@ li {
 }
 
 .three-col-outer-layer .left-col .outline-btn {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
 }
 
 .three-col-outer-layer .left-col .keys .top-keys {
@@ -324,15 +331,15 @@ li {
 } */
 
 .three-col-outer-layer .left-col .keys ul li span {
-    position: relative;
+    position: absolute;
     font-weight: 600;
     color: #fff;
     text-shadow: 1px 1px 4px black;
-    top: -3px;
-    right: -21px;
-    transform: rotate(-41deg);
-    display: block;
-    font-size: 14px;
+    top: 19px;
+    right: -14px;
+    transform: rotate(-43deg);
+    /* display: block; */
+    font-size: 13px;
 }
 
 /* end of bottom keys */
@@ -344,15 +351,14 @@ li {
 
 /* Display Status */
 .three-col-outer-layer .left-col .display-stauts {
-    /* height: 50px;
-    background: darkgrey;
-    position: relative;
-    padding: 15px; */
+    max-width: 186px;
+    height: 45px;
 
 }
 
 .three-col-outer-layer .left-col .display-stauts img {
-    max-width: 200px;
+    /* max-width: 200px; */
+    max-width: 186px;
 
 }
 
@@ -502,6 +508,26 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p {
     display: none;
 }
+
+.three-col-outer-layer .center-col.bottom-btn .demo-content[data-filter=".step6"] .btn {
+    position: absolute;
+    bottom: 9px;
+    left: 0;
+    right: 0;
+}
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li.no-list-style,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li.no-list-style {
+    list-style: none;
+    text-indent: -9px;
+}
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li.no-list-style span,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li.no-list-style span {
+    position: relative;
+    left: -6px;
+}
+
 
 
 /*============== Right col =================*/

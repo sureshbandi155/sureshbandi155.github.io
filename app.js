@@ -30,20 +30,27 @@ $(document).ready(function () {
 
     // Get keys Image src
 
-    let cmdKeySrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key.png';
-    let topOptionKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-btn.png';
-    let topOptionHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Arm-disarm-hightlight-key.png';
-    let cmdKeyHigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-highlight-key.png';
-    let Key1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1.png';
-    let Key2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-new.png';
-    let Key3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3.png';
-    let Key4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4.png';
-    let Key1HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1-highlight.png';
-    let Key2HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-highlight.png';
-    let Key3HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3-highlight.png';
-    let Key4HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4-hightlight.png';
-    let Key7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7.png';
-    let Key7HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7-highlight.png';
+    let cmdKeySrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key-inactive.png';
+    let topOptionKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Top-key-inactive.png';
+    let topOptionHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Top-key-active.png';
+    let cmdKeyHigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key-active.png';
+    let Key0ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key0-inactive.png';
+    let Key1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key1-inactive.png';
+    let Key2ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key2-inactive.png';
+    let Key3ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key3-inactive.png';
+    let Key4ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key4-inactive.png';
+    let Key5ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key5-inactive.png';
+    let Key6ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key6-inactive.png';
+    let Key7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key7-inactive.png';
+    let Key8ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key8-inactive.png';
+    let Key9ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key9-inactive.png';
+    let Key1HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key1-active.png';
+    let Key2HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key2-active.png';
+    let Key3HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key3-active.png';
+    let Key4HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key4-active.png';
+    let Key7HigImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key7-active.png';
+
+
 
     // Display status images
     let fridayDisplayImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Fri-06.png';
@@ -64,7 +71,11 @@ $(document).ready(function () {
     let step3TopRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad3  ul.top-keys li:first-child');
     let step3FirstNumKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:first-child');
     let step3DisplayStatus = $('.three-col-outer-layer .left-col .keypad3 .display-stauts img');
-    let Step3RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad3 .indicator .light.red');
+    // let Step3RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad3 .indicator .light.red');
+
+    let step3PowerIndicatorImg = $('.three-col-outer-layer .left-col .keypad3 .power-btns img');
+    let powerIndicatorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Power-indicator.png';
+    let armedIndicatorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Power-armed-indicator.png';
 
     // step4 elements 
     let step4CmdKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:last-child');
@@ -72,7 +83,9 @@ $(document).ready(function () {
     let step4TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad4  ul.top-keys li:nth-child(4)');
     let step4FirstNumKey = $('.three-col-outer-layer .left-col .keypad4 ul.bottom-keys  li:first-child');
     let step4DisplayStatus = $('.three-col-outer-layer .left-col .keypad4 .display-stauts img');
-    let Step4RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad4 .indicator .light.red');
+    // let Step4RedArmedIndicator = $('.three-col-outer-layer .left-col .keypad4 .indicator .light.red');
+
+    let step4PowerIndicatorImg = $('.three-col-outer-layer .left-col .keypad4 .power-btns img');
 
     // Get step5 elements
     let step5CmdKey = $('.three-col-outer-layer .left-col .keypad5 ul.bottom-keys  li:last-child');
@@ -100,8 +113,8 @@ $(document).ready(function () {
     let byPasszonesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zones.png';
     let byPasszoneRstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-rst-byp.png';
     let byPasszoneWith7RstBypImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bypass-zone-7-rst-byp.png';
-    let backKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key.png';
-    let backHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/backKey-highlight.png';
+    let backKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key-inactive.png';
+    let backHigKeyImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key-active.png';
 
 
 
@@ -114,9 +127,29 @@ $(document).ready(function () {
     let step6DisplayStatus = $('.three-col-outer-layer .left-col .keypad6 .display-stauts img');
     let step6DescriptionPare = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .description>p');
     let step6NextStepButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .btn img');
-    let step6FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(-n+4)');
+    let step6FirstFiveListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(-n+5)');
     let replayDivForStep6 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .replay');
     let step6CmdKeyCount = 0;
+
+    // redcolor key buttons image src 
+
+    let TopkeysRedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Top-key-red.png';
+    let key0redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-0-red.png';
+    let key1redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-1-red.png';
+    let key2redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-2-red.png';
+    let key3redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-3-red.png';
+    let key4redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-4-red.png';
+    let key5redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-5-red.png';
+    let key6redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-6-red.png';
+    let key7redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-7-red.png';
+    let key8redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-8-red.png';
+    let key9redImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Key-9-red.png';
+    let cmdKeyRedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Cmd-key-red.png';
+    let backKeyRedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Back-key-red.png';
+    // step6 display status img src
+    let sensorOffImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Sensor-off.png';
+    let sensorOnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Sensor-on.png';
+
 
 
     // Next Button Hover function
@@ -133,7 +166,7 @@ $(document).ready(function () {
     function tutorialListItemsHandler(e) {
         var tab_id = $(this).attr('data-tab');
         var tab_keypad = $(this).attr('data-keypad');
-        console.log('#' + tab_keypad);
+        // console.log('#' + tab_keypad);
         tutorialList.removeClass('current');
         tutorialConent.removeClass('current');
         keypadSteps.removeClass('current');
@@ -158,7 +191,7 @@ $(document).ready(function () {
         let currentButton = $(this);
         let nextFilter = $(this).closest('.demo-content').attr('data-filter');
         let nextFilterforKeypad = $(this).closest('.demo-content').attr('data-keypad');
-        console.log(nextFilterforKeypad);
+        // console.log(nextFilterforKeypad);
         setTimeout(function () {
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).removeClass('current');
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).next().addClass('current');
@@ -204,6 +237,13 @@ $(document).ready(function () {
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:nth-child(n+2)').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:first-child').slideDown(1500);
+        // step5 slideDown 
+        step6DescriptionPare.show();
+        step6NextStepButton.hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li:first-child').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li:nth-child(n+2)').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li:first-child').slideDown(1500);
     }
 
 
@@ -232,43 +272,178 @@ $(document).ready(function () {
 
     // step2 next btn onclick handler 
     step2NextSectionBtn.click(function () {
-        slideDownHandler();
         cmdKeyHightlight();
-        redArmIndicationOFF(Step3RedArmedIndicator);
+        redArmIndicationOFF(step3PowerIndicatorImg);
         step3ResetExistingStateActions();
 
     });
 
-    // step3 next btn onclick handler 
-    step3NextSectionBtn.click(function () {
-        slideDownHandler();
-        redArmIndicationON(Step4RedArmedIndicator);
-        step4CmdKeyHightlight();
-        step4ResetExistingStateActions();
-
-    });
 
     // step3 list item onclick handler 
     step3ListItem.click(function () {
-        step3DisplayStatus.attr('src', fridayDisplayImgSrc);
         cmdKeyHightlight();
-        redArmIndicationOFF(Step3RedArmedIndicator);
+        redArmIndicationOFF(step3PowerIndicatorImg);
         step3ResetExistingStateActions();
+
+    });
+    function cmdKeyHightlight() {
+        step3NextList.nextAll().hide();
+        step3NextSectionBtn.hide();
+        cmdKey.addClass('playing');
+        cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+        cmdKey.click(firstTimeCmdKeyHandler);
+    }
+
+    function firstTimeCmdKeyHandler() {
+        $(this).removeClass('playing');
+        cmdKey.off('click');
+        redArmIndicationOFF(step3PowerIndicatorImg);
+        step3DisplayStatus.attr('src', armDisArmImgSrc);
+        cmdKey.find('img').attr('src', cmdKeySrc);
+        step3NextList.slideDown(500);
+        step3TopRowFirstKeyItem.addClass('playing');
+        step3TopRowFirstKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+        topLeftKeyHightlight();
+    }
+    function topLeftKeyHightlight() {
+        // cmdKey.parent().removeClass('.playing');
+        step3TopRowFirstKeyItem.click(function () {
+            $(this).off('click');
+            step3TopRowFirstKeyItem.removeClass('playing');
+            step3DisplayStatus.attr('src', enterCodeKeyImgSrc);
+            step3TopRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+            step3NextList.next().slideDown(500);
+            step3FirstNumKey.addClass('playing');
+            step3FirstNumKey.find('img').attr('src', Key1HigImgSrc);
+            firstKeyHightlight();
+        });
+
+    }
+    function firstKeyHightlight() {
+        step3FirstNumKey.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step3DisplayStatus.attr('src', enterCodeKey1ImgSrc);
+            $(this).find('img').attr('src', Key1ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key2HigImgSrc);
+            secondKeyHightlight();
+        });
+
+    }
+    function secondKeyHightlight() {
+        step3FirstNumKey.next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step3DisplayStatus.attr('src', enterCodeKey2ImgSrc);
+            $(this).find('img').attr('src', Key2ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key3HigImgSrc);
+            thirdKeyHightlight();
+        });
+    }
+    function thirdKeyHightlight() {
+        step3FirstNumKey.next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step3DisplayStatus.attr('src', enterCodeKey3ImgSrc);
+            $(this).find('img').attr('src', Key3ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key4HigImgSrc);
+            fourthKeyHightlight();
+        });
+
+    }
+    function fourthKeyHightlight() {
+        step3FirstNumKey.next().next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step3DisplayStatus.attr('src', enterCodeKey4ImgSrc);
+            $(this).find('img').attr('src', Key4ImgSrc);
+            // console.log('Sequence done.');
+            step3NextList.next().next().slideDown(500);
+            cmdKey.addClass('playing');
+            cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+            finalCmdKeyHightlight();
+        });
+
+    }
+
+
+    function finalCmdKeyHightlight() {
+        cmdKey.off('click');
+        cmdKey.click(function () {
+            $(this).off('click');
+            $(this).find('img').attr('src', cmdKeySrc);
+            // console.log('test');
+            redArmIndicationON(step3PowerIndicatorImg);
+            step3DisplayStatus.attr('src', exitImgSrc);
+            $(this).removeClass('playing');
+            step3NextList.next().next().next().slideDown(500);
+            const num1 = 1, num2 = 11;
+            let exitArray = ['https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-10.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-9.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-8.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-7.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-6.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-5.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-4.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-3.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-2.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-1.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Fri-06.png'];
+            for (let i = num1; i <= num2; i++) {
+                setTimeout(() => {
+                    let currentImage = exitArray[i - 1];
+                    step3DisplayStatus.attr('src', currentImage);
+                    // console.log(currentImage);
+                    if (i === 2) {
+                        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
+                    }
+                    else if (i === 11) {
+                        let longKeyAudio = $('audio[data-key="2"]');
+                        longKeyAudio.get(0).play();
+                        step3NextSectionBtn.slideDown(500);
+                    }
+                }, i * 500);
+            }
+
+        });
+    }
+    // Replay Button for step3 Onclick Action
+    replayDivForStep3.click(function () {
+        slideDownHandler();
+        keys.removeClass('playing');
+        cmdKeyHightlight();
+        redArmIndicationOFF(step3PowerIndicatorImg);
+        step3ResetExistingStateActions();
+
+    });
+
+    // clear all functions and actions once you click step2 and step3 next btn and replaybutton
+    function step3ResetExistingStateActions() {
+        step3DisplayStatus.attr('src', fridayDisplayImgSrc);
+        cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+        step3TopRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+        step3FirstNumKey.find('img').attr('src', Key1ImgSrc);
+        step3FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
+        step3FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
+        step3FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        keys.click(playSound);
+
+    }
+
+
+    // step3 next btn onclick handler 
+    step3NextSectionBtn.click(function () {
+        redArmIndicationON(step4PowerIndicatorImg);
+        step4CmdKeyHightlight();
+        step4ResetExistingStateActions();
 
     });
     // step4 list item onclick handler 
     step4ListItem.click(function () {
-        redArmIndicationON(Step4RedArmedIndicator);
+        redArmIndicationON(step4PowerIndicatorImg);
         step4CmdKeyHightlight();
         step4ResetExistingStateActions();
     });
 
-    function redArmIndicationON(indicatorEle) {
-        indicatorEle.addClass('red-active');
+    function redArmIndicationON(indicatorImgSrc) {
+        indicatorImgSrc.attr('src', armedIndicatorImgSrc);
 
     }
-    function redArmIndicationOFF(indicatorEle) {
-        indicatorEle.removeClass('red-active');
+    function redArmIndicationOFF(indicatorImgSrc) {
+        indicatorImgSrc.attr('src', powerIndicatorImgSrc);
 
     }
     // Below functions will run once user reach to step4 
@@ -358,30 +533,21 @@ $(document).ready(function () {
             $(this).find('img').attr('src', cmdKeySrc);
             step4DisplayStatus.attr('src', fridayDisplayImgSrc);
             $(this).removeClass('playing');
-            redArmIndicationOFF(Step4RedArmedIndicator);
+            redArmIndicationOFF(step4PowerIndicatorImg);
             step4NextList.next().next().next().slideDown(500);
         });
     }
     replayDivForStep4.click(function () {
-        step4DisplayStatus.attr('src', fridayDisplayImgSrc);
         slideDownHandler();
         keys.removeClass('playing');
         step4CmdKeyHightlight();
         step4ResetExistingStateActions();
     });
 
-    // clear all functions and actions once you click step2 and step3 next btn and replaybutton
-    function step3ResetExistingStateActions() {
-        cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
-        step3TopRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
-        step3FirstNumKey.find('img').attr('src', Key1ImgSrc);
-        step3FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
-        step3FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
-        step3FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
 
-    }
+    // clear all functions and actions once you click step3 next btn and step4replaybutton
     function step4ResetExistingStateActions() {
+        step4DisplayStatus.attr('src', fridayDisplayImgSrc);
         step4CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step4TopRowLastKeyItem.find('img').attr('src', topOptionKeyImgSrc);
         step4FirstNumKey.find('img').attr('src', Key1ImgSrc);
@@ -400,130 +566,7 @@ $(document).ready(function () {
     //     thirdKey.off('click');
     //     fourthKey.off('click');
     // }
-    function cmdKeyHightlight() {
-        step3NextList.nextAll().hide();
-        step3NextSectionBtn.hide();
-        cmdKey.addClass('playing');
-        cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
-        cmdKey.click(firstTimeCmdKeyHandler);
-    }
 
-    function firstTimeCmdKeyHandler() {
-        $(this).removeClass('playing');
-        cmdKey.off('click');
-        redArmIndicationOFF(Step3RedArmedIndicator);
-        step3DisplayStatus.attr('src', armDisArmImgSrc);
-        cmdKey.find('img').attr('src', cmdKeySrc);
-        step3NextList.slideDown(500);
-        step3TopRowFirstKeyItem.addClass('playing');
-        step3TopRowFirstKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
-        topLeftKeyHightlight();
-    }
-    function topLeftKeyHightlight() {
-        // cmdKey.parent().removeClass('.playing');
-        step3TopRowFirstKeyItem.click(function () {
-            $(this).off('click');
-            step3TopRowFirstKeyItem.removeClass('playing');
-            step3DisplayStatus.attr('src', enterCodeKeyImgSrc);
-            step3TopRowFirstKeyItem.find('img').attr('src', topOptionKeyImgSrc);
-            step3NextList.next().slideDown(500);
-            step3FirstNumKey.addClass('playing');
-            step3FirstNumKey.find('img').attr('src', Key1HigImgSrc);
-            firstKeyHightlight();
-        });
-
-    }
-    function firstKeyHightlight() {
-        step3FirstNumKey.click(function () {
-            $(this).off('click');
-            $(this).removeClass('playing');
-            step3DisplayStatus.attr('src', enterCodeKey1ImgSrc);
-            $(this).find('img').attr('src', Key1ImgSrc);
-            $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', Key2HigImgSrc);
-            secondKeyHightlight();
-        });
-
-    }
-    function secondKeyHightlight() {
-        step3FirstNumKey.next().click(function () {
-            $(this).off('click');
-            $(this).removeClass('playing');
-            step3DisplayStatus.attr('src', enterCodeKey2ImgSrc);
-            $(this).find('img').attr('src', Key2ImgSrc);
-            $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', Key3HigImgSrc);
-            thirdKeyHightlight();
-        });
-    }
-    function thirdKeyHightlight() {
-        step3FirstNumKey.next().next().click(function () {
-            $(this).off('click');
-            $(this).removeClass('playing');
-            step3DisplayStatus.attr('src', enterCodeKey3ImgSrc);
-            $(this).find('img').attr('src', Key3ImgSrc);
-            $(this).next().addClass('playing');
-            $(this).next().find('img').attr('src', Key4HigImgSrc);
-            fourthKeyHightlight();
-        });
-
-    }
-    function fourthKeyHightlight() {
-        step3FirstNumKey.next().next().next().click(function () {
-            $(this).off('click');
-            $(this).removeClass('playing');
-            step3DisplayStatus.attr('src', enterCodeKey4ImgSrc);
-            $(this).find('img').attr('src', Key4ImgSrc);
-            console.log('Sequence done.');
-            step3NextList.next().next().slideDown(500);
-            cmdKey.addClass('playing');
-            cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
-            finalCmdKeyHightlight();
-        });
-
-    }
-
-
-    function finalCmdKeyHightlight() {
-        cmdKey.off('click');
-        cmdKey.click(function () {
-            $(this).off('click');
-            $(this).find('img').attr('src', cmdKeySrc);
-            // console.log('test');
-            redArmIndicationON(Step3RedArmedIndicator);
-            step3DisplayStatus.attr('src', exitImgSrc);
-            $(this).removeClass('playing');
-            step3NextList.next().next().next().slideDown(500);
-            const num1 = 1, num2 = 11;
-            let exitArray = ['https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-10.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-9.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-8.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-7.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-6.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-5.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-4.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-3.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-2.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit-1.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Fri-06.png'];
-            for (let i = num1; i <= num2; i++) {
-                setTimeout(() => {
-                    let currentImage = exitArray[i - 1];
-                    step3DisplayStatus.attr('src', currentImage);
-                    // console.log(currentImage);
-                    if (i === 2) {
-                        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
-                    }
-                    else if (i === 11) {
-                        let longKeyAudio = $('audio[data-key="2"]');
-                        longKeyAudio.get(0).play();
-                        step3NextSectionBtn.slideDown(500);
-                    }
-                }, i * 500);
-            }
-
-        });
-    }
-    // Replay Button for step3 Onclick Action
-    replayDivForStep3.click(function () {
-        step3DisplayStatus.attr('src', fridayDisplayImgSrc);
-        slideDownHandler();
-        keys.removeClass('playing');
-        cmdKeyHightlight();
-        redArmIndicationOFF(Step3RedArmedIndicator);
-        step3ResetExistingStateActions();
-
-    });
 
 
 
@@ -738,9 +781,13 @@ $(document).ready(function () {
 
 
     // Below functions will run once user reach to step6
+    step5NextStepButton.click(function () {
+        step6ResetExistingStateActions();
+        step6CmdKeyHightlight();
+    });
     // step6 list item onclick handler 
     step6ListItem.click(function () {
-        // step5ResetExistingStateActions();
+        step6ResetExistingStateActions();
         step6CmdKeyHightlight();
     });
 
@@ -820,11 +867,110 @@ $(document).ready(function () {
             step6NextList.next().slideDown(500);
             step6CmdKey.addClass('playing');
             step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
-            // step6MenuImgShowsHandler();
+            step6MenuImgShowsHandler();
         });
     }
 
+    function step6MenuImgShowsHandler() {
+        let step6Menucount = 0;
+        step6CmdKey.click(function () {
+            $(this).click(playSound);
+            step6Menucount += 1;
+            // console.log(step5Menucount);
+            switch (step6Menucount) {
+                case 1:
+                    step6DisplayStatus.attr('src', alaramSilenceImgSrc);
+                    step6NextList.next().next().slideDown(500);
+                    break;
+                case 2:
+                    step6DisplayStatus.attr('src', sensorResetImgSrc);
+                    step6NextList.next().next().next().slideDown(500);
+                    $(this).removeClass('playing');
+                    $(this).off('click');
+                    $(this).find('img').attr('src', cmdKeySrc);
+                    step6TopRowAllKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+                    step6TopRowAllKeyItem.addClass('playing');
+                    step6SensorResetHandler();
+                    break;
+                default:
+                    break;
+            }
+        })
 
+    }
+    function step6SensorResetHandler() {
+        step6TopRowAllKeyItem.click(function () {
+            step6TopRowAllKeyItem.off('click');
+            step6TopRowAllKeyItem.removeClass('playing');
+            step6TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+            step6DisplayStatus.attr('src', sensorOffImgSrc);
+            setTimeout(() => {
+                step6TopRowAllKeyItem.find('img').attr('src', TopkeysRedImgSrc);
+                step6FirstNumKey.find('img').attr('src', key1redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(2)').find('img').attr('src', key2redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(3)').find('img').attr('src', key3redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(4)').find('img').attr('src', key4redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(5)').find('img').attr('src', key5redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(6)').find('img').attr('src', key6redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(7)').find('img').attr('src', key7redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(8)').find('img').attr('src', key8redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(9)').find('img').attr('src', key9redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(10)').find('img').attr('src', key0redImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(11)').find('img').attr('src', backKeyRedImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(12)').find('img').attr('src', cmdKeyRedImgSrc);
+            }, 1000);
+
+            setTimeout(() => {
+                step6DisplayStatus.attr('src', sensorOnImgSrc);
+                step6TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+                step6FirstNumKey.find('img').attr('src', Key1ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(2)').find('img').attr('src', Key2ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(3)').find('img').attr('src', Key3ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(4)').find('img').attr('src', Key4ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(5)').find('img').attr('src', Key5ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(6)').find('img').attr('src', Key6ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(7)').find('img').attr('src', Key7ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(8)').find('img').attr('src', Key8ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(9)').find('img').attr('src', Key9ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(10)').find('img').attr('src', Key0ImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(11)').find('img').attr('src', backKeyImgSrc);
+                $('.three-col-outer-layer .left-col .keypad6 ul.bottom-keys  li:nth-child(12)').find('img').attr('src', cmdKeySrc);
+            }, 2000);
+            setTimeout(() => {
+                step6FirstFiveListItems.hide();
+                step6DescriptionPare.hide();
+                $('.three-col-outer-layer .center-col').addClass('bottom-btn');
+                $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(6)').show();
+                $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p').show();
+                step6NextStepButton.show();
+                step6DisplayStatus.attr('src', fridayDisplayImgSrc);
+            }, 3000);
+
+        })
+    }
+    // Replay Button for step6 Onclick Action
+    replayDivForStep6.click(function () {
+        slideDownHandler();
+        keys.removeClass('playing');
+        step6CmdKeyHightlight();
+        step6ResetExistingStateActions();
+
+    });
+    // clear all functions and actions for step6 once you click nextbutton and replaybutton
+    function step6ResetExistingStateActions() {
+        step6DisplayStatus.attr('src', fridayDisplayImgSrc);
+        step6CmdKeyCount = 0;
+        step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+        step6TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+        $('.three-col-outer-layer .center-col').removeClass('bottom-btn');
+        // step6Key7Key.find('img').attr('src', Key7ImgSrc);
+        // step6BackKey.find('img').attr('src', backKeyImgSrc);
+        step6FirstNumKey.find('img').attr('src', Key1ImgSrc);
+        step6FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
+        step6FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
+        step6FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        keys.click(playSound);
+    }
 
 });
 
