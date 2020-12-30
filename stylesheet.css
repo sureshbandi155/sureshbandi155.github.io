@@ -149,7 +149,7 @@ li {
 
 .three-col-outer-layer .center-col {
     flex-basis: 25%;
-    padding: 15px;
+    padding: 15px 7px;
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #c5c5c5, #fff);
@@ -397,13 +397,14 @@ li {
 
 .three-col-outer-layer .center-col li {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p {
     margin-bottom: 1px;
-    ;
 }
 
 .three-col-outer-layer .center-col .heading {
@@ -485,7 +486,7 @@ li {
 .three-col-outer-layer .center-col ol {
     margin: 0;
     padding: 0;
-    margin: 10px 0 0 15px;
+    margin: 3px 0 0 15px;
 }
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol {
