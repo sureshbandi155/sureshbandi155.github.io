@@ -748,6 +748,7 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', backKeyImgSrc);
+            step5NextList.next().next().next().next().next().next().next().next().next().slideDown(500);
             step5NextStepButton.slideDown(500);
             step5DisplayStatus.attr('src', fridayDisplayImgSrc);
 

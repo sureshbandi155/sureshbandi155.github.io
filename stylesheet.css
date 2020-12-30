@@ -128,7 +128,11 @@ li {
 }
 
 .three-col-outer-layer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
     background: #103745;
     margin: 30px 129px 149px 126px;
@@ -137,26 +141,35 @@ li {
 
 
 .three-col-outer-layer .left-col {
+    -ms-flex-preferred-size: 51%;
     flex-basis: 51%;
     margin-right: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     vertical-align: middle;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    background: url(./Assets/images/Original-blue-background.png) no-repeat center center /cover;
     background: linear-gradient(180deg, lightblue, transparent);
 }
 
 .three-col-outer-layer .center-col {
+    -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
     padding: 15px 7px;
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #c5c5c5, #fff);
-    min-height: 507px;
+    min-height: 511px;
 }
 
 .three-col-outer-layer .right-col {
+    -ms-flex-preferred-size: 23%;
     flex-basis: 23%;
     text-align: right;
     background: linear-gradient(180deg, lightblue, transparent);
@@ -184,6 +197,8 @@ li {
     /* padding: 40px 30px 54px 52px; */
     /* padding: 45px 46px 51px 43px; */
     padding: 44px 46px 48px 43px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-size: contain;
 }
@@ -443,6 +458,7 @@ li {
     color: #ffffff;
     font-weight: 500;
     margin: 0;
+    text-shadow: 1px 1px 4px black;
 }
 
 .three-col-outer-layer .center-col button {
@@ -529,6 +545,16 @@ li {
     left: -6px;
 }
 
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .next-btn-help-txt {
+    padding-top: 7px;
+}
+
+.three-col-outer-layer .center-col .demo-content ol p img,
+.three-col-outer-layer .center-col .demo-content ol li img {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
 
 
 /*============== Right col =================*/
@@ -576,4 +602,10 @@ li {
 
 .three-col-outer-layer .tabber-sec ul li.current {
     color: rgb(255 255 255 / 0.5);
+}
+
+@media(min-width: 1025px) {
+    .three-col-outer-layer .center-col h4 {
+        font-size: 18px;
+    }
 }
