@@ -165,7 +165,7 @@ li {
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #c5c5c5, #fff);
-    min-height: 511px;
+    min-height: 522px;
 }
 
 .three-col-outer-layer .right-col {
@@ -194,8 +194,6 @@ li {
 
 .three-col-outer-layer .left-col .keypad-box {
     background: url(https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/White-keypad-BG.png) no-repeat;
-    /* padding: 40px 30px 54px 52px; */
-    /* padding: 45px 46px 51px 43px; */
     padding: 44px 46px 48px 43px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -309,10 +307,6 @@ li {
 }
 
 .three-col-outer-layer .left-col .keys ul li {
-    /* width: 35px;
-    height: 21px;
-    background: #d4d6c3;
-    border-radius: 50%; */
     display: inline-block;
     max-height: 20px;
     vertical-align: middle;
@@ -360,7 +354,6 @@ li {
 /* end of bottom keys */
 
 .playing {
-    /* box-shadow: 0 0 13px green; */
     cursor: pointer;
 }
 
@@ -372,7 +365,6 @@ li {
 }
 
 .three-col-outer-layer .left-col .display-stauts img {
-    /* max-width: 200px; */
     max-width: 186px;
 
 }
@@ -533,6 +525,7 @@ li {
     right: 0;
 }
 
+
 .three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li.no-list-style,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li.no-list-style {
     list-style: none;
@@ -556,6 +549,10 @@ li {
     top: -2px;
 }
 
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .heading {
+    padding-bottom: 10px;
+}
 
 /*============== Right col =================*/
 
