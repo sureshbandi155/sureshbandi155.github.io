@@ -410,7 +410,8 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step5"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] p {
     margin-bottom: 1px;
 }
 
@@ -514,7 +515,10 @@ li {
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li:nth-child(n+2),
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] li:nth-child(n+2),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p {
     display: none;
 }
 
@@ -526,14 +530,14 @@ li {
 }
 
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li.no-list-style,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li.no-list-style {
+.three-col-outer-layer .center-col .demo-content li.no-list-style,
+.three-col-outer-layer .center-col .demo-content li.no-list-style {
     list-style: none;
     text-indent: -9px;
 }
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li.no-list-style span,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li.no-list-style span {
+.three-col-outer-layer .center-col .demo-content li.no-list-style span,
+.three-col-outer-layer .center-col .demo-content li.no-list-style span {
     position: relative;
     left: -6px;
 }
@@ -550,7 +554,8 @@ li {
 }
 
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .heading {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .heading,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .heading {
     padding-bottom: 10px;
 }
 
