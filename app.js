@@ -3,6 +3,7 @@ $(document).ready(function () {
     let tutorialList = $('.three-col-outer-layer .tabber-sec ul li');
     let tutorialConent = $('.three-col-outer-layer .center-col .demo-content');
     let keypadSteps = $('.three-col-outer-layer .left-col .keypad-step');
+    let step2ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(2)');
     let step3ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(3)');
     let step4ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(4)');
     let step5ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(5)');
@@ -63,6 +64,11 @@ $(document).ready(function () {
 
     let exitImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Exit.png';
 
+    //step1 elements
+    let step1NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn img');
+
+    // step2 elements 
+    let step2PowerIndicatorImg = $('.three-col-outer-layer .left-col .keypad2 .power-btns img');
 
     // step3 elements 
     let cmdKey = $('.three-col-outer-layer .left-col .keypad3 ul.bottom-keys  li:last-child');
@@ -291,7 +297,20 @@ $(document).ready(function () {
 
     keys.click(playSound);
 
+    // below function will is related to step2 armed indicatior light
+    // step1 next btn onclick handler 
+    step1NextSectionBtn.click(function () {
+        step2RedArmedIndicator();
+    });
 
+    step2ListItem.click(function () {
+        step2RedArmedIndicator();
+    });
+    function step2RedArmedIndicator() {
+        setTimeout(() => {
+            redArmIndicationON(step2PowerIndicatorImg);
+        }, 1000);
+    }
     // step2 next btn onclick handler 
     step2NextSectionBtn.click(function () {
         cmdKeyHightlight();
