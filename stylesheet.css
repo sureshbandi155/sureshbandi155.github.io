@@ -611,3 +611,15 @@ li {
         font-size: 18px;
     }
 }
+
+@media (min-width: 1025px) and (max-width:1199px) {
+    .three-col-outer-layer {
+        margin: 30px 100px 149px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .three-col-outer-layer {
+        margin: 30px 50px 149px;
+    }
+}
