@@ -411,7 +411,8 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step5"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] p {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] p {
     margin-bottom: 1px;
 }
 
@@ -518,7 +519,10 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step7"] li:nth-child(n+2),
 .three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] li:nth-child(n+2),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] .btn img,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] ol p {
     display: none;
 }
 
@@ -556,7 +560,8 @@ li {
 
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .heading,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .heading {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .heading,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] .heading {
     padding-bottom: 10px;
 }
 

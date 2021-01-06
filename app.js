@@ -9,6 +9,7 @@ $(document).ready(function () {
     let step5ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(5)');
     let step6ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(6)');
     let step7ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(7)');
+    let step8ListItem = $('.three-col-outer-layer .tabber-sec ul li:nth-child(8)');
 
 
     // nextButton 
@@ -174,6 +175,24 @@ $(document).ready(function () {
     let step7CmdKeyCount = 0;
     let step7Menucount = 0;
 
+
+    // Get step8 elements
+    let step8CmdKey = $('.three-col-outer-layer .left-col .keypad8 ul.bottom-keys  li:last-child');
+    let step8DescriptionPare = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] .description>p');
+    let step8DisplayStatus = $('.three-col-outer-layer .left-col .keypad8 .display-stauts img');
+    let step8NextList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] ol li:nth-child(2)');
+    let step8TopRowLastKeyItem = $('.three-col-outer-layer .left-col .keypad8  ul.top-keys li:nth-child(4)');
+    let step8TopRowAllKeyItem = $('.three-col-outer-layer .left-col .keypad8  ul.top-keys li:nth-child(-n+4)');
+    let step8FirstNumKey = $('.three-col-outer-layer .left-col .keypad8 ul.bottom-keys  li:first-child');
+    let step8TopRowFirstKeyItem = $('.three-col-outer-layer .left-col .keypad8  ul.top-keys li:nth-child(1)');
+    let replayDivForStep8 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] .replay');
+    let step8FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] ol li:nth-child(-n+4)');
+    //    let step7Key7 = $('.three-col-outer-layer .left-col .keypad7  ul.bottom-keys li:nth-child(7)');
+    //    let step7Upto7thList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li:nth-child(-n+7)');
+    let step8CmdKeyCount = 0;
+    let step8Menucount = 0;
+
+
     // Next Button Hover function
     nextButton.hover(function () {
         nextButton.attr('src', nextBtnHoverImgSrc);
@@ -273,6 +292,12 @@ $(document).ready(function () {
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] li:nth-child(n+2)').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] li:first-child').slideDown(1500);
+        // step8 slideDown 
+        step8DescriptionPare.show();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] li:first-child').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] li:nth-child(n+2)').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] ol p').hide();
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] li:first-child').slideDown(1500);
     }
 
 
@@ -1006,8 +1031,6 @@ $(document).ready(function () {
         step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step6TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
         $('.three-col-outer-layer .center-col').removeClass('bottom-btn');
-        // step6Key7Key.find('img').attr('src', Key7ImgSrc);
-        // step6BackKey.find('img').attr('src', backKeyImgSrc);
         step6FirstNumKey.find('img').attr('src', Key1ImgSrc);
         step6FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step6FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
@@ -1015,7 +1038,11 @@ $(document).ready(function () {
         keys.click(playSound);
     }
 
-
+    // Below function will run for step7 keypad 
+    step6NextStepButton.click(function () {
+        step7ResetExistingStateActions();
+        step7CmdKeyHightlight();
+    });
     // step7 list item onclick handler 
     step7ListItem.click(function () {
         step7ResetExistingStateActions();
@@ -1186,7 +1213,6 @@ $(document).ready(function () {
     }
     function step7AddZoneMonitorHandler() {
         step7TopRowNBRKey.click(function () {
-            // debugger;
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
@@ -1210,7 +1236,6 @@ $(document).ready(function () {
     function step7BackKeyHandler() {
         step7BackKey.click(function () {
             step7BackKeyCount++;
-            // console.log(step7BackKeyCount);
             step7DisplayStatus.attr('src', byPasszonesImgSrc); //add with zone monitor all nbr img src
             if (step7BackKeyCount === 2) {
                 $(this).removeClass('playing');
@@ -1247,6 +1272,210 @@ $(document).ready(function () {
         step7Key7.find('img').attr('src', Key7ImgSrc);
         step7BackKey.find('img').attr('src', backKeyImgSrc);
         $('.three-col-outer-layer .center-col').removeClass('bottom-btn');
+        keys.click(playSound);
+    }
+
+
+    // Below function will run for step8 keypad 
+    // step8 list item onclick handler 
+    step7NextStepButton.click(function () {
+        step8ResetExistingStateActions();
+        step8CmdKeyHightlight();
+    });
+    step8ListItem.click(function () {
+        step8ResetExistingStateActions();
+        step8CmdKeyHightlight();
+    });
+
+    function step8CmdKeyHightlight() {
+        step8CmdKey.addClass('playing');
+        step8CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+        step8CmdKey.click(function () {
+            step8CmdKeyCount++;
+            step8DisplayStatus.attr('src', armDisArmImgSrc);
+            // display menu image 
+            if (step8CmdKeyCount === 2) {
+                step8DisplayStatus.attr('src', menuNoYesImgSrc);
+                $(this).off('click');
+                step8CmdKey.find('img').attr('src', cmdKeySrc);
+                step8NextList.slideDown(500);
+                $(this).removeClass('playing');
+                $(this).off('click');
+                step8TopRowLastKeyItem.addClass('playing');
+                step8TopRowLastKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+                step8TopRowRightKeyHightlight();
+            }
+        });
+    }
+
+    function step8TopRowRightKeyHightlight() {
+        step8TopRowLastKeyItem.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step8DisplayStatus.attr('src', enterCodeKeyImgSrc);
+            $(this).find('img').attr('src', topOptionKeyImgSrc);
+            step8FirstNumKey.addClass('playing');
+            step8FirstNumKey.find('img').attr('src', Key1HigImgSrc);
+            step8FirstKeyHightlight();
+        });
+    }
+    function step8FirstKeyHightlight() {
+        step8FirstNumKey.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step8DisplayStatus.attr('src', enterCodeKey1ImgSrc);
+            $(this).find('img').attr('src', Key1ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key2HigImgSrc);
+            step8SecondKeyHightlight();
+        });
+
+    }
+    function step8SecondKeyHightlight() {
+        step8FirstNumKey.next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step8DisplayStatus.attr('src', enterCodeKey2ImgSrc);
+            $(this).find('img').attr('src', Key2ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key3HigImgSrc);
+            step8ThirdKeyHightlight();
+        });
+    }
+    function step8ThirdKeyHightlight() {
+        step8FirstNumKey.next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step8DisplayStatus.attr('src', enterCodeKey3ImgSrc);
+            $(this).find('img').attr('src', Key3ImgSrc);
+            $(this).next().addClass('playing');
+            $(this).next().find('img').attr('src', Key4HigImgSrc);
+            step8FourthKeyHightlight();
+        });
+
+    }
+    function step8FourthKeyHightlight() {
+        step8FirstNumKey.next().next().next().click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step8DisplayStatus.attr('src', enterCodeKey4ImgSrc);
+            $(this).find('img').attr('src', Key4ImgSrc);
+            step8NextList.next().slideDown(500);
+            step8CmdKey.addClass('playing');
+            step8CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
+            step8MenuImgShowsHandler();
+        });
+    }
+    function step8MenuImgShowsHandler() {
+        step8CmdKey.click(function () {
+            $(this).click(playSound);
+            step8Menucount += 1;
+            switch (step8Menucount) {
+                case 1:
+                    step8DisplayStatus.attr('src', alaramSilenceImgSrc);
+                    step8NextList.next().next().slideDown(500);
+                    break;
+                case 2:
+                    step8DisplayStatus.attr('src', sensorResetImgSrc);
+                    break;
+                case 2:
+                    step8DisplayStatus.attr('src', sensorResetImgSrc);
+                    break;
+                case 3:
+                    step8DisplayStatus.attr('src', doorAccessImgSrc);
+                    break;
+                case 4:
+                    step8DisplayStatus.attr('src', armedAreasImgSrc);
+                    break;
+                case 5:
+                    step8DisplayStatus.attr('src', outputsOnOffImgSrc);
+                    break;
+                case 6:
+                    step8DisplayStatus.attr('src', zoneStatusImgSrc);
+                    break;
+                case 7:
+                    step8DisplayStatus.attr('src', byPasszonesImgSrc);
+                    break;
+                case 8:
+                    step8DisplayStatus.attr('src', zoneStatusImgSrc);
+                    break;
+                case 9:
+                    step8DisplayStatus.attr('src', sensorResetImgSrc);
+                    break;
+                case 10:
+                    step8DisplayStatus.attr('src', zoneStatusImgSrc);
+                    $(this).off('click');
+                    $(this).removeClass('playing');
+                    $(this).find('img').attr('src', cmdKeySrc);
+                    step8DescriptionPare.hide();
+                    step8FirstFourListItems.hide();
+                    step8NextList.next().next().next().slideDown(500);
+                    step8TopRowAllKeyItem.addClass('playing');
+                    step8TopRowAllKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+                    step8SystemTestHandler();
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+    function step8SystemTestHandler() {
+        step8TopRowAllKeyItem.click(function () {
+            step8TopRowAllKeyItem.off('click');
+            step8TopRowAllKeyItem.removeClass('playing');
+            step8TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+            step8DisplayStatus.attr('src', sensorResetImgSrc);
+            step8NextList.next().next().next().next().slideDown(500);
+            step8TopRowFirstKeyItem.addClass('playing');
+            step8TopRowFirstKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
+            step8SystemPanicHandler();
+        })
+    }
+    function step8SystemPanicHandler() {
+        step8TopRowFirstKeyItem.click(function () {
+            $(this).off('click');
+            $(this).addClass('playing');
+            $(this).find('img').attr('src', topOptionKeyImgSrc);
+            $(`audio[data-key="4"]`).get(0).play();
+            const step8Num1 = 1, step8Num2 = 8;
+            let step8TestArray = ['https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-10.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-9.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-8.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-7.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-6.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-5.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-4.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-fri-6pm.png'];
+            for (let i = step8Num1; i <= step8Num2; i++) {
+                setTimeout(() => {
+                    let currentImage = step8TestArray[i - 1];
+                    step8DisplayStatus.attr('src', currentImage);
+                    if (i === 7) {
+                        step8NextList.next().next().next().next().next().slideDown(500);
+                    }
+                    // else if (i === 11) {
+                    //     let longKeyAudio = $('audio[data-key="2"]');
+                    //     longKeyAudio.get(0).play();
+                    //     step3NextSectionBtn.slideDown(500);
+                    // }
+                }, i * 500);
+            }
+
+        })
+    }
+
+    // Replay Button for step7 Onclick Action
+    replayDivForStep8.click(function () {
+        slideDownHandler();
+        keys.removeClass('playing');
+        step8ResetExistingStateActions();
+        step8CmdKeyHightlight();
+
+    });
+    // clear all functions and actions for the step7 once you click nextbutton and replaybutton
+    function step8ResetExistingStateActions() {
+        step8CmdKeyCount = 0;
+        step8Menucount = 0;
+        step8DisplayStatus.attr('src', fridayDisplayImgSrc);
+        step8CmdKey.find('img').attr('src', cmdKeySrc);
+        step8TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
+        step8FirstNumKey.find('img').attr('src', Key1ImgSrc);
+        step8FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
+        step8FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
+        step8FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
         keys.click(playSound);
     }
 });
