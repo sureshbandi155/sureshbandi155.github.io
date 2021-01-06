@@ -522,7 +522,8 @@ li {
     display: none;
 }
 
-.three-col-outer-layer .center-col.bottom-btn .demo-content[data-filter=".step6"] .btn {
+.three-col-outer-layer .center-col.bottom-btn .demo-content[data-filter=".step6"] .btn,
+.three-col-outer-layer .center-col.bottom-btn .demo-content[data-filter=".step7"] .btn {
     position: absolute;
     bottom: 9px;
     left: 0;
