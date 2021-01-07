@@ -110,6 +110,7 @@ $(document).ready(function () {
     let step5Key7Key = $('.three-col-outer-layer .left-col .keypad5  ul.bottom-keys li:nth-child(7)');
     let replayDivForStep5 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .replay');
     let step5CmdKeyCount = 0;
+    let step5Menucount = 0;
     let menuNoYesImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Menu-no-yes.png';
     let alaramSilenceImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Alaram-silence-new.png';
     let sensorResetImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Sensor-reset-new.png';
@@ -724,16 +725,15 @@ $(document).ready(function () {
         });
     }
     function step5MenuImgShowsHandler() {
-        let step5Menucount = 0;
         step5CmdKey.click(function () {
             $(this).click(playSound);
             step5Menucount += 1;
-            // console.log(step5Menucount);
+            // console.log('Menu Count: ' + step5Menucount);
             switch (step5Menucount) {
                 case 1:
                     step5DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step5NextList.next().next().slideDown(500);
-                    step5BackBtnHelpText.slideDown(500);
+                    // step5BackBtnHelpText.slideDown(500);
                     break;
                 case 2:
                     step5DisplayStatus.attr('src', sensorResetImgSrc);
@@ -756,13 +756,13 @@ $(document).ready(function () {
                 case 7:
                     step5DisplayStatus.attr('src', byPasszonesImgSrc);
                     step5DescriptionPare.hide();
-                    step5BackBtnHelpText.hide();
+                    // step5BackBtnHelpText.hide();
                     step5FirstFourListItems.hide();
-                    step5NextList.next().next().next().hide();
+                    // step5NextList.next().next().next().hide();
                     $(this).off('click');
                     $(this).removeClass('playing');
                     $(this).find('img').attr('src', cmdKeySrc);
-                    step5NextList.next().next().next().next().slideDown(500);
+                    step5NextList.next().next().next().slideDown(500);
                     step5TopRowAllKeyItem.addClass('playing');
                     step5TopRowAllKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
                     bypassZonesHandler();
@@ -778,20 +778,20 @@ $(document).ready(function () {
             step5TopRowAllKeyItem.off('click');
             step5TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step5TopRowAllKeyItem.removeClass('playing');
-            step5NextList.next().next().next().next().next().slideDown(500);
+            step5NextList.next().next().next().next().slideDown(500);
             step5DisplayStatus.attr('src', byPasszoneRstBypImgSrc);
             step5Key7Key.addClass('playing');
             step5Key7Key.find('img').attr('src', Key7HigImgSrc);
-            step7Key7Handler();
+            step5Key7Handler();
         })
     }
-    function step7Key7Handler() {
+    function step5Key7Handler() {
         step5Key7Key.click(function () {
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', Key7ImgSrc);
             step5DisplayStatus.attr('src', byPasszoneWith7RstBypImgSrc);
-            step5NextList.next().next().next().next().next().next().slideDown(500);
+            step5NextList.next().next().next().next().next().slideDown(500);
             step5BypKeyItem.addClass('playing');
             step5BypKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
             bypassZoneConfirmsHandler();
@@ -802,8 +802,8 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
+            step5NextList.next().next().next().next().next().next().slideDown(500);
             step5NextList.next().next().next().next().next().next().next().slideDown(500);
-            step5NextList.next().next().next().next().next().next().next().next().slideDown(500);
             step5DisplayStatus.attr('src', byPasszoneRstBypImgSrc);
             step5BackKey.addClass('playing');
             step5BackKey.find('img').attr('src', backHigKeyImgSrc);
@@ -815,7 +815,7 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', backKeyImgSrc);
-            step5NextList.next().next().next().next().next().next().next().next().next().slideDown(500);
+            step5NextList.next().next().next().next().next().next().next().next().slideDown(500);
             step5NextStepButton.slideDown(500);
             step5DisplayStatus.attr('src', fridayDisplayImgSrc);
 
@@ -825,14 +825,16 @@ $(document).ready(function () {
     replayDivForStep5.click(function () {
         slideDownHandler();
         keys.removeClass('playing');
-        step5CmdKeyHightlight();
         step5ResetExistingStateActions();
+        step5CmdKeyHightlight();
 
     });
     // clear all functions and actions once you click replaybutton
     function step5ResetExistingStateActions() {
         step5DisplayStatus.attr('src', fridayDisplayImgSrc);
         step5CmdKeyCount = 0;
+        step5Menucount = 0;
+        // console.log(step5Menucount);
         step5CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step5TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
         step5Key7Key.find('img').attr('src', Key7ImgSrc);
