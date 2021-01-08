@@ -175,6 +175,12 @@ $(document).ready(function () {
     let step7Upto7thList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li:nth-child(-n+7)');
     let step7CmdKeyCount = 0;
     let step7Menucount = 0;
+    // step7 display status image src elements 
+    let zoneMonitorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor.png';
+    let zoneMonitorAllNbrImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-all-nbr.png';
+    let zoneMonitorAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-add-rmv.png';
+    let zoneMonitorSevenAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-7-add-rmv.png';
+    let zoneMonitorOn = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-ON.png';
 
 
     // Get step8 elements
@@ -192,6 +198,17 @@ $(document).ready(function () {
     //    let step7Upto7thList = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li:nth-child(-n+7)');
     let step8CmdKeyCount = 0;
     let step8Menucount = 0;
+    // step8 display status image src elements 
+    let systemStatusImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/System-status.png';
+    let systemTestImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/System-test.png';
+    let systemPanicsImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/System-panics.png';
+    let bellSoundingImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Bell-sounding.png';
+    let keypadSoundingImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Keypad-sounding.png';
+    let batteryOkayImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Battery-okay.png';
+    let transmitTestImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Transmit-test.png';
+    let transmitOkayImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Transmit-okay.png';
+    let testEndImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Test-end.png';
+
 
 
     // Next Button Hover function
@@ -1163,7 +1180,7 @@ $(document).ready(function () {
                     step7DisplayStatus.attr('src', byPasszonesImgSrc);
                     break;
                 case 8:
-                    step7DisplayStatus.attr('src', zoneStatusImgSrc);
+                    step7DisplayStatus.attr('src', zoneMonitorImgSrc);
                     $(this).off('click');
                     $(this).removeClass('playing');
                     $(this).find('img').attr('src', cmdKeySrc);
@@ -1184,7 +1201,7 @@ $(document).ready(function () {
             step7TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step7TopRowAllKeyItem.removeClass('playing');
             step7NextList.next().next().next().next().slideDown(500);
-            step7DisplayStatus.attr('src', byPasszoneRstBypImgSrc);
+            step7DisplayStatus.attr('src', zoneMonitorAllNbrImgSrc);
             step7TopRowNBRKey.addClass('playing');
             step7TopRowNBRKey.find('img').attr('src', topOptionHigKeyImgSrc);
             step7NBRKeyHandler();
@@ -1197,7 +1214,7 @@ $(document).ready(function () {
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
             step7NextList.next().next().next().next().next().slideDown(500);
-            step7DisplayStatus.attr('src', zoneStatusImgSrc); //remove with zone monitor img src
+            step7DisplayStatus.attr('src', zoneMonitorAddRmvImgSrc);
             step7Key7.find('img').attr('src', Key7HigImgSrc);
             step7Key7.addClass('playing');
             step7Key7Handler();
@@ -1208,6 +1225,7 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).find('img').attr('src', Key7ImgSrc);
             $(this).removeClass('playing');
+            step7DisplayStatus.attr('src', zoneMonitorSevenAddRmvImgSrc);
             step7TopRowNBRKey.addClass('playing');
             step7TopRowNBRKey.find('img').attr('src', topOptionHigKeyImgSrc);
             step7AddZoneMonitorHandler();
@@ -1218,10 +1236,10 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
-            step7DisplayStatus.attr('src', byPasszoneRstBypImgSrc);
+            step7DisplayStatus.attr('src', zoneMonitorOn);
             $(`audio[data-key="3"]`).get(0).play();
             setTimeout(() => {
-                step7DisplayStatus.attr('src', byPasszoneWith7RstBypImgSrc);
+                step7DisplayStatus.attr('src', zoneMonitorAddRmvImgSrc);
                 step7BackKey.addClass('playing');
                 step7BackKey.find('img').attr('src', backHigKeyImgSrc);
                 step7BackKeyHandler();
@@ -1238,7 +1256,7 @@ $(document).ready(function () {
     function step7BackKeyHandler() {
         step7BackKey.click(function () {
             step7BackKeyCount++;
-            step7DisplayStatus.attr('src', byPasszonesImgSrc); //add with zone monitor all nbr img src
+            step7DisplayStatus.attr('src', zoneMonitorAllNbrImgSrc);
             if (step7BackKeyCount === 2) {
                 $(this).removeClass('playing');
                 $(this).off('click');
@@ -1399,13 +1417,13 @@ $(document).ready(function () {
                     step8DisplayStatus.attr('src', byPasszonesImgSrc);
                     break;
                 case 8:
-                    step8DisplayStatus.attr('src', zoneStatusImgSrc);
+                    step8DisplayStatus.attr('src', zoneMonitorImgSrc);
                     break;
                 case 9:
-                    step8DisplayStatus.attr('src', sensorResetImgSrc);
+                    step8DisplayStatus.attr('src', systemStatusImgSrc);
                     break;
                 case 10:
-                    step8DisplayStatus.attr('src', zoneStatusImgSrc);
+                    step8DisplayStatus.attr('src', systemTestImgSrc);
                     $(this).off('click');
                     $(this).removeClass('playing');
                     $(this).find('img').attr('src', cmdKeySrc);
@@ -1426,7 +1444,7 @@ $(document).ready(function () {
             step8TopRowAllKeyItem.off('click');
             step8TopRowAllKeyItem.removeClass('playing');
             step8TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
-            step8DisplayStatus.attr('src', sensorResetImgSrc);
+            step8DisplayStatus.attr('src', systemPanicsImgSrc);
             step8NextList.next().next().next().next().slideDown(500);
             step8TopRowFirstKeyItem.addClass('playing');
             step8TopRowFirstKeyItem.find('img').attr('src', topOptionHigKeyImgSrc);
@@ -1438,22 +1456,18 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).addClass('playing');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
-            $(`audio[data-key="4"]`).get(0).play();
+            $(`audio[data-key="4"]`).get(0).play(); //play step8 audio file
+            step8DisplayStatus.attr('src', bellSoundingImgSrc);
             const step8Num1 = 1, step8Num2 = 8;
-            let step8TestArray = ['https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-10.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-9.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-8.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-7.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-6.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-5.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-exit-4.png', 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Display-fri-6pm.png'];
+            let step8DisplayTestImgSrc = [bellSoundingImgSrc, keypadSoundingImgSrc, batteryOkayImgSrc, transmitTestImgSrc, transmitOkayImgSrc, testEndImgSrc, fridayDisplayImgSrc];
             for (let i = step8Num1; i <= step8Num2; i++) {
                 setTimeout(() => {
-                    let currentImage = step8TestArray[i - 1];
+                    let currentImage = step8DisplayTestImgSrc[i - 1];
                     step8DisplayStatus.attr('src', currentImage);
                     if (i === 7) {
                         step8NextList.next().next().next().next().next().slideDown(500);
                     }
-                    // else if (i === 11) {
-                    //     let longKeyAudio = $('audio[data-key="2"]');
-                    //     longKeyAudio.get(0).play();
-                    //     step3NextSectionBtn.slideDown(500);
-                    // }
-                }, i * 500);
+                }, i * 2000);
             }
 
         })
