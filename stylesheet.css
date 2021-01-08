@@ -687,6 +687,10 @@ li {
         float: right;
         margin-right: 13px;
     }
+
+    .keypad-tutorial-sec .section-heading h1 {
+        font-size: 56px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -778,6 +782,10 @@ li {
 
     .three-col-outer-layer .replay p {
         font-size: 15px;
+    }
+
+    .keypad-tutorial-sec .section-heading h1 {
+        font-size: 40px;
     }
 }
 
