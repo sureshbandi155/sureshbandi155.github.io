@@ -176,7 +176,7 @@ $(document).ready(function () {
     let step7CmdKeyCount = 0;
     let step7Menucount = 0;
     // step7 display status image src elements 
-    let zoneMonitorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor.png';
+    let zoneMonitorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-Qmark.png';
     let monitorZoneImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Monitor-zone.png';
     let zoneMonitorAllNbrImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-all-nbr.png';
     let zoneMonitorAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-add-rmv.png';
