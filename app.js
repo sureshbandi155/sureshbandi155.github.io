@@ -177,6 +177,7 @@ $(document).ready(function () {
     let step7Menucount = 0;
     // step7 display status image src elements 
     let zoneMonitorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor.png';
+    let monitorZoneImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Monitor-zone.png';
     let zoneMonitorAllNbrImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-all-nbr.png';
     let zoneMonitorAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-add-rmv.png';
     let zoneMonitorSevenAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-7-add-rmv.png';
@@ -641,19 +642,6 @@ $(document).ready(function () {
         step4FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
         keys.click(playSound);
     }
-
-    // Below functions will run once user reach to step3 
-    // // once one function is running don't play sound to other func
-    // function dontPlaySoundHandler(topFirstLeftKey, firstKey, secondKey, thirdKey, fourthKey) {
-    //     topFirstLeftKey.off('click');
-    //     firstKey.off('click');
-    //     secondKey.off('click');
-    //     thirdKey.off('click');
-    //     fourthKey.off('click');
-    // }
-
-
-
 
     // Below functions will run once user reach to step5
     // step5 list item onclick handler 
@@ -1180,7 +1168,7 @@ $(document).ready(function () {
                     step7DisplayStatus.attr('src', byPasszonesImgSrc);
                     break;
                 case 8:
-                    step7DisplayStatus.attr('src', zoneMonitorImgSrc);
+                    step7DisplayStatus.attr('src', monitorZoneImgSrc);
                     $(this).off('click');
                     $(this).removeClass('playing');
                     $(this).find('img').attr('src', cmdKeySrc);
