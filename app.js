@@ -177,7 +177,6 @@ $(document).ready(function () {
     let step7Menucount = 0;
     // step7 display status image src elements 
     let zoneMonitorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-Qmark.png';
-    let monitorZoneImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Monitor-zone.png';
     let zoneMonitorAllNbrImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-all-nbr.png';
     let zoneMonitorAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-add-rmv.png';
     let zoneMonitorSevenAddRmvImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Zone-monitor-7-add-rmv.png';
@@ -336,10 +335,16 @@ $(document).ready(function () {
         audio.get(0).play();
 
     }
+    // data key 1 beep sound 
+    function keyPressBeepSound() {
+        let audio = $('audio[data-key="1"]');
+        if (!audio) return; //stop the fun all together
+        audio.currentTime = 0; //rewind to the start
+        audio.get(0).play();
+    }
 
 
     // onclick of keys Handler 
-
     keys.click(playSound);
 
     // below function will is related to step2 armed indicatior light
@@ -459,6 +464,7 @@ $(document).ready(function () {
     function finalCmdKeyHightlight() {
         cmdKey.off('click');
         cmdKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', cmdKeySrc);
             // console.log('test');
@@ -477,7 +483,7 @@ $(document).ready(function () {
                         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
                     }
                     else if (i === 11) {
-                        let longKeyAudio = $('audio[data-key="2"]');
+                        let longKeyAudio = $('audio[data-key="2"]'); //step3 long beep sound
                         longKeyAudio.get(0).play();
                         step3NextSectionBtn.slideDown(500);
                     }
@@ -539,6 +545,7 @@ $(document).ready(function () {
         step4CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step4CmdKey.click(function () {
             $(this).off('click');
+            $(this).removeClass('playing');
             step4DisplayStatus.attr('src', armDisArmImgSrc);
             step4CmdKey.find('img').attr('src', cmdKeySrc);
             step4NextList.slideDown(500);
@@ -612,9 +619,9 @@ $(document).ready(function () {
     }
 
     function step4FinalCmdKeyHightlight() {
-        step4CmdKey.off('click');
+        // step4CmdKey.off('click');
         step4CmdKey.click(function () {
-            // alert('test');
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', cmdKeySrc);
             step4DisplayStatus.attr('src', fridayDisplayImgSrc);
@@ -729,6 +736,7 @@ $(document).ready(function () {
             step5MenuImgShowsHandler();
         });
     }
+
     function step5MenuImgShowsHandler() {
         step5CmdKey.click(function () {
             $(this).click(playSound);
@@ -738,7 +746,7 @@ $(document).ready(function () {
                 case 1:
                     step5DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step5NextList.next().next().slideDown(500);
-                    // step5BackBtnHelpText.slideDown(500);
+                    keyPressBeepSound();
                     break;
                 case 2:
                     step5DisplayStatus.attr('src', sensorResetImgSrc);
@@ -780,6 +788,7 @@ $(document).ready(function () {
     }
     function bypassZonesHandler() {
         step5TopRowAllKeyItem.click(function () {
+            keyPressBeepSound();
             step5TopRowAllKeyItem.off('click');
             step5TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step5TopRowAllKeyItem.removeClass('playing');
@@ -804,6 +813,7 @@ $(document).ready(function () {
     }
     function bypassZoneConfirmsHandler() {
         step5BypKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
@@ -956,6 +966,7 @@ $(document).ready(function () {
                 case 1:
                     step6DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step6NextList.next().next().slideDown(500);
+                    keyPressBeepSound();
                     break;
                 case 2:
                     step6DisplayStatus.attr('src', sensorResetImgSrc);
@@ -975,6 +986,7 @@ $(document).ready(function () {
     }
     function step6SensorResetHandler() {
         step6TopRowAllKeyItem.click(function () {
+            keyPressBeepSound();
             step6TopRowAllKeyItem.off('click');
             step6TopRowAllKeyItem.removeClass('playing');
             step6TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
@@ -1145,6 +1157,7 @@ $(document).ready(function () {
                 case 1:
                     step7DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step7NextList.next().next().slideDown(500);
+                    keyPressBeepSound();
                     break;
                 case 2:
                     step7DisplayStatus.attr('src', sensorResetImgSrc);
@@ -1168,7 +1181,7 @@ $(document).ready(function () {
                     step7DisplayStatus.attr('src', byPasszonesImgSrc);
                     break;
                 case 8:
-                    step7DisplayStatus.attr('src', monitorZoneImgSrc);
+                    step7DisplayStatus.attr('src', zoneMonitorImgSrc);
                     $(this).off('click');
                     $(this).removeClass('playing');
                     $(this).find('img').attr('src', cmdKeySrc);
@@ -1184,6 +1197,7 @@ $(document).ready(function () {
     }
     function step7ZoneMonitorHandler() {
         step7TopRowAllKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).click(playSound);
             step7TopRowAllKeyItem.off('click');
             step7TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
@@ -1197,7 +1211,7 @@ $(document).ready(function () {
     }
     function step7NBRKeyHandler() {
         step7TopRowNBRKey.click(function () {
-            $(this).click(playSound);
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
@@ -1221,6 +1235,7 @@ $(document).ready(function () {
     }
     function step7AddZoneMonitorHandler() {
         step7TopRowNBRKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
             $(this).removeClass('playing');
@@ -1382,6 +1397,7 @@ $(document).ready(function () {
                 case 1:
                     step8DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step8NextList.next().next().slideDown(500);
+                    keyPressBeepSound();
                     break;
                 case 2:
                     step8DisplayStatus.attr('src', sensorResetImgSrc);
@@ -1429,6 +1445,7 @@ $(document).ready(function () {
     }
     function step8SystemTestHandler() {
         step8TopRowAllKeyItem.click(function () {
+            keyPressBeepSound();
             step8TopRowAllKeyItem.off('click');
             step8TopRowAllKeyItem.removeClass('playing');
             step8TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
@@ -1441,6 +1458,7 @@ $(document).ready(function () {
     }
     function step8SystemPanicHandler() {
         step8TopRowFirstKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).addClass('playing');
             $(this).find('img').attr('src', topOptionKeyImgSrc);
