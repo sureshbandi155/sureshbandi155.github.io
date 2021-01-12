@@ -316,30 +316,20 @@ $(document).ready(function () {
     }
 
 
-
-
-
-    // Playsound handler 
-    function playSound(e) {
-        const keyCode = $(this).attr('data-key');
-        const audio = $(`audio[data-key="${keyCode}"]`);
-        const key = $(`.key[data-key="${keyCode}"]`);
-        if (!audio) return; //stop the fun all together
-        audio.currentTime = 0; //rewind to the start
-        audio.get(0).play();
-
-    }
-    // data key 1 beep sound 
+    // data key 1 beep sound play
     function keyPressBeepSound() {
         let audio = $('audio[data-key="1"]');
         if (!audio) return; //stop the fun all together
         audio.currentTime = 0; //rewind to the start
         audio.get(0).play();
     }
-
-
-    // onclick of keys Handler 
-    keys.click(playSound);
+    // data key 1 beep sound pause
+    function pauseBeepSound() {
+        let audio = $('audio[data-key="1"]');
+        if (!audio) return; //stop the fun all together
+        audio.currentTime = 0; //rewind to the start
+        audio.get(0).pause();
+    }
 
     // below function will is related to step2 armed indicatior light
     // step1 next btn onclick handler 
@@ -380,6 +370,7 @@ $(document).ready(function () {
     }
 
     function firstTimeCmdKeyHandler() {
+        keyPressBeepSound();
         $(this).removeClass('playing');
         cmdKey.off('click');
         redArmIndicationOFF(step3PowerIndicatorImg);
@@ -393,6 +384,7 @@ $(document).ready(function () {
     function topLeftKeyHightlight() {
         // cmdKey.parent().removeClass('.playing');
         step3TopRowFirstKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             step3TopRowFirstKeyItem.removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -406,6 +398,7 @@ $(document).ready(function () {
     }
     function firstKeyHightlight() {
         step3FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -418,6 +411,7 @@ $(document).ready(function () {
     }
     function secondKeyHightlight() {
         step3FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -429,6 +423,7 @@ $(document).ready(function () {
     }
     function thirdKeyHightlight() {
         step3FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -441,6 +436,7 @@ $(document).ready(function () {
     }
     function fourthKeyHightlight() {
         step3FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -502,7 +498,6 @@ $(document).ready(function () {
         step3FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step3FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step3FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
 
     }
 
@@ -535,6 +530,7 @@ $(document).ready(function () {
         step4CmdKey.addClass('playing');
         step4CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step4CmdKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', armDisArmImgSrc);
@@ -550,6 +546,7 @@ $(document).ready(function () {
     function step4TopRowRightKeyHightlight() {
         // cmdKey.parent().removeClass('.playing');
         step4TopRowLastKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -563,6 +560,7 @@ $(document).ready(function () {
     }
     function step4FirstKeyHightlight() {
         step4FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -575,6 +573,7 @@ $(document).ready(function () {
     }
     function step4SecondKeyHightlight() {
         step4FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -586,6 +585,7 @@ $(document).ready(function () {
     }
     function step4ThirdKeyHightlight() {
         step4FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -598,6 +598,7 @@ $(document).ready(function () {
     }
     function step4FourthKeyHightlight() {
         step4FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step4DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -622,6 +623,7 @@ $(document).ready(function () {
         });
     }
     replayDivForStep4.click(function () {
+        redArmIndicationON(step4PowerIndicatorImg);
         slideDownHandler();
         keys.removeClass('playing');
         step4CmdKeyHightlight();
@@ -638,7 +640,6 @@ $(document).ready(function () {
         step4FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step4FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step4FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
     }
 
     // Below functions will run once user reach to step5
@@ -652,6 +653,7 @@ $(document).ready(function () {
         step5CmdKey.addClass('playing');
         step5CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step5CmdKey.click(function () {
+            keyPressBeepSound();
             step5CmdKeyCount++;
             step5DisplayStatus.attr('src', armDisArmImgSrc);
             // display menu image 
@@ -671,6 +673,7 @@ $(document).ready(function () {
 
     function step5TopRowRightKeyHightlight() {
         step5TopRowLastKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step5DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -682,6 +685,7 @@ $(document).ready(function () {
     }
     function step5FirstKeyHightlight() {
         step5FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step5DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -694,6 +698,7 @@ $(document).ready(function () {
     }
     function step5SecondKeyHightlight() {
         step5FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step5DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -705,6 +710,7 @@ $(document).ready(function () {
     }
     function step5ThirdKeyHightlight() {
         step5FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step5DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -717,6 +723,7 @@ $(document).ready(function () {
     }
     function step5FourthKeyHightlight() {
         step5FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step5DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -730,13 +737,12 @@ $(document).ready(function () {
 
     function step5MenuImgShowsHandler() {
         step5CmdKey.click(function () {
-            $(this).click(playSound);
+            keyPressBeepSound();
             step5Menucount += 1;
             switch (step5Menucount) {
                 case 1:
                     step5DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step5NextList.next().next().slideDown(500);
-                    keyPressBeepSound();
                     break;
                 case 2:
                     step5DisplayStatus.attr('src', sensorResetImgSrc);
@@ -791,6 +797,7 @@ $(document).ready(function () {
     }
     function step5Key7Handler() {
         step5Key7Key.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', Key7ImgSrc);
@@ -817,6 +824,7 @@ $(document).ready(function () {
     }
     function step5BackkeyHandler() {
         step5BackKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', backKeyImgSrc);
@@ -847,7 +855,6 @@ $(document).ready(function () {
         step5FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step5FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step5FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
 
     }
 
@@ -869,6 +876,7 @@ $(document).ready(function () {
         step6CmdKey.addClass('playing');
         step6CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step6CmdKey.click(function () {
+            keyPressBeepSound();
             step6CmdKeyCount++;
             step6DisplayStatus.attr('src', armDisArmImgSrc);
             // display menu image 
@@ -888,6 +896,7 @@ $(document).ready(function () {
 
     function step6TopRowRightKeyHightlight() {
         step6TopRowLastKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step6DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -899,6 +908,7 @@ $(document).ready(function () {
     }
     function step6FirstKeyHightlight() {
         step6FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step6DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -911,6 +921,7 @@ $(document).ready(function () {
     }
     function step6SecondKeyHightlight() {
         step6FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step6DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -922,6 +933,7 @@ $(document).ready(function () {
     }
     function step6ThirdKeyHightlight() {
         step6FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step6DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -934,6 +946,7 @@ $(document).ready(function () {
     }
     function step6FourthKeyHightlight() {
         step6FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step6DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -948,13 +961,12 @@ $(document).ready(function () {
     function step6MenuImgShowsHandler() {
         let step6Menucount = 0;
         step6CmdKey.click(function () {
-            $(this).click(playSound);
+            keyPressBeepSound();
             step6Menucount += 1;
             switch (step6Menucount) {
                 case 1:
                     step6DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step6NextList.next().next().slideDown(500);
-                    keyPressBeepSound();
                     break;
                 case 2:
                     step6DisplayStatus.attr('src', sensorResetImgSrc);
@@ -1042,7 +1054,6 @@ $(document).ready(function () {
         step6FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step6FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step6FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
     }
 
     // Below function will run for step7 keypad 
@@ -1060,6 +1071,7 @@ $(document).ready(function () {
         step7CmdKey.addClass('playing');
         step7CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step7CmdKey.click(function () {
+            keyPressBeepSound();
             step7CmdKeyCount++;
             step7DisplayStatus.attr('src', armDisArmImgSrc);
             // display menu image 
@@ -1079,6 +1091,7 @@ $(document).ready(function () {
 
     function step7TopRowRightKeyHightlight() {
         step7TopRowLastKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step7DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -1090,6 +1103,7 @@ $(document).ready(function () {
     }
     function step7FirstKeyHightlight() {
         step7FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step7DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -1102,6 +1116,7 @@ $(document).ready(function () {
     }
     function step7SecondKeyHightlight() {
         step7FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step7DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -1113,6 +1128,7 @@ $(document).ready(function () {
     }
     function step7ThirdKeyHightlight() {
         step7FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step7DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -1125,6 +1141,7 @@ $(document).ready(function () {
     }
     function step7FourthKeyHightlight() {
         step7FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step7DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -1139,13 +1156,12 @@ $(document).ready(function () {
     }
     function step7MenuImgShowsHandler() {
         step7CmdKey.click(function () {
-            $(this).click(playSound);
+            keyPressBeepSound();
             step7Menucount += 1;
             switch (step7Menucount) {
                 case 1:
                     step7DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step7NextList.next().next().slideDown(500);
-                    keyPressBeepSound();
                     break;
                 case 2:
                     step7DisplayStatus.attr('src', sensorResetImgSrc);
@@ -1186,7 +1202,6 @@ $(document).ready(function () {
     function step7ZoneMonitorHandler() {
         step7TopRowAllKeyItem.click(function () {
             keyPressBeepSound();
-            $(this).click(playSound);
             step7TopRowAllKeyItem.off('click');
             step7TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
             step7TopRowAllKeyItem.removeClass('playing');
@@ -1212,6 +1227,7 @@ $(document).ready(function () {
     }
     function step7Key7Handler() {
         step7Key7.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', Key7ImgSrc);
             $(this).removeClass('playing');
@@ -1246,6 +1262,7 @@ $(document).ready(function () {
     let step7BackKeyCount = 0;
     function step7BackKeyHandler() {
         step7BackKey.click(function () {
+            keyPressBeepSound();
             step7BackKeyCount++;
             step7DisplayStatus.attr('src', zoneMonitorAllNbrImgSrc);
             if (step7BackKeyCount === 2) {
@@ -1283,7 +1300,6 @@ $(document).ready(function () {
         step7Key7.find('img').attr('src', Key7ImgSrc);
         step7BackKey.find('img').attr('src', backKeyImgSrc);
         $('.three-col-outer-layer .center-col').removeClass('bottom-btn');
-        keys.click(playSound);
     }
 
 
@@ -1302,6 +1318,7 @@ $(document).ready(function () {
         step8CmdKey.addClass('playing');
         step8CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step8CmdKey.click(function () {
+            keyPressBeepSound();
             step8CmdKeyCount++;
             step8DisplayStatus.attr('src', armDisArmImgSrc);
             // display menu image 
@@ -1321,6 +1338,7 @@ $(document).ready(function () {
 
     function step8TopRowRightKeyHightlight() {
         step8TopRowLastKeyItem.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step8DisplayStatus.attr('src', enterCodeKeyImgSrc);
@@ -1332,6 +1350,7 @@ $(document).ready(function () {
     }
     function step8FirstKeyHightlight() {
         step8FirstNumKey.click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step8DisplayStatus.attr('src', enterCodeKey1ImgSrc);
@@ -1344,6 +1363,7 @@ $(document).ready(function () {
     }
     function step8SecondKeyHightlight() {
         step8FirstNumKey.next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step8DisplayStatus.attr('src', enterCodeKey2ImgSrc);
@@ -1355,6 +1375,7 @@ $(document).ready(function () {
     }
     function step8ThirdKeyHightlight() {
         step8FirstNumKey.next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step8DisplayStatus.attr('src', enterCodeKey3ImgSrc);
@@ -1367,6 +1388,7 @@ $(document).ready(function () {
     }
     function step8FourthKeyHightlight() {
         step8FirstNumKey.next().next().next().click(function () {
+            keyPressBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
             step8DisplayStatus.attr('src', enterCodeKey4ImgSrc);
@@ -1379,13 +1401,12 @@ $(document).ready(function () {
     }
     function step8MenuImgShowsHandler() {
         step8CmdKey.click(function () {
-            $(this).click(playSound);
+            keyPressBeepSound();
             step8Menucount += 1;
             switch (step8Menucount) {
                 case 1:
                     step8DisplayStatus.attr('src', alaramSilenceImgSrc);
                     step8NextList.next().next().slideDown(500);
-                    keyPressBeepSound();
                     break;
                 case 2:
                     step8DisplayStatus.attr('src', sensorResetImgSrc);
@@ -1486,7 +1507,6 @@ $(document).ready(function () {
         step8FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step8FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step8FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        keys.click(playSound);
     }
 });
 
