@@ -225,7 +225,6 @@ $(document).ready(function () {
     function tutorialListItemsHandler(e) {
         var tab_id = $(this).attr('data-tab');
         var tab_keypad = $(this).attr('data-keypad');
-        // console.log('#' + tab_keypad);
         tutorialList.removeClass('current');
         tutorialConent.removeClass('current');
         keypadSteps.removeClass('current');
@@ -239,7 +238,6 @@ $(document).ready(function () {
         //     $(this).off('click');
         // }
         // else return;
-        // console.log($(this).hasClass('current'));
     }
     // tutorialListItems Click action - right col items
     tutorialList.click(tutorialListItemsHandler);
@@ -250,7 +248,6 @@ $(document).ready(function () {
         let currentButton = $(this);
         let nextFilter = $(this).closest('.demo-content').attr('data-filter');
         let nextFilterforKeypad = $(this).closest('.demo-content').attr('data-keypad');
-        // console.log(nextFilterforKeypad);
         setTimeout(function () {
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).removeClass('current');
             $('.three-col-outer-layer .tabber-sec ul li' + nextFilter).next().addClass('current');
@@ -324,12 +321,9 @@ $(document).ready(function () {
 
     // Playsound handler 
     function playSound(e) {
-        const keyCode = $(this).attr('data-key');;
-        // console.log(keyCode);
+        const keyCode = $(this).attr('data-key');
         const audio = $(`audio[data-key="${keyCode}"]`);
-        // console.log(audio);
         const key = $(`.key[data-key="${keyCode}"]`);
-        // console.log(key);
         if (!audio) return; //stop the fun all together
         audio.currentTime = 0; //rewind to the start
         audio.get(0).play();
@@ -451,7 +445,6 @@ $(document).ready(function () {
             $(this).removeClass('playing');
             step3DisplayStatus.attr('src', enterCodeKey4ImgSrc);
             $(this).find('img').attr('src', Key4ImgSrc);
-            // console.log('Sequence done.');
             step3NextList.next().next().slideDown(500);
             cmdKey.addClass('playing');
             cmdKey.find('img').attr('src', cmdKeyHigImgSrc);
@@ -467,7 +460,6 @@ $(document).ready(function () {
             keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', cmdKeySrc);
-            // console.log('test');
             redArmIndicationON(step3PowerIndicatorImg);
             step3DisplayStatus.attr('src', exitImgSrc);
             $(this).removeClass('playing');
@@ -478,7 +470,6 @@ $(document).ready(function () {
                 setTimeout(() => {
                     let currentImage = exitArray[i - 1];
                     step3DisplayStatus.attr('src', currentImage);
-                    // console.log(currentImage);
                     if (i === 2) {
                         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
                     }
@@ -741,7 +732,6 @@ $(document).ready(function () {
         step5CmdKey.click(function () {
             $(this).click(playSound);
             step5Menucount += 1;
-            // console.log('Menu Count: ' + step5Menucount);
             switch (step5Menucount) {
                 case 1:
                     step5DisplayStatus.attr('src', alaramSilenceImgSrc);
@@ -849,7 +839,6 @@ $(document).ready(function () {
         step5DisplayStatus.attr('src', fridayDisplayImgSrc);
         step5CmdKeyCount = 0;
         step5Menucount = 0;
-        // console.log(step5Menucount);
         step5CmdKey.find('img').attr('src', cmdKeyHigImgSrc);
         step5TopRowAllKeyItem.find('img').attr('src', topOptionKeyImgSrc);
         step5Key7Key.find('img').attr('src', Key7ImgSrc);
@@ -961,7 +950,6 @@ $(document).ready(function () {
         step6CmdKey.click(function () {
             $(this).click(playSound);
             step6Menucount += 1;
-            // console.log(step5Menucount);
             switch (step6Menucount) {
                 case 1:
                     step6DisplayStatus.attr('src', alaramSilenceImgSrc);
