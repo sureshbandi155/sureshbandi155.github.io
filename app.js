@@ -456,7 +456,6 @@ $(document).ready(function () {
             keyPressBeepSound();
             $(this).off('click');
             $(this).find('img').attr('src', cmdKeySrc);
-            redArmIndicationON(step3PowerIndicatorImg);
             step3DisplayStatus.attr('src', exitImgSrc);
             $(this).removeClass('playing');
             step3NextList.next().next().next().slideDown(500);
@@ -470,6 +469,7 @@ $(document).ready(function () {
                         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] ol p').show();
                     }
                     else if (i === 11) {
+                        redArmIndicationON(step3PowerIndicatorImg);
                         let longKeyAudio = $('audio[data-key="2"]'); //step3 long beep sound
                         longKeyAudio.get(0).play();
                         step3NextSectionBtn.slideDown(500);
