@@ -1300,6 +1300,7 @@ $(document).ready(function () {
         step7Key7.find('img').attr('src', Key7ImgSrc);
         step7BackKey.find('img').attr('src', backKeyImgSrc);
         $('.three-col-outer-layer .center-col').removeClass('bottom-btn');
+        step7CmdKey.off('click'); //clear step7 cmd key click action.
     }
 
 
@@ -1507,6 +1508,7 @@ $(document).ready(function () {
         step8FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step8FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step8FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        step8CmdKey.off('click'); //clear step7 cmd key click action.
     }
 });
 
