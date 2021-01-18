@@ -855,6 +855,7 @@ $(document).ready(function () {
         step5FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step5FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step5FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        step5CmdKey.off('click');//clear step5 cmd key click action.
 
     }
 
@@ -1039,8 +1040,8 @@ $(document).ready(function () {
     replayDivForStep6.click(function () {
         slideDownHandler();
         keys.removeClass('playing');
-        step6CmdKeyHightlight();
         step6ResetExistingStateActions();
+        step6CmdKeyHightlight();
 
     });
     // clear all functions and actions for step6 once you click nextbutton and replaybutton
@@ -1054,6 +1055,7 @@ $(document).ready(function () {
         step6FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step6FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step6FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
+        step6CmdKey.off('click');
     }
 
     // Below function will run for step7 keypad 
@@ -1508,7 +1510,7 @@ $(document).ready(function () {
         step8FirstNumKey.next().find('img').attr('src', Key2ImgSrc);
         step8FirstNumKey.next().next().find('img').attr('src', Key3ImgSrc);
         step8FirstNumKey.next().next().next().find('img').attr('src', Key4ImgSrc);
-        step8CmdKey.off('click'); //clear step7 cmd key click action.
+        step8CmdKey.off('click'); //clear step8 cmd key click action.
     }
 });
 
