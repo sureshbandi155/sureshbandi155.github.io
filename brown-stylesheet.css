@@ -411,20 +411,16 @@ li {
     margin: 3px 0 0 15px;
 }
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol {
-    padding-bottom: 56px;
-}
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .description,
+
 .three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .description,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn,
-.three-col-outer-layer .center-col .heading,
-.three-col-outer-layer .center-col .description,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:first-child,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:nth-child(n+2),
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .description ol p
+.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .description ol p,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol li,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] .description .next-slide-txt,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] .btn img
 
 /*.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:nth-child(n+2),
 .three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img,
