@@ -318,22 +318,22 @@ li {
 .three-col-outer-layer .center-col p {
     color: #000;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .three-col-outer-layer .center-col li {
     font-size: 14px;
-    margin-bottom: 1px;
+    margin-bottom: 8px;
 }
 
-.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
+/* .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step5"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step7"] p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step8"] p {
     margin-bottom: 1px;
-}
+} */
 
 .three-col-outer-layer .center-col .heading {
     padding: 0 0 15px;

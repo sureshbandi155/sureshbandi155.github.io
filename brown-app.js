@@ -433,20 +433,20 @@ $(document).ready(function () {
     step4NextSectionBtn.click(function () {
         // step5ResetExistingStateActions();
         initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
-        step5CmdKeyHandler();
+        step5InitialCmdKeyHandler();
     });
     // step5 list item onclick handler 
     step5ListItem.click(function () {
         // step5ResetExistingStateActions();
         initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
-        step5CmdKeyHandler();
+        step5InitialCmdKeyHandler();
     });
     // step5replay btn handler 
     // step5ReplayButton.click(function () {
     //     step5ResetExistingStateActions();
     //             initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
     //     slideDownHandler();
-    //     step5CmdKeyHandler();
+    //     step5InitialCmdKeyHandler();
     // });
     function nonSequenceKeyHandler(currentNumberKeyEle, prevKeyInactiveImgSrc, nextNumberKey, nextKeyActiveImgSrc, displayStatusEle, displayStatusImgSrcEle) {
         playDefaultBeepSound();
@@ -457,7 +457,7 @@ $(document).ready(function () {
         nextNumberKey.addClass('playing');
         nextNumberKey.find('img').attr('src', nextKeyActiveImgSrc);
     }
-    function step5CmdKeyHandler() {
+    function step5InitialCmdKeyHandler() {
         step5CmdKeyEle.click(function () {
             nonSequenceKeyHandler(step5CmdKeyEle, cmdInactiveImgSrc, step5ZeroKeyEle, key0ActiveImgSrc, step5DisplayStatus, systemCmdImgSrc);
             step5ZeroNumKeyHandler();
@@ -531,13 +531,93 @@ $(document).ready(function () {
             setTimeout(() => {
                 step5DisplayStatus.attr('src', readyToArmImgSrc);
                 step5ListItem5.slideDown(500);
-                nonSequenceKeyHandler(step5CmdKeyEle, cmdActiveImgSrc, step5ZeroKeyEle, key0ActiveImgSrc, step5DisplayStatus, systemCmdImgSrc);
-                step5CmdKeyEle.off('click');
-                step5CmdKeyEle.removeClass('playing');
-                step5CmdKeyEle.find('img').attr('src', cmdInactiveImgSrc);
+                nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5CmdKeyEle, cmdActiveImgSrc, step5DisplayStatus, readyToArmImgSrc);
+                step5CmdClickToZeroKeyHandler();
             }, 2000);
         });
     }
+    function step5CmdClickToZeroKeyHandler() {
+        step5CmdKeyEle.click(function () {
+            nonSequenceKeyHandler(step5CmdKeyEle, cmdInactiveImgSrc, step5ZeroKeyEle, key0ActiveImgSrc, step5DisplayStatus, systemCmdImgSrc);
+            step5DoubleZeroKeyHandler();
+        });
+    }
+    function step5DoubleZeroKeyHandler() {
+        step5ZeroKeyEle.click(function () {
+            playDefaultBeepSound();
+            step5ZeroKeyEle.click(function () {
+                playDefaultBeepSound();
+                nonSequenceKeyHandler(step5ZeroKeyEle, key0InactiveImgSrc, step5FirstNumKey, key1ActiveImgSrc, step5DisplayStatus, enterPasscodeImgSrc);
+                step5ListItem6.slideDown(500);
+                step5AgainFirstNumKeyHandler();
+            });
+        });
+    }
+    function step5AgainFirstNumKeyHandler() {
+        step5FirstNumKey.click(function () {
+            commonNumKeyHandler($(this), key1InactiveImgSrc, key2ActiveImgSrc, step5DisplayStatus, oneStarImgSrc);
+            step5AgainSecondNumKeyHandler();
+        });
+    }
+    function step5AgainSecondNumKeyHandler() {
+        step5FirstNumKey.next().click(function () {
+            commonNumKeyHandler($(this), key2InactiveImgSrc, key3ActiveImgSrc, step5DisplayStatus, twoStarsImgSrc);
+            step5AgainThirdNumKeyHandler();
+        });
+    }
+    function step5AgainThirdNumKeyHandler() {
+        step5FirstNumKey.next().next().click(function () {
+            commonNumKeyHandler($(this), key3InactiveImgSrc, key4ActiveImgSrc, step5DisplayStatus, threeStarsImgSrc);
+            step5AgainFourthNumKeyHandler();
+        });
+    }
+    function step5AgainFourthNumKeyHandler() {
+        step5FirstNumKey.next().next().next().click(function () {
+            commonNumKeyHandler($(this), key4InactiveImgSrc, null, step5DisplayStatus, fourStarsImgSrc);
+            $(this).next().find('img').attr('src', key5InactiveImgSrc);
+            $(this).next().removeClass('playing');
+            step5EntKey.addClass('playing');
+            step5EntKey.find('img').attr('src', entActiveImgSrc);
+            step5AgainEnterKeyHandler();
+        });
+    }
+    function step5AgainEnterKeyHandler() {
+        step5EntKey.click(function () {
+            step5ListItem7.slideDown(500);
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5Key7Ele, key7ActiveImgSrc, step5DisplayStatus, enterPtNumImgSrc);
+            step5AgainKey7Handler();
+        });
+    }
+    function step5AgainKey7Handler() {
+        step5Key7Ele.click(function () {
+            nonSequenceKeyHandler(step5Key7Ele, key7InactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, enterPtNum7ImgSrc);
+            step5AgainClick1EnterKeyHandler();
+        });
+    }
+    function step5AgainClick1EnterKeyHandler() {
+        step5EntKey.click(function () {
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, hallwayMtnImgSrc);
+            $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol>li:nth-child(-n+8)').hide();
+            step5Point5Div.hide();
+            step5InitialDes.hide();
+            step5Point8Div.slideDown(500);
+            step5AgainClick2EnterKeyHandler();
+        });
+    }
+    function step5AgainClick2EnterKeyHandler() {
+        step5EntKey.click(function () {
+            playDefaultBeepSound();
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step5DisplayStatus.attr('src', readyToArmImgSrc);
+            $(this).find('img').attr('src', entInactiveImgSrc);
+            step5NextSecText.slideDown(500);
+            step5NextSectionBtn.slideDown(500);
+            console.log('[step5] done');
+        });
+    }
+
+
 
 });
 
