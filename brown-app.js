@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // get the elements
+    //Right Col List items
     let tutorialList = $('.three-col-outer-layer .tabber-sec ul li');
     let tutorialConent = $('.three-col-outer-layer .center-col .demo-content');
     let keypadSteps = $('.three-col-outer-layer .left-col .keypad-step');
@@ -71,6 +72,12 @@ $(document).ready(function () {
     let enterPtNum7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-pt-num-7.png';
     let hallwayMtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Hallway-mtn.png';
     let pt7BypassedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Pt7-bypassed.png';
+    // step6 display status 
+    let sensorResettingImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Sensors-resetting.png';
+    let emptyDisplayStatusImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Empty-display-status.png';
+    // step7 display status 
+    let watchIsNowOffImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Watch-is-now-off.png';
+    let watchIsNowOnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Watch-is-now-on.png';
 
     const keys = $('.three-col-outer-layer .left-col .keys ul li');
     // step2 elements 
@@ -100,13 +107,13 @@ $(document).ready(function () {
     let step5FirstNumKey = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys  li:first-child');
     let step5DisplayStatus = $('.three-col-outer-layer .left-col .keypad5 .display-status img');
     let step5EntKey = $('.three-col-outer-layer .left-col .keypad5 ul.menu-keys  li:last-child');
+    let step5CmdKeyEle = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:last-child');
     let step5ZeroKeyEle = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:nth-last-child(2)');
     let step5Key7Ele = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:nth-child(7)');
     let step5FirstListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(1)');
     let step5SecondListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(2)');
     let step5RemOrderedListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(n+2)');
     let step5InitialDes = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .description .step5-initial-text');
-    let step5NextSlideDes = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .description .next-slide-txt');
     let step5NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img');
     let step5Point5Div = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol .step5-point7');
     let step5Point8Div = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol .step5-list8');
@@ -116,6 +123,27 @@ $(document).ready(function () {
     let step5ListItem8 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li.list8');
     let step5NextSecText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol .step5-next-section');
     let step5ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .replay');
+
+    // step6 elements 
+    let step6CmdKeyEle = $('.three-col-outer-layer .left-col .keypad6 ul.number-keys li:last-child');
+    let step6Key4Ele = $('.three-col-outer-layer .left-col .keypad6 ul.number-keys li:nth-child(4)');
+    let step6Key7Ele = $('.three-col-outer-layer .left-col .keypad6 ul.number-keys li:nth-child(7)');
+    let step6DisplayStatus = $('.three-col-outer-layer .left-col .keypad6 .display-status img');
+    let step6NextListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol li:nth-child(2)');
+    let step6NextSecText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol .step6-next-sec-div');
+    let step6NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .btn img');
+    let step6ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .replay');
+
+    // step7 elements
+    let step7CmdKeyEle = $('.three-col-outer-layer .left-col .keypad7 ul.number-keys li:last-child');
+    let step7Key6Ele = $('.three-col-outer-layer .left-col .keypad7 ul.number-keys li:nth-child(6)');
+    let step7DisplayStatus = $('.three-col-outer-layer .left-col .keypad7 .display-status img');
+    let step7ListItem2 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li.step7-list2');
+    let step7WatchModeTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-watch-mode-txt');
+    let step7WatchModeBoldTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-watch-mode-bold');
+    let step7NextSecText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-next-sec-tex');
+    let step7NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img');
+    let step7ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .replay');
 
     // Next Button image src elements 
     let nextBtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Next-section-button.png';
@@ -196,6 +224,16 @@ $(document).ready(function () {
         step5NextSecText.hide();
         step5InitialDes.slideDown(1500);
         step5FirstListItem.slideDown(1500);
+        //step6
+        step6NextListItem.hide();
+        step6NextSecText.hide();
+        step6NextSectionBtn.hide();
+        // step7 
+        step7ListItem2.hide();
+        step7WatchModeTxt.hide();
+        step7WatchModeBoldTxt.hide();
+        step7NextSecText.hide();
+        step7NextSectionBtn.hide();
 
 
 
@@ -429,25 +467,32 @@ $(document).ready(function () {
     // ==============================================
     //  Below fun will run once user reach to step5 
     // ==============================================
-    let step5CmdKeyEle = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:last-child');
     step4NextSectionBtn.click(function () {
-        // step5ResetExistingStateActions();
+        step5ResetExistingStateActions();
         initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
         step5InitialCmdKeyHandler();
     });
     // step5 list item onclick handler 
     step5ListItem.click(function () {
-        // step5ResetExistingStateActions();
+        step5ResetExistingStateActions();
         initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
         step5InitialCmdKeyHandler();
     });
     // step5replay btn handler 
-    // step5ReplayButton.click(function () {
-    //     step5ResetExistingStateActions();
-    //             initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
-    //     slideDownHandler();
-    //     step5InitialCmdKeyHandler();
-    // });
+    step5ReplayButton.click(function () {
+        step5ResetExistingStateActions();
+        initialKeyActiveHandler(step5CmdKeyEle, cmdActiveImgSrc);
+        slideDownHandler();
+        step5InitialCmdKeyHandler();
+    });
+    // step5 clear all functions and actions once you click on replay or next-section button
+    function step5ResetExistingStateActions() {
+        step5DisplayStatus.attr('src', readyToArmImgSrc);
+        // reset first four num and ent keys 
+        resetAllKeysToInactiveImages(step5FirstNumKey, step5EntKey);
+        step5ZeroKeyEle.find('img').attr('src', key0InactiveImgSrc);
+        step5Key7Ele.find('img').attr('src', key7InactiveImgSrc);
+    }
     function nonSequenceKeyHandler(currentNumberKeyEle, prevKeyInactiveImgSrc, nextNumberKey, nextKeyActiveImgSrc, displayStatusEle, displayStatusImgSrcEle) {
         playDefaultBeepSound();
         currentNumberKeyEle.off('click');
@@ -613,12 +658,110 @@ $(document).ready(function () {
             $(this).find('img').attr('src', entInactiveImgSrc);
             step5NextSecText.slideDown(500);
             step5NextSectionBtn.slideDown(500);
-            console.log('[step5] done');
+        });
+    }
+
+    // ==============================================
+    //  Below fun will run once user reach to step6 
+    // ==============================================
+    step5NextSectionBtn.click(function () {
+        step6ResetExistingStateActions();
+        initialKeyActiveHandler(step6CmdKeyEle, cmdActiveImgSrc);
+        step6InitialCmdKeyHandler();
+    });
+    // step6 list item onclick handler 
+    step6ListItem.click(function () {
+        step6ResetExistingStateActions();
+        initialKeyActiveHandler(step6CmdKeyEle, cmdActiveImgSrc);
+        step6InitialCmdKeyHandler();
+    });
+    // step6 replay btn handler 
+    step6ReplayButton.click(function () {
+        step6ResetExistingStateActions();
+        initialKeyActiveHandler(step6CmdKeyEle, cmdActiveImgSrc);
+        slideDownHandler();
+        step6InitialCmdKeyHandler();
+    });
+    // step6 clear all functions and actions once you click on replay or next-section button
+    function step6ResetExistingStateActions() {
+        clearTimeout(step6ClearTimeOut1);
+        clearTimeout(step6ClearTimeOut2);
+        step6DisplayStatus.attr('src', readyToArmImgSrc);
+        step6Key4Ele.find('img').attr('src', key4InactiveImgSrc);
+        step6Key7Ele.find('img').attr('src', key7InactiveImgSrc);
+    }
+    function step6InitialCmdKeyHandler() {
+        step6CmdKeyEle.click(function () {
+            nonSequenceKeyHandler(step6CmdKeyEle, cmdInactiveImgSrc, step6Key4Ele, key4ActiveImgSrc, step6DisplayStatus, systemCmdImgSrc);
+            step6key4ClickHandler();
+        });
+    }
+    function step6key4ClickHandler() {
+        step6Key4Ele.click(function () {
+            nonSequenceKeyHandler(step6Key4Ele, key4InactiveImgSrc, step6Key7Ele, key7ActiveImgSrc, step6DisplayStatus, systemCmdImgSrc);
+            step6key7ClickHandler();
+        });
+    }
+    let step6ClearTimeOut1, step6ClearTimeOut2;
+    function step6key7ClickHandler() {
+        step6Key7Ele.click(function () {
+            playDefaultBeepSound();
+            $(this).off('click');
+            $(this).removeClass('playing');
+            step6DisplayStatus.attr('src', sensorResettingImgSrc);
+            $(this).find('img').attr('src', key7InactiveImgSrc);
+            step6NextListItem.slideDown(500);
+            step6ClearTimeOut1 = setTimeout(() => {
+                step6DisplayStatus.attr('src', emptyDisplayStatusImgSrc);
+                step6ShowNextButtonHandler();
+            }, 2000);
+            function step6ShowNextButtonHandler() {
+                step6ClearTimeOut2 = setTimeout(() => {
+                    step6DisplayStatus.attr('src', readyToArmImgSrc);
+                    step6NextSecText.slideDown(500);
+                    step6NextSectionBtn.slideDown(500);
+                }, 2000);
+            }
         });
     }
 
 
-
+    // ==============================================
+    //  Below fun will run once user reach to step7 
+    // ==============================================
+    step6NextSectionBtn.click(function () {
+        step7ResetExistingStateActions();
+        initialKeyActiveHandler(step7CmdKeyEle, cmdActiveImgSrc);
+        step7CmdKeyHandler();
+    });
+    // step7 list item onclick handler 
+    step7ListItem.click(function () {
+        step7ResetExistingStateActions();
+        initialKeyActiveHandler(step7CmdKeyEle, cmdActiveImgSrc);
+        step7CmdKeyHandler();
+    });
+    // step7 replay btn handler 
+    step7ReplayButton.click(function () {
+        step7ResetExistingStateActions();
+        initialKeyActiveHandler(step7CmdKeyEle, cmdActiveImgSrc);
+        slideDownHandler();
+        step7CmdKeyHandler();
+    });
+    // step7 clear all functions and actions once you click on replay or next-section button
+    function step7ResetExistingStateActions() {
+        step7DisplayStatus.attr('src', readyToArmImgSrc);
+    }
+    function step7CmdKeyHandler() {
+        step7CmdKeyEle.click(function () {
+            nonSequenceKeyHandler(step7CmdKeyEle, cmdInactiveImgSrc, step7Key6Ele, key6ActiveImgSrc, step7DisplayStatus, systemCmdImgSrc);
+            step6key6Handler();
+        });
+    }
+    function step6key6Handler() {
+        step7Key6Ele.click(function () {
+            nonSequenceKeyHandler(step7Key6Ele, key6ActiveImgSrc);
+        });
+    }
 });
 
 

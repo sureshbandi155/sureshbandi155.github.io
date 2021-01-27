@@ -420,21 +420,15 @@ li {
 .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] .description ol p,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] ol li,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step4"] .description .next-slide-txt,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] .btn img
-
-/*.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] li:nth-child(n+2),
-.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] li:nth-child(n+2),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] .btn img,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .description ol li:nth-child(n+2),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .description ol .step6-next-sec-div,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] ol p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] li:nth-child(n+2),
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] li:nth-child(n+2),
-.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] .btn img,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] ol p*/
-    {
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li.step7-list2,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-watch-mode-txt,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-watch-mode-bold,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-next-sec-tex,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img {
     display: none;
 }
 
