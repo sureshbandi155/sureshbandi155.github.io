@@ -143,7 +143,9 @@ $(document).ready(function () {
     let step7WatchModeBoldTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-watch-mode-bold');
     let step7NextSecText = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol p.step7-next-sec-tex');
     let step7NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .btn img');
-    let step7ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] .replay');
+    let step7ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .replay');
+    let step7FirstListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] ol li:first-child');
+    let step7DescriptionPara = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] .description>p');
 
     // Next Button image src elements 
     let nextBtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Next-section-button.png';
@@ -229,6 +231,8 @@ $(document).ready(function () {
         step6NextSecText.hide();
         step6NextSectionBtn.hide();
         // step7 
+        step7FirstListItem.slideDown(1500);
+        step7DescriptionPara.slideDown(1500);
         step7ListItem2.hide();
         step7WatchModeTxt.hide();
         step7WatchModeBoldTxt.hide();
@@ -750,16 +754,54 @@ $(document).ready(function () {
     // step7 clear all functions and actions once you click on replay or next-section button
     function step7ResetExistingStateActions() {
         step7DisplayStatus.attr('src', readyToArmImgSrc);
+        step7Key6Ele.find('img').attr('src', key6InactiveImgSrc);
     }
     function step7CmdKeyHandler() {
         step7CmdKeyEle.click(function () {
             nonSequenceKeyHandler(step7CmdKeyEle, cmdInactiveImgSrc, step7Key6Ele, key6ActiveImgSrc, step7DisplayStatus, systemCmdImgSrc);
-            step6key6Handler();
+            step7key6Handler();
         });
     }
-    function step6key6Handler() {
+    function step7key6Handler() {
         step7Key6Ele.click(function () {
-            nonSequenceKeyHandler(step7Key6Ele, key6ActiveImgSrc);
+            playDefaultBeepSound();
+            step7Key6Ele.off('click');
+            step7Key6Ele.removeClass('playing');
+            step7Key6Ele.find('img').attr('src', key6InactiveImgSrc);
+            step7DisplayStatus.attr('src', watchIsNowOnImgSrc);
+            step7WatchModeTxt.slideDown(500);
+            setTimeout(() => {
+                step7CmdKeyEle.addClass('playing');
+                step7CmdKeyEle.find('img').attr('src', cmdActiveImgSrc);
+                step7DisplayStatus.attr('src', readyToArmImgSrc);
+                step7ListItem2.slideDown(500);
+                step7CmdKeyMenuHandler();
+            }, 2000);
+        });
+    }
+    function step7CmdKeyMenuHandler() {
+        step7CmdKeyEle.click(function () {
+            nonSequenceKeyHandler(step7CmdKeyEle, cmdInactiveImgSrc, step7Key6Ele, key6ActiveImgSrc, step7DisplayStatus, systemCmdImgSrc);
+            step7Key6MenuHandler();
+        });
+    }
+    function step7Key6MenuHandler() {
+        step7Key6Ele.click(function () {
+            playDefaultBeepSound();
+            step7Key6Ele.off('click');
+            step7Key6Ele.removeClass('playing');
+            step7Key6Ele.find('img').attr('src', key6InactiveImgSrc);
+            step7DisplayStatus.attr('src', watchIsNowOffImgSrc);
+            step7ListItem2.hide();
+            step7FirstListItem.hide();
+            step7DescriptionPara.hide();
+            step7WatchModeTxt.hide();
+            step7WatchModeBoldTxt.show();
+            setTimeout(() => {
+                step7DisplayStatus.attr('src', readyToArmImgSrc);
+                step7NextSecText.slideDown(500);
+                step7NextSectionBtn.slideDown(500);
+            }, 2000);
         });
     }
 });
