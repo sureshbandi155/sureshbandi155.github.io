@@ -165,7 +165,7 @@ li {
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #c5c5c5, #fff);
-    min-height: 522px;
+    min-height: 530px;
 }
 
 .three-col-outer-layer .right-col {
@@ -411,7 +411,12 @@ li {
     margin: 3px 0 0 15px;
 }
 
-
+.three-col-outer-layer .center-col .btn {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+}
 
 .three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn,
 .three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn,

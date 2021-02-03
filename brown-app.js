@@ -86,6 +86,13 @@ $(document).ready(function () {
     let z4UntillRoomMTNImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Z4-Util-Room-Mtn.png';
     let sendingReportImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Sending-Report.png';
     let reportSentImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Report-Sent.png';
+    // step9 display status 
+    let entNewAgainImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-new-again.png';
+    let enterNewCodeImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-new-code.png';
+    let passCodeChangedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Passcode-changed.png';
+    // step10 display status 
+    let areaFaultImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Area-fault.png';
+    let chkAreaImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/CHK-area.png';
 
     const keys = $('.three-col-outer-layer .left-col .keys ul li');
     // step2 elements 
@@ -178,14 +185,34 @@ $(document).ready(function () {
     let step9Key6Ele = $('.three-col-outer-layer .left-col .keypad9 ul.number-keys li:nth-child(6)');
     let step9Key7Ele = $('.three-col-outer-layer .left-col .keypad9 ul.number-keys li:nth-child(7)');
     let step9Key8Ele = $('.three-col-outer-layer .left-col .keypad9 ul.number-keys li:nth-child(8)');
-    let step9EntKey = $('.three-col-outer-layer .left-col .keypad9 ul.menu-keys  li:last-child');
+    let step9EntKeyEle = $('.three-col-outer-layer .left-col .keypad9 ul.menu-keys  li:last-child');
     let step9DisplayStatus = $('.three-col-outer-layer .left-col .keypad9 .display-status img');
     let step9DescriptionPara = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] .description>p');
     let step9ListItem1 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:first-child');
-    let step9ExpectFirstListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:nth-child(-n+4)');
+    let step9FirstFourListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:nth-child(-n+4)');
     let step9ListItem2 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:nth-child(2)');
+    let step9ListItem3 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:nth-child(3)');
+    let step9ListItem4 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol li:nth-child(4)');
     let step9NextSectionTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] ol p');
     let step9NextSectionBtn = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] .btn img');
+    let step9ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step9"] .replay');
+
+    // step10 elements
+    let step10CmdKeyEle = $('.three-col-outer-layer .left-col .keypad10 ul.number-keys li:last-child');
+    let step10EntKeyEle = $('.three-col-outer-layer .left-col .keypad10 ul.menu-keys  li:last-child');
+    let step10Key1Ele = $('.three-col-outer-layer .left-col .keypad10 ul.number-keys li:first-child');
+    let step10Key2Ele = $('.three-col-outer-layer .left-col .keypad10 ul.number-keys li:nth-child(2)');
+    let step10Key3Ele = $('.three-col-outer-layer .left-col .keypad10 ul.number-keys li:nth-child(3)');
+    let step10Key4Ele = $('.three-col-outer-layer .left-col .keypad10 ul.number-keys li:nth-child(4)');
+    let step10DisplayStatus = $('.three-col-outer-layer .left-col .keypad10 .display-status img');
+    let step10DescriptionPara = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] .description>p');
+    let step10ListItem1 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol li:first-child');
+    let step10ListItem2 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol li:nth-child(2)');
+    let step10SysNotReadyTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol p.step10-sys-not-txt');
+    let step10ListItem3 = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol div.step10-list3');
+    let step10CountTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol p.step10-count-txt');
+    let step10UnarmedTxt = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol p.step10-unarmed-txt');
+    let step10ReplayButton = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] .replay');
     // Next Button image src elements 
     let nextBtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Next-section-button.png';
     let nextBtnHoverImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Keypad-user-tutorial-assets/Images/Next-section-button-hover.png';
@@ -241,10 +268,10 @@ $(document).ready(function () {
         $('.three-col-outer-layer .center-col .description').slideDown(1500);
         // step1 
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn').hide();
-        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn').slideDown(1500);
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step1"] .btn').fadeIn(2000);
         // step2
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn').hide();
-        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn').slideDown(1500);
+        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step2"] .btn').fadeIn(1500);
         // step3 
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:first-child').hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:nth-child(2)').hide();
@@ -288,14 +315,19 @@ $(document).ready(function () {
         step8LastSecTxtEle.hide();
         step8NextSectionBtn.hide();
         // step9 
-        step9ExpectFirstListItem.hide();
+        step9FirstFourListItems.hide();
         step9DescriptionPara.slideDown(1500);
         step9ListItem1.slideDown(1500);
         step9NextSectionBtn.hide();
         step9NextSectionTxt.hide();
-
-
-
+        // step10
+        step10DescriptionPara.slideDown(1500);
+        step10ListItem1.slideDown(1500);
+        step10ListItem2.hide();
+        step10ListItem3.hide();
+        step10SysNotReadyTxt.hide();
+        step10CountTxt.hide();
+        step10UnarmedTxt.hide();
     }
 
     // data key 1 default beep sound play
@@ -985,23 +1017,33 @@ $(document).ready(function () {
     //  Below fun will run once user reach to step9 
     // ==============================================
     step8NextSectionBtn.click(function () {
-        // step9ResetExistingStateActions();
+        step9ResetExistingStateActions();
         initialKeyActiveHandler(step9CmdKeyEle, cmdActiveImgSrc);
         step9InitialCmdKeyHandler();
     });
     // step9 list item onclick handler 
     step9ListItem.click(function () {
-        // step9ResetExistingStateActions();
+        step9ResetExistingStateActions();
         initialKeyActiveHandler(step9CmdKeyEle, cmdActiveImgSrc);
         step9InitialCmdKeyHandler();
     });
     // step9 replay btn handler 
-    // step9ReplayButton.click(function () {
-    //     step9ResetExistingStateActions();
-    //     initialKeyActiveHandler(step9CmdKeyEle, cmdActiveImgSrc);
-    //     slideDownHandler();
-    //     step9InitialCmdKeyHandler();
-    // });
+    step9ReplayButton.click(function () {
+        step9ResetExistingStateActions();
+        initialKeyActiveHandler(step9CmdKeyEle, cmdActiveImgSrc);
+        slideDownHandler();
+        step9InitialCmdKeyHandler();
+    });
+    // step9 clear all functions and actions once click on replay or next-section button
+    function step9ResetExistingStateActions() {
+        clearTimeout(step9ClearTimeOut1);
+        step9DisplayStatus.attr('src', readyToArmImgSrc);
+        resetAllKeysToInactiveImages(step9Key1Ele, step9EntKeyEle);
+        step9Key5Ele.find('img').attr('src', key5InactiveImgSrc);
+        step9Key6Ele.find('img').attr('src', key6InactiveImgSrc);
+        step9Key7Ele.find('img').attr('src', key7InactiveImgSrc);
+        step9Key8Ele.find('img').attr('src', key8InactiveImgSrc);
+    }
     function step9InitialCmdKeyHandler() {
         step9CmdKeyEle.click(function () {
             nonSequenceKeyHandler(step9CmdKeyEle, cmdInactiveImgSrc, step9Key5Ele, key5ActiveImgSrc, step9DisplayStatus, systemCmdImgSrc);
@@ -1012,32 +1054,231 @@ $(document).ready(function () {
         step9Key5Ele.click(function () {
             playDefaultBeepSound();
             step9Key5Ele.click(function () {
+                $(this).off('click');
                 step9ListItem2.slideDown(500);
-                // step9FirstNumKeyHandler();
+                step9Key5Ele.removeClass('playing');
+                step9Key5Ele.find('img').attr('src', key5InactiveImgSrc);
+                step9DisplayStatus.attr('src', enterPasscodeImgSrc);
+                initialKeyActiveHandler(step9Key1Ele, key1ActiveImgSrc);
+                step9Key1ClickHandler();
             });
         });
     }
-    // function step9FirstNumKeyHandler() {
-    //     step9Key1Ele.click(function () {
-    //         commonNumKeyHandler($(this), key1InactiveImgSrc, key2ActiveImgSrc, step9DisplayStatus, oneStarImgSrc);
-    //         step9SecondNumKeyHandler();
-    //     });
-    // }
-    // function step9SecondNumKeyHandler() {
-    //     step9Key2Ele.click(function () {
-    //         commonNumKeyHandler($(this), key2InactiveImgSrc, key3ActiveImgSrc, step9DisplayStatus, twoStarsImgSrc);
-    //         step9ThirdNumKeyHandler();
-    //     });
-    // }
-    // function step9ThirdNumKeyHandler() {
-    //     step9Key3Ele.click(function () {
-    //         commonNumKeyHandler($(this), key3InactiveImgSrc, key4ActiveImgSrc, step9DisplayStatus, threeStarsImgSrc);
-    //         step9FourthNumKeyHandler();
-    //     });
-    // }
-    // function step9FourthNumKeyHandler() {
+    function step9Key1ClickHandler() {
+        step9Key1Ele.click(function () {
+            commonNumKeyHandler($(this), key1InactiveImgSrc, key2ActiveImgSrc, step9DisplayStatus, oneStarImgSrc);
+            step9Key2ClickHandler();
+        });
+    }
+    function step9Key2ClickHandler() {
+        step9Key2Ele.click(function () {
+            commonNumKeyHandler($(this), key2InactiveImgSrc, key3ActiveImgSrc, step9DisplayStatus, twoStarsImgSrc);
+            step9Key3ClickHandler();
+        });
+    }
+    function step9Key3ClickHandler() {
+        step9Key3Ele.click(function () {
+            commonNumKeyHandler($(this), key3InactiveImgSrc, key4ActiveImgSrc, step9DisplayStatus, threeStarsImgSrc);
+            step9Key4ClickHandler();
+        });
+    }
+    function step9Key4ClickHandler() {
+        step9Key4Ele.click(function () {
+            nonSequenceKeyHandler($(this), key4InactiveImgSrc, step9EntKeyEle, entActiveImgSrc, step9DisplayStatus, fourStarsImgSrc);
+            step9EntKeyClickHandler();
+        });
+    }
+    function step9EntKeyClickHandler() {
+        step9EntKeyEle.click(function () {
+            step9ListItem3.slideDown(500);
+            nonSequenceKeyHandler($(this), entInactiveImgSrc, step9Key5Ele, key5ActiveImgSrc, step9DisplayStatus, enterNewCodeImgSrc);
+            step9Key5ClickHandler();
+        });
+    }
+    // step9 key 5-6-7-8 click's handlers
+    function step9Key5ClickHandler() {
+        step9Key5Ele.click(function () {
+            commonNumKeyHandler($(this), key5InactiveImgSrc, key6ActiveImgSrc, step9DisplayStatus, oneStarImgSrc);
+            step9Key6ClickHandler();
+        });
+    }
+    function step9Key6ClickHandler() {
+        step9Key6Ele.click(function () {
+            commonNumKeyHandler($(this), key6InactiveImgSrc, key7ActiveImgSrc, step9DisplayStatus, twoStarsImgSrc);
+            step9Key7ClickHandler();
+        });
+    }
+    function step9Key7ClickHandler() {
+        step9Key7Ele.click(function () {
+            commonNumKeyHandler($(this), key7InactiveImgSrc, key8ActiveImgSrc, step9DisplayStatus, threeStarsImgSrc);
+            step9Key8ClickHandler();
+        });
+    }
+    function step9Key8ClickHandler() {
+        step9Key8Ele.click(function () {
+            nonSequenceKeyHandler($(this), key8InactiveImgSrc, step9EntKeyEle, entActiveImgSrc, step9DisplayStatus, fourStarsImgSrc);
+            step9EntKeySecondTimeClickHandler();
+        });
+    }
+    // step9 enter Keys second time click handler
+    function step9EntKeySecondTimeClickHandler() {
+        step9EntKeyEle.click(function () {
+            step9ListItem4.slideDown(500);
+            nonSequenceKeyHandler($(this), entInactiveImgSrc, step9Key5Ele, key5ActiveImgSrc, step9DisplayStatus, entNewAgainImgSrc);
+            step9Key5SecondTimeClickHandler();
+        });
+    }
+    // step9 key 5-6-7-8 second time click handlers
+    function step9Key5SecondTimeClickHandler() {
+        step9Key5Ele.click(function () {
+            commonNumKeyHandler($(this), key5InactiveImgSrc, key6ActiveImgSrc, step9DisplayStatus, oneStarImgSrc);
+            step9Key6SecondTimeClickHandler();
+        });
+    }
+    function step9Key6SecondTimeClickHandler() {
+        step9Key6Ele.click(function () {
+            commonNumKeyHandler($(this), key6InactiveImgSrc, key7ActiveImgSrc, step9DisplayStatus, twoStarsImgSrc);
+            step9Key7SecondTimeClickHandler();
+        });
+    }
+    function step9Key7SecondTimeClickHandler() {
+        step9Key7Ele.click(function () {
+            commonNumKeyHandler($(this), key7InactiveImgSrc, key8ActiveImgSrc, step9DisplayStatus, threeStarsImgSrc);
+            step9Key8SecondTimeClickHandler();
+        });
+    }
+    function step9Key8SecondTimeClickHandler() {
+        step9Key8Ele.click(function () {
+            nonSequenceKeyHandler($(this), key8InactiveImgSrc, step9EntKeyEle, entActiveImgSrc, step9DisplayStatus, fourStarsImgSrc);
+            step9EntKeyThirdTimeClickHandler();
+        });
+    }
+    let step9ClearTimeOut1;
+    function step9EntKeyThirdTimeClickHandler() {
+        step9EntKeyEle.click(function () {
+            playDefaultBeepSound();
+            $(this).off('click');
+            $(this).find('img').attr('src', entInactiveImgSrc);
+            step9DisplayStatus.attr('src', passCodeChangedImgSrc);
+            step9FirstFourListItems.hide();
+            step9DescriptionPara.hide();
+            step9NextSectionTxt.slideDown(500);
+            step9NextSectionBtn.slideDown(500);
+            step9ClearTimeOut1 = setTimeout(() => {
+                step9DisplayStatus.attr('src', readyToArmImgSrc);
+            }, 1000);
+        });
+    }
 
-    // }
+    // ==============================================
+    //  Below fun will run once user reach to step10 
+    // ==============================================
+    step9NextSectionBtn.click(function () {
+        step10ResetExistingStateActions();
+        initialKeyActiveHandler(step10Key1Ele, key1ActiveImgSrc);
+        step10Key1ClickHandler()
+    });
+    // step10 list item onclick handler 
+    step10ListItem.click(function () {
+        step10ResetExistingStateActions();
+        initialKeyActiveHandler(step10Key1Ele, key1ActiveImgSrc);
+        step10Key1ClickHandler()
+    });
+    // step10 replay btn handler 
+    step10ReplayButton.click(function () {
+        step10ResetExistingStateActions();
+        initialKeyActiveHandler(step10Key1Ele, key1ActiveImgSrc);
+        slideDownHandler();
+        step10Key1ClickHandler()
+    });
+    // step10 clear all functions and actions once click on replay or next-section button
+    function step10ResetExistingStateActions() {
+        clearTimeout(step10ClearTimeOut1);
+        clearTimeout(step10ClearTimeOut2);
+        step10DisplayStatus.attr('src', readyToArmImgSrc);
+        resetAllKeysToInactiveImages(step10Key1Ele, step10EntKeyEle);
+        step10CmdKeyEle.find('img').attr('src', cmdInactiveImgSrc);
+    }
+    function step10Key1ClickHandler() {
+        step10Key1Ele.click(function () {
+            commonNumKeyHandler($(this), key1InactiveImgSrc, key2ActiveImgSrc, step10DisplayStatus, oneStarImgSrc);
+            step10Key2ClickHandler();
+        });
+    }
+    function step10Key2ClickHandler() {
+        step10Key2Ele.click(function () {
+            commonNumKeyHandler($(this), key2InactiveImgSrc, key3ActiveImgSrc, step10DisplayStatus, twoStarsImgSrc);
+            step10Key3ClickHandler();
+        });
+    }
+    function step10Key3ClickHandler() {
+        step10Key3Ele.click(function () {
+            commonNumKeyHandler($(this), key3InactiveImgSrc, key4ActiveImgSrc, step10DisplayStatus, threeStarsImgSrc);
+            step10Key4ClickHandler();
+        });
+    }
+    function step10Key4ClickHandler() {
+        step10Key4Ele.click(function () {
+            step10ListItem2.slideDown(500);
+            nonSequenceKeyHandler($(this), key4InactiveImgSrc, step10EntKeyEle, entActiveImgSrc, step10DisplayStatus, fourStarsImgSrc);
+            step10EntKeyClickHandler();
+        });
+    }
+    let step10ClearTimeOut1, step10ClearTimeOut2;
+    function step10EntKeyClickHandler() {
+        step10EntKeyEle.click(function () {
+            playDefaultBeepSound();
+            $(this).off('click');
+            $(this).removeClass('playing');
+            $(this).find('img').attr('src', entInactiveImgSrc);
+            step10DescriptionPara.hide();
+            step10ListItem1.hide();
+            step10ListItem2.hide();
+            step10SysNotReadyTxt.slideDown(500);
+            let step10AreaImgSrc = [chkAreaImgSrc, areaFaultImgSrc];
+            for (let i = 0; i < step10AreaImgSrc.length; i++) {
+                step10ClearTimeOut1 = setTimeout(() => {
+                    let currentImg = step10AreaImgSrc[i];
+                    step10DisplayStatus.attr('src', currentImg);
+                    if (i === 1) {
+                        step10ListItem3.slideDown(500);
+                        $('.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol div.step10-list3 li').slideDown(500);
+                        initialKeyActiveHandler(step10CmdKeyEle, cmdActiveImgSrc);
+                        step10CmdClickHandler();
+                    }
+                }, i * 2000);
+            }
+        });
+    }
+    function step10CmdClickHandler() {
+        step10CmdKeyEle.click(function () {
+            nonSequenceKeyHandler($(this), cmdInactiveImgSrc, step10EntKeyEle, entActiveImgSrc, step10DisplayStatus, areaFaultImgSrc);
+            step10EntKeySecondTimeClickHandler();
+        });
+    }
+    function step10EntKeySecondTimeClickHandler() {
+        step10EntKeyEle.click(function () {
+            $(this).off('click');
+            $(this).removeClass('playing');
+            $(this).find('img').attr('src', entInactiveImgSrc);
+            step10CountTxt.slideDown(500);
+            let step10ExitImgSrc = [armingImgSrc, exitNow60ImgSrc, exitNow45ImgSrc, exitNow30ImgSrc, exitNow15ImgSrc, systemArmedImgSrc];
+            for (let i = 0; i < step10ExitImgSrc.length; i++) {
+                step10ClearTimeOut2 = setTimeout(() => {
+                    let currentImg = step10ExitImgSrc[i];
+                    step10DisplayStatus.attr('src', currentImg);
+                    if (i === 5) {
+                        step10UnarmedTxt.slideDown(500);
+                        playLongBeepSound();
+                    }
+                    else playDefaultBeepSound();
+                }, i * 2000);
+            }
+        });
+    }
+
+
+
 });
 
 
