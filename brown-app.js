@@ -447,7 +447,7 @@ $(document).ready(function () {
                         step3NextSectionBtn.slideDown(500);
                         playLongBeepSound();
                     }
-                    else playDefaultBeepSound();
+                    // else playDefaultBeepSound();
                 }, i * 1500);
             }
         });
@@ -1195,8 +1195,8 @@ $(document).ready(function () {
     function step10ResetExistingStateActions() {
         clearTimeout(step10ClearTimeOut1);
         clearTimeout(step10ClearTimeOut2);
-        step10DisplayStatus.attr('src', readyToArmImgSrc);
         resetAllKeysToInactiveImages(step10Key1Ele, step10EntKeyEle);
+        step10DisplayStatus.attr('src', readyToArmImgSrc);
         step10CmdKeyEle.find('img').attr('src', cmdInactiveImgSrc);
     }
     function step10Key1ClickHandler() {
@@ -1261,6 +1261,7 @@ $(document).ready(function () {
             $(this).off('click');
             $(this).removeClass('playing');
             $(this).find('img').attr('src', entInactiveImgSrc);
+            playDefaultBeepSound();
             step10CountTxt.slideDown(500);
             let step10ExitImgSrc = [armingImgSrc, exitNow60ImgSrc, exitNow45ImgSrc, exitNow30ImgSrc, exitNow15ImgSrc, systemArmedImgSrc];
             for (let i = 0; i < step10ExitImgSrc.length; i++) {
@@ -1271,7 +1272,7 @@ $(document).ready(function () {
                         step10UnarmedTxt.slideDown(500);
                         playLongBeepSound();
                     }
-                    else playDefaultBeepSound();
+                    // else playDefaultBeepSound();
                 }, i * 2000);
             }
         });

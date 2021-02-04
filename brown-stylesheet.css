@@ -215,7 +215,8 @@ li {
 
 .three-col-outer-layer .left-col .display-status img {
     max-width: 200px;
-
+    float: right;
+    margin-right: -1px;
 }
 
 
@@ -286,7 +287,11 @@ li {
 
 
 .three-col-outer-layer .left-col .keys ul.menu-keys {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -295,7 +300,8 @@ li {
 }
 
 .three-col-outer-layer .left-col .dga-logo img {
-    max-width: 176px;
+    max-width: 178px;
+    width: 100%;
 }
 
 .three-col-outer-layer .gray-borders {
@@ -326,14 +332,6 @@ li {
     margin-bottom: 8px;
 }
 
-/* .three-col-outer-layer .center-col .demo-content[data-filter=".step3"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step4"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step6"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step7"] p,
-.three-col-outer-layer .center-col .demo-content[data-filter=".step8"] p {
-    margin-bottom: 1px;
-} */
 
 .three-col-outer-layer .center-col .heading {
     padding: 0 0 15px;
@@ -506,25 +504,7 @@ li {
     color: rgb(255 255 255 / 0.5);
 }
 
-@media (min-width:1025px) and (max-width: 1143px) {
-    .three-col-outer-layer .left-col .keypad-box {
-        padding: 44px 30px 48px;
-        background-size: 100% 100%;
-    }
 
-    .three-col-outer-layer .left-col .keys ul li img {
-        max-width: 38px;
-    }
-
-    .three-col-outer-layer .left-col .keys ul.bottom-keys li,
-    .three-col-outer-layer .left-col .keys ul.top-keys li:not(:first-child) {
-        margin-left: 4px;
-    }
-
-    .three-col-outer-layer .left-col .display-status img {
-        max-width: 182px;
-    }
-}
 
 
 
@@ -533,6 +513,59 @@ li {
         margin: 30px 100px 149px;
     }
 
+    .three-col-outer-layer .left-col .keypad-box {
+        padding: 44px 25px 48px;
+        background-size: 100% 100%;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+
+    .three-col-outer-layer .left-col .keys ul li img {
+        max-width: 42px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys li:last-child img {
+        max-width: 81px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul li {
+        margin-left: 4px;
+    }
+
+    .three-col-outer-layer .left-col .dga-logo img {
+        max-width: 186px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.menu-keys li img {
+        max-width: 28px;
+    }
+
+    .three-col-outer-layer .left-col .display-status img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1100px) and (max-width:1199px) {
+    .three-col-outer-layer .left-col .keys ul.menu-keys li img {
+        max-width: 30px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul li img {
+        max-width: 49px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys li:last-child img {
+        max-width: 95px;
+    }
 
 }
 
@@ -546,32 +579,55 @@ li {
     .three-col-outer-layer .left-col .keypad-box {
         padding: 20px;
         background-position: center center;
+        background-size: cover;
+
+    }
+
+    .three-col-outer-layer .left-col .keypad-right-col .keypad {
+        max-width: 170px;
 
     }
 
     .three-col-outer-layer .left-col .display-status img {
-        max-width: 160px;
+        max-width: inherit;
+        width: 100%;
     }
 
-    .three-col-outer-layer .left-col .keys ul li img {
-        max-width: 35px;
+    .three-col-outer-layer .left-col .keys ul.number-keys li img {
+        max-width: 39px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.menu-keys li img {
+        max-width: 26px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys li:last-child img {
+        max-width: 77px;
+    }
+
+    .three-col-outer-layer .gray-borders img {
+        max-width: 110px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul li i {
+        font-size: 9px;
+        top: -10px;
     }
 
     .three-col-outer-layer .right-col {
         padding: 10px;
     }
 
-    .three-col-outer-layer .left-col .keys ul.top-keys li:not(:first-child),
-    .three-col-outer-layer .left-col .keys ul.bottom-keys li {
-        margin-left: 2px;
-    }
-
-    .three-col-outer-layer .left-col .keys .top-keys {
-        margin: 0;
-    }
-
-    .three-col-outer-layer .left-col .outline-btn {
-        margin: 0 0 4px;
+    .three-col-outer-layer .left-col .keys ul {
+        margin-left: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
     }
 
     .three-col-outer-layer .center-col .btn img {
@@ -580,16 +636,6 @@ li {
 
     .three-col-outer-layer .center-col p {
         margin-bottom: 5px;
-    }
-
-    .three-col-outer-layer .left-col .keys ul,
-    .three-col-outer-layer .left-col .outline-btn {
-        max-width: 175px;
-    }
-
-    .three-col-outer-layer .left-col .power-btns img {
-        float: right;
-        margin-right: 13px;
     }
 
     .keypad-tutorial-sec .section-heading h1 {
@@ -606,52 +652,79 @@ li {
     }
 
     .three-col-outer-layer .left-col .keypad-box {
-        padding: 20px;
+        padding: 20px 10px;
         background-position: center center;
+        background-size: cover;
 
+    }
+
+    .three-col-outer-layer .center-col h4 br {
+        display: none;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
     }
 
     .three-col-outer-layer .left-col .display-status img {
-        max-width: 128px;
+        max-width: inherit;
+        width: 100%;
     }
 
-    .three-col-outer-layer .left-col .keys ul li img {
-        max-width: 25px;
+    .three-col-outer-layer .left-col .keys ul.number-keys li img {
+        max-width: 34px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.menu-keys li img {
+        max-width: 24px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys li:last-child img {
+        max-width: 70px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul.number-keys li:last-child {
+        margin-left: 0;
+    }
+
+    .three-col-outer-layer .gray-borders img {
+        max-width: 80px;
+    }
+
+    .three-col-outer-layer .left-col .keys ul li span {
+        font-size: 8px;
+        top: -8px;
     }
 
     .three-col-outer-layer .right-col {
         padding: 10px;
     }
 
-    .three-col-outer-layer .left-col .keys ul.top-keys li:not(:first-child),
-    .three-col-outer-layer .left-col .keys ul.bottom-keys li {
+    .three-col-outer-layer .left-col .keys ul li {
         margin-left: 2px;
-        margin-bottom: 4px;
+        margin-top: 6px;
     }
 
-    .three-col-outer-layer .left-col .keys .top-keys {
-        margin: 0;
+    .three-col-outer-layer .left-col .keys ul li i {
+        font-size: 8px;
+        top: -8px;
     }
 
-    .three-col-outer-layer .left-col .outline-btn {
-        margin: 0;
-    }
 
     .three-col-outer-layer .center-col .btn img {
         max-width: 105px;
     }
 
-    .three-col-outer-layer .center-col p {
-        margin-bottom: 5px;
-    }
 
     .three-col-outer-layer .center-col {
         overflow: visible;
-    }
-
-    .three-col-outer-layer .left-col .power-btns img,
-    .three-col-outer-layer .left-col .dga-logo img {
-        max-width: 60px;
     }
 
 
@@ -660,28 +733,9 @@ li {
         width: 110%;
     }
 
-    .three-col-outer-layer .left-col .display-status {
-        height: auto;
-    }
-
-    .three-col-outer-layer .left-col .outline-btn img {
-        max-width: 100px;
-    }
-
-    .three-col-outer-layer .left-col .keys ul li span {
-        font-size: 10px;
-        top: 13px;
-        right: -10px;
-    }
-
-    .three-col-outer-layer .left-col .keys ul,
-    .three-col-outer-layer .left-col .outline-btn {
+    .three-col-outer-layer .left-col .keypad-right-col .keypad {
         max-width: 130px;
-    }
 
-    .three-col-outer-layer .left-col .power-btns img {
-        float: right;
-        margin-right: 13px;
     }
 
     .three-col-outer-layer .replay p {
@@ -693,22 +747,9 @@ li {
     }
 }
 
-@media(max-width: 534px) {
-    .three-col-outer-layer .left-col .display-status img {
-        max-width: 110px;
+@media(max-width: 576px) {
+    .three-col-outer-layer {
+        width: 523px;
     }
 
-    .three-col-outer-layer .left-col .keys ul li img {
-        max-width: 22px;
-    }
-
-    .three-col-outer-layer .left-col {
-        -ms-flex-preferred-size: 49%;
-        flex-basis: 49%;
-    }
-
-    .three-col-outer-layer .center-col,
-    .three-col-outer-layer .right-col {
-        flex-basis: 25.5%;
-    }
 }
