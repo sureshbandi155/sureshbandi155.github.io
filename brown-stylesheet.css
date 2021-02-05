@@ -165,7 +165,7 @@ li {
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #c5c5c5, #fff);
-    min-height: 530px;
+    min-height: 540px;
 }
 
 .three-col-outer-layer .right-col {
