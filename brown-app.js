@@ -279,7 +279,7 @@ $(document).ready(function () {
         step3NextSectionBtn.hide();
         $('.three-col-outer-layer .center-col .demo-content[data-filter=".step3"] li:first-child').slideDown(1000);
         // step4 
-        step4FirstListItem.hide();
+        step4FirstListItem.slideDown(1500);
         step4SecondListItem.hide();
         step4NextSlideDes.hide();
         step4NextSectionBtn.hide();
@@ -474,35 +474,26 @@ $(document).ready(function () {
     // ==============================================
     //  Below fun will run once user reach to step4 
     // ==============================================
-    function step4DisarmInitialImagesLoadHandler() {
-        const step4DisarmNum1 = 0, step4DisarmNum2 = 4;
-        let disarmInitialImgSrcArray = [disarmNowImgSrc, a1AlarmImgSrc, z1FDoorImgSrc, disarmNowImgSrc];
-        for (let i = step4DisarmNum1; i <= step4DisarmNum2; i++) {
-            setTimeout(() => {
-                let currentImg = disarmInitialImgSrcArray[i];
-                step4DisplayStatus.attr('src', currentImg);
-                if (i === 3) {
-                    initialKeyActiveHandler(step4FirstNumKey, key1ActiveImgSrc);
-                    step4FirstListItem.slideDown(500);
-                    step4FirstNumKeyHandler(); //call step4 first num key
-                }
-            }, i * 1000);
-        }
+    //Step4 disarm now Images active handler
+    function step4InitialDisarmNowImgHandler() {
+        step4DisplayStatus.attr('src', disarmNowImgSrc);
+        initialKeyActiveHandler(step4FirstNumKey, key1ActiveImgSrc);
+        step4FirstNumKeyHandler(); //call step4 first num key
     }
     // step3 next btn onclick handler 
     step3NextSectionBtn.click(function () {
         step4ResetExistingStateActions();
-        step4DisarmInitialImagesLoadHandler();
+        step4InitialDisarmNowImgHandler();
     });
     // step4 list item onclick handler 
     step4ListItem.click(function () {
         step4ResetExistingStateActions();
-        step4DisarmInitialImagesLoadHandler();
+        step4InitialDisarmNowImgHandler();
     });
     // step4replay btn handler 
     step4ReplayButton.click(function () {
         step4ResetExistingStateActions();
-        step4DisarmInitialImagesLoadHandler();
+        step4InitialDisarmNowImgHandler();
         slideDownHandler();
     });
     function step4FirstNumKeyHandler() {
@@ -538,29 +529,19 @@ $(document).ready(function () {
         step4EntKey.click(function () {
             entActiveKeyHandler($(this));
             $(this).off('click');
-            step4ShowReadyToArmDisplayHandler();
+            step4InitialDes.hide();
+            step4OrderListItems.hide();
+            step4NextSlideDes.slideDown(500);
+            step4NextSectionBtn.slideDown(500);
             setTimeout(() => {
-                step4InitialDes.hide();
-                step4OrderListItems.hide();
-                step4NextSlideDes.slideDown(500);
-                step4NextSectionBtn.slideDown(500);
-            }, 1000);
-
-
+                step4ShowReadyToArmDisplayHandler();
+            }, 300);
         });
     }
+
     function step4ShowReadyToArmDisplayHandler() {
-        const step4ImgLoop1 = 0, step4ImgLoop2 = 2;
-        let step4ExitLoopImgs = [alarmSilencedImgSrc, a1AlarmImgSrc, readyToArmImgSrc];
-        for (let i = step4ImgLoop1; i <= step4ImgLoop2; i++) {
-            setTimeout(() => {
-                if (i === 2) {
-                    playLongBeepSound();
-                }
-                let currentImg = step4ExitLoopImgs[i];
-                step4DisplayStatus.attr('src', currentImg);
-            }, i * 800);
-        }
+        step4DisplayStatus.attr('src', readyToArmImgSrc);
+        playLongBeepSound();
     }
     // step4 clear all functions and actions once you click on replay or next-section button
     function step4ResetExistingStateActions() {
