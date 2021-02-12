@@ -62,16 +62,14 @@ $(document).ready(function () {
     let systemArmedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/System-armed.png';
     // step4 display status images
     let disarmNowImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Disarm-now.png';
-    let a1AlarmImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/A1-alarm.png';
-    let z1FDoorImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Z1-f-door.png';
-    let alarmSilencedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Alarm-silenced.png';
     // step5 display status 
     let systemCmdImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/System-command.png';
     let enterPasscodeImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-passcode.png';
     let enterPtNumImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-pt-number.png';
-    let enterPtNum7ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-pt-num-7.png';
-    let hallwayMtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Hallway-mtn.png';
-    let pt7BypassedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Pt7-bypassed.png';
+    let enterPt1ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-pt-num-1.png';
+    let enterPt11ImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Enter-pt-number-11.png';
+    let z11HalwayMtnImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Z11-Halway-Mtn.png';
+    let pt11BypassedImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/PT11-bypassed.png';
     // step6 display status 
     let sensorResettingImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Sensors-resetting.png';
     let emptyDisplayStatusImgSrc = 'https://f.hubspotusercontent00.net/hubfs/2432204/Brown-keypad-tutorial-assets/Images/Empty-display-status.png';
@@ -124,7 +122,7 @@ $(document).ready(function () {
     let step5EntKey = $('.three-col-outer-layer .left-col .keypad5 ul.menu-keys  li:last-child');
     let step5CmdKeyEle = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:last-child');
     let step5ZeroKeyEle = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:nth-last-child(2)');
-    let step5Key7Ele = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:nth-child(7)');
+    // let step5Key7Ele = $('.three-col-outer-layer .left-col .keypad5 ul.number-keys li:nth-child(7)');
     let step5FirstListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(1)');
     let step5SecondListItem = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(2)');
     let step5RemOrderedListItems = $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol li:nth-child(n+2)');
@@ -577,7 +575,7 @@ $(document).ready(function () {
         // reset first four num and ent keys 
         resetAllKeysToInactiveImages(step5FirstNumKey, step5EntKey);
         step5ZeroKeyEle.find('img').attr('src', key0InactiveImgSrc);
-        step5Key7Ele.find('img').attr('src', key7InactiveImgSrc);
+        // step5Key7Ele.find('img').attr('src', key7InactiveImgSrc);
     }
     function nonSequenceKeyHandler(currentNumberKeyEle, prevKeyInactiveImgSrc, nextNumberKey, nextKeyActiveImgSrc, displayStatusEle, displayStatusImgSrcEle) {
         playDefaultBeepSound();
@@ -632,19 +630,25 @@ $(document).ready(function () {
     function step5EnterKeyHandler() {
         step5EntKey.click(function () {
             step5SecondListItem.next().slideDown(500);
-            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5Key7Ele, key7ActiveImgSrc, step5DisplayStatus, enterPtNumImgSrc);
-            step5Key7Handler();
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5FirstNumKey, key1ActiveImgSrc, step5DisplayStatus, enterPtNumImgSrc);
+            step5key1FirstTimeDoubleClickHandler();
         });
     }
-    function step5Key7Handler() {
-        step5Key7Ele.click(function () {
-            nonSequenceKeyHandler(step5Key7Ele, key7InactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, enterPtNum7ImgSrc);
-            step5Click1EnterMenuHandler();
+    function step5key1FirstTimeDoubleClickHandler() {
+        step5FirstNumKey.click(function () {
+            playDefaultBeepSound();
+            step5DisplayStatus.attr('src', enterPt1ImgSrc);
+            step5FirstNumKey.click(function () {
+                playDefaultBeepSound();
+                nonSequenceKeyHandler(step5FirstNumKey, key1InactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, enterPt11ImgSrc);
+                step5Click1EnterMenuHandler();
+            });
         });
     }
+
     function step5Click1EnterMenuHandler() {
         step5EntKey.click(function () {
-            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, hallwayMtnImgSrc);
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, z11HalwayMtnImgSrc);
             step5InitialDes.hide();
             $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol>li:nth-child(-n+3)').hide();
             step5SecondListItem.next().next().slideDown(500);
@@ -656,7 +660,7 @@ $(document).ready(function () {
             playDefaultBeepSound();
             $(this).off('click');
             $(this).removeClass('playing');
-            step5DisplayStatus.attr('src', pt7BypassedImgSrc);
+            step5DisplayStatus.attr('src', pt11BypassedImgSrc);
             $(this).find('img').attr('src', entInactiveImgSrc);
             step5Point5Div.slideDown(500);
             setTimeout(() => {
@@ -715,19 +719,25 @@ $(document).ready(function () {
     function step5AgainEnterKeyHandler() {
         step5EntKey.click(function () {
             step5ListItem7.slideDown(500);
-            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5Key7Ele, key7ActiveImgSrc, step5DisplayStatus, enterPtNumImgSrc);
-            step5AgainKey7Handler();
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5FirstNumKey, key1ActiveImgSrc, step5DisplayStatus, enterPtNumImgSrc);
+            step5key1SecondTimeDoubleClickHandler();
         });
     }
-    function step5AgainKey7Handler() {
-        step5Key7Ele.click(function () {
-            nonSequenceKeyHandler(step5Key7Ele, key7InactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, enterPtNum7ImgSrc);
-            step5AgainClick1EnterKeyHandler();
+    function step5key1SecondTimeDoubleClickHandler() {
+        step5FirstNumKey.click(function () {
+            playDefaultBeepSound();
+            step5DisplayStatus.attr('src', enterPt1ImgSrc);
+            step5FirstNumKey.click(function () {
+                playDefaultBeepSound();
+                nonSequenceKeyHandler(step5FirstNumKey, key1InactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, enterPt11ImgSrc);
+                step5AgainClick1EnterKeyHandler();
+            });
         });
     }
+
     function step5AgainClick1EnterKeyHandler() {
         step5EntKey.click(function () {
-            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, hallwayMtnImgSrc);
+            nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5EntKey, entActiveImgSrc, step5DisplayStatus, z11HalwayMtnImgSrc);
             $('.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol>li:nth-child(-n+8)').hide();
             step5Point5Div.hide();
             step5InitialDes.hide();
