@@ -475,6 +475,19 @@ li {
     padding-bottom: 10px;
 }
 
+/* step 5 and step10  alignment text  */
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol>li:nth-child(4),
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol .step5-list8 li,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol div.step10-list3 li {
+    text-indent: -11px;
+}
+
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol>li:nth-child(4)>span,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step5"] ol .step5-list8 li span,
+.three-col-outer-layer .center-col .demo-content[data-filter=".step10"] ol div.step10-list3 li span {
+    left: -4px;
+}
+
 /*============== Right col =================*/
 
 

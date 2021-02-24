@@ -666,7 +666,9 @@ $(document).ready(function () {
             setTimeout(() => {
                 step5DisplayStatus.attr('src', readyToArmImgSrc);
                 step5ListItem5.slideDown(500);
-                nonSequenceKeyHandler(step5EntKey, entInactiveImgSrc, step5CmdKeyEle, cmdActiveImgSrc, step5DisplayStatus, readyToArmImgSrc);
+                step5DisplayStatus.attr('src', readyToArmImgSrc);
+                step5CmdKeyEle.addClass('playing');
+                step5CmdKeyEle.find('img').attr('src', cmdActiveImgSrc);
                 step5CmdClickToZeroKeyHandler();
             }, 2000);
         });
