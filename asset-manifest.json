@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.705f26d7.css",
+    "main.js": "/static/js/main.4dc7813c.js",
+    "static/js/787.4a178e0d.chunk.js": "/static/js/787.4a178e0d.chunk.js",
+    "static/media/metaverse.svg": "/static/media/metaverse.177d886c94ca724454b3f77d011048f8.svg",
+    "static/media/social-network.svg": "/static/media/social-network.66dfee4024ccc0b2c8d277f4c82ceb87.svg",
+    "static/media/art.svg": "/static/media/art.a1433c14a1fe3932560ff7481edf3d24.svg",
+    "static/media/mining-bitcoin.svg": "/static/media/mining-bitcoin.796ccfd17122777f759b6c412ce0e400.svg",
+    "static/media/bitcoin-technology.svg": "/static/media/bitcoin-technology.cdb0d9f498b25000e9dd4babe82bce95.svg",
+    "static/media/wallet.svg": "/static/media/wallet.dc057a9a4f9f0cfc6dad73d205b65ce4.svg",
+    "static/media/Exchange.svg": "/static/media/Exchange.f6858f21c65a59a0e393667ec0a29136.svg",
+    "static/media/Blockchain.svg": "/static/media/Blockchain.a1e7720b1e9e8171e9ec4f0cc04bd5ab.svg",
+    "static/media/games.svg": "/static/media/games.cd0f136e2534a4062ab4e0ae45ae0082.svg",
+    "index.html": "/index.html",
+    "main.705f26d7.css.map": "/static/css/main.705f26d7.css.map",
+    "main.4dc7813c.js.map": "/static/js/main.4dc7813c.js.map",
+    "787.4a178e0d.chunk.js.map": "/static/js/787.4a178e0d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.705f26d7.css",
+    "static/js/main.4dc7813c.js"
+  ]
+}
