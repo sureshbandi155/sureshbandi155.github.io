@@ -1,0 +1,49 @@
+@import '../../assets/styles/variables';
+.signInBg {
+  background-color: $primary-btn;
+  padding: 30px 0;
+  height: 100vh;
+}
+.signInContainer {
+  max-width: 500px;
+  background-color: $white;
+  margin: 1rem auto;
+  border-radius: 20px;
+  .headingSec {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0, 17, 41, 0.1);
+  }
+  .formSec {
+    padding: 2.2rem;
+    button {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+.logo {
+  img {
+    max-width: 140px !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.bottomText a {
+  font-size: 1rem !important;
+  color: $white;
+  position: relative;
+  padding: 0 10px;
+  &:not(:last-child)::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-right: 1px solid $white;
+  }
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

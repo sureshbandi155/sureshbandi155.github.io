@@ -1,0 +1,94 @@
+@import '../../assets/styles/variables';
+
+.footerSec {
+  background-color: $footer-bg;
+
+  .links p,
+  a {
+    color: #78aeff !important;
+  }
+}
+
+.logoTextSec {
+  p {
+    color: #78aeff !important;
+  }
+}
+
+.socialShare {
+  ul {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 0.8rem;
+
+    a i {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: 0.2s all ease-in;
+      color: $theme-color;
+      background-color: $white;
+    }
+
+    a i:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.links>div:first-child h2 {
+  padding-bottom: 5px;
+}
+
+.navLinks {
+  a {
+    padding-bottom: 0.7rem !important;
+  }
+
+  a {
+    display: inline-block !important;
+    position: relative;
+  }
+
+  a::before {
+    position: absolute;
+    content: '';
+    background: $white !important;
+    width: 0;
+    height: 2px;
+    bottom: 9px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: $white !important;
+  }
+
+  a:hover::before {
+    width: 100%;
+    color: $white;
+  }
+}
+
+@media (min-width: 768px) {
+  .rightAlign > div {
+    float: right;
+  }
+}
+
+@media (max-width: 767px) {
+  .footerSec {
+    text-align: center;
+  }
+
+  .links h3 {
+    margin-top: 1rem !important;
+  }
+}

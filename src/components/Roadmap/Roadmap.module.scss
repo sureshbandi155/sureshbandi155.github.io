@@ -1,0 +1,28 @@
+.roadMapSec {
+  background-color: #e2f2fe;
+}
+
+.verticalTimeEle>div {
+  box-shadow: 0 0 15px #d4d1d1 !important;
+  padding: 2em !important;
+}
+
+.verticalTimeEle>span {
+  color: #fff;
+  text-align: center;
+  width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+}
+
+.verticalTimeEle {
+  h3 {
+    margin-bottom: .75rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .verticalTimeEle>div {
+    padding: 1.5rem !important
+  }
+}

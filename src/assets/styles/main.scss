@@ -1,0 +1,551 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500&display=swap');
+// @import '~semantic-ui-css/semantic.min.css';
+@import './variables';
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: $black;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1.ui.header,
+h2.ui.header,
+h3.ui.header,
+h4.ui.header,
+h5.ui.header,
+h6.ui.header {
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 1rem;
+  color: $primrary-heading;
+}
+h1,
+h1.ui.header {
+  font-size: 3.4rem;
+}
+h2,
+h2.ui.header {
+  font-size: 2.6rem;
+}
+h3,
+h3.ui.header {
+  font-size: 1.45rem;
+}
+h4,
+h4.ui.header {
+  font-size: 1.25rem;
+}
+h5,
+h5.ui.header {
+  font-size: 1.15rem;
+}
+h6,
+h6.ui.header {
+  font-size: 1rem;
+  font-weight: 400;
+}
+p,
+li,
+a {
+  font-size: 1.15rem;
+}
+p {
+  margin: 0 0 1rem !important;
+}
+a {
+  font-weight: 500;
+  color: $primrary-heading;
+  transition: all 0.2s ease-in;
+}
+a:hover {
+  color: $primary-btn;
+}
+.sectionHeading.alignCenter{
+  max-width: 990px;
+  margin:0 auto 2.5rem;
+}
+.sectionHeading h3,
+.sectionHeading h3.ui.header {
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+// primary button blue color btn
+.ui.button {
+  font-size: 1.15rem !important;
+  border-radius: 30px !important;
+  font-size: 1.15rem !important;
+  padding: 0.725rem 1.7rem !important;
+  border-radius: 30px !important;
+  border: 2px solid $primary-btn;
+}
+.ui.primary.button,
+.ui.primary.buttons .button {
+  background-color: $primary-btn;
+}
+.ui.primary.button:active,
+.ui.primary.buttons .button:active {
+  background-color: $primary-btn;
+}
+.ui.primary.button:focus,
+.ui.primary.buttons .button:focus {
+  background-color: $primary-btn;
+}
+.ui.primary.button:hover,
+.ui.primary.buttons .button:hover {
+  background-color: $white;
+  color: $theme-color;
+}
+
+// secondary button blue color btn
+.ui.secondary.button,
+.ui.secondary.buttons .button {
+  color: $secondary-btn;
+  background-color: $white;
+  border: 2px solid $white;
+}
+.ui.secondary.button:active,
+.ui.secondary.buttons .button:active {
+  background-color: $secondary-btn;
+  border: 2px solid $primary-btn;
+}
+.ui.secondary.button:focus,
+.ui.secondary.buttons .button:focus {
+  background-color: $secondary-btn;
+  border: 2px solid $primary-btn;
+}
+.ui.secondary.button:hover,
+.ui.secondary.buttons .button:hover {
+  color: $white;
+  background-color: $primary-btn;
+  border: 2px solid $primary-btn;
+}
+
+.dFlex {
+  display: flex;
+  align-items: stretch;
+}
+
+.sectionPadding {
+  padding: 60px 0 !important;
+}
+.allTextWhite h1,
+.allTextWhite h2,
+.allTextWhite h3,
+.allTextWhite h4,
+.allTextWhite h5,
+.allTextWhite h6,
+.allTextWhite p,
+.allTextWhite a,
+.allTextWhite h1.ui.header,
+.allTextWhite h2.ui.header,
+.allTextWhite h3.ui.header,
+.allTextWhite h4.ui.header,
+.allTextWhite h5.ui.header,
+.allTextWhite h6.ui.header {
+  color: $white;
+}
+.centerAlign {
+  text-align: center;
+}
+.themeColor h1,
+.themeColor h2,
+.themeColor h3,
+.themeColor h4,
+.themeColor h5,
+.themeColor h6,
+.themeColor p,
+.themeColor a,
+.themeColor h1.ui.header,
+.themeColor h2.ui.header,
+.themeColor h3.ui.header,
+.themeColor h4.ui.header,
+.themeColor h5.ui.header,
+.themeColor h6.ui.header,
+.themeColor span {
+  color: $primary-btn;
+}
+
+.allTextUppercase,
+.allTextUppercase a,
+.allTextUppercase h1,
+.allTextUppercase h2,
+.allTextUppercase h3,
+.allTextUppercase h4,
+.allTextUppercase h5,
+.allTextUppercase h6,
+.allTextUppercase p {
+  text-transform: uppercase !important;
+}
+.logoText > p {
+  font-size: 2rem;
+  margin: 0 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.alignCenter {
+  text-align: center;
+}
+.alignLeft {
+  text-align: left;
+}
+.alignRight {
+  text-align: right;
+}
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}
+.noMargin {
+  margin: 0 !important;
+}
+//Margin Left
+.tinyMarginLeft {
+  margin-left: 0.5rem !important;
+}
+.smallMarginLeft {
+  margin-left: 0.75rem;
+}
+.mediumMarginLeft {
+  margin-left: 1rem;
+}
+.largeMarginLeft {
+  margin-left: 1.25rem;
+}
+.extraLargeMarginLeft {
+  margin-left: 1.5rem;
+}
+
+//Margin Right
+
+.tinyMarginRight {
+  margin-right: 0.5rem !important;
+}
+.smallMarginRight {
+  margin-right: 0.75rem !important;
+}
+.mediumMarginRight {
+  margin-right: 1rem !important;
+}
+.largeMarginRight {
+  margin-right: 1.25rem;
+}
+.extraLargeMarginRight {
+  margin-right: 1.5rem !important;
+}
+
+//Margin top
+
+.tinyMargintop {
+  margin-top: 0.5rem !important;
+}
+.smallMargintop {
+  margin-top: 0.75rem;
+}
+.mediumMargintop {
+  margin-top: 1rem;
+}
+.largeMargintop {
+  margin-top: 1.25rem;
+}
+.extraLargeMargintop {
+  margin-top: 1.5rem;
+}
+
+//Margin Bottom
+
+.tinyMarginBottom {
+  margin-bottom: 0.5rem;
+}
+.smallMarginBottom {
+  margin-bottom: 0.75rem !important;
+}
+.mediumMarginBottom {
+  margin-bottom: 1rem !important;
+}
+.largeMarginBottom {
+  margin-bottom: 1.25rem;
+}
+.extraLargeMarginBottom {
+  margin-bottom: 1.5rem !important;
+}
+
+//Margin Horizontal
+
+.tinyMarginHorizontal {
+  margin: 0 0.5rem !important;
+}
+.smallMarginHorizontal {
+  margin: 0 0.75rem;
+}
+.mediumMarginHorizontal {
+  margin: 0 1rem !important;
+}
+.largeMarginHorizontal {
+  margin: 0 1.25rem;
+}
+.extraLargeMarginHorizontal {
+  margin: 0 1.5rem;
+}
+
+//Margin Vertical
+
+.tinyMarginVertical {
+  margin: 0.5rem 0;
+}
+.smallMarginVertical {
+  margin: 0.75rem 0;
+}
+.mediumMarginVertical {
+  margin: 1rem 0;
+}
+.largeMarginVertical {
+  margin: 1.25rem 0;
+}
+.extraLargeMarginVertical {
+  margin: 1.5rem 0;
+}
+
+//Margin Around
+
+.tinyMarginAround {
+  margin: 0.5rem;
+}
+.smallMarginAround {
+  margin: 0.75rem;
+}
+.mediumMarginAround {
+  margin: 1rem;
+}
+.largeMarginAround {
+  margin: 1.25rem;
+}
+.extraLargeMarginAround {
+  margin: 1.5rem;
+}
+
+//Padding styles
+
+//Padding
+//Padding Left
+.tinyPaddingLeft {
+  padding-left: 0.5rem;
+}
+.smallPaddingLeft {
+  padding-left: 0.75rem;
+}
+.mediumPaddingLeft {
+  padding-left: 1rem;
+}
+.largePaddingLeft {
+  padding-left: 1.25rem;
+}
+.extraLargePaddingLeft {
+  padding-left: 1.5rem;
+}
+
+//padding Right
+
+.tinyPaddingRight {
+  padding-right: 0.5rem;
+}
+.smallPaddingRight {
+  padding-right: 0.75rem;
+}
+.mediumPaddingRight {
+  padding-right: 1rem;
+}
+.largePaddingRight {
+  padding-right: 1.25rem;
+}
+.extraLargePaddingRight {
+  padding-right: 1.5rem;
+}
+
+//padding top
+
+.tinyPaddingtop {
+  padding-top: 0.5rem;
+}
+.smallPaddingtop {
+  padding-top: 0.75rem;
+}
+.mediumPaddingtop {
+  padding-top: 1rem;
+}
+.largePaddingtop {
+  padding-top: 1.25rem;
+}
+.extraLargePaddingtop {
+  padding-top: 1.5rem;
+}
+
+//padding Bottom
+
+.tinyPaddingBottom {
+  padding-bottom: 0.5rem !important;
+}
+.smallPaddingBottom {
+  padding-bottom: 0.75rem !important;
+}
+.mediumPaddingBottom {
+  padding-bottom: 1rem !important;
+}
+.largePaddingBottom {
+  padding-bottom: 1.25rem;
+}
+.extraLargePaddingBottom {
+  padding-bottom: 1.5rem;
+}
+
+//padding Horizontal
+
+.tinyPaddingHorizontal {
+  padding: 0 0.5rem;
+}
+.smallPaddingHorizontal {
+  padding: 0 0.75rem;
+}
+.mediumPaddingHorizontal {
+  padding: 0 1rem;
+}
+.largePaddingHorizontal {
+  padding: 0 1.25rem;
+}
+.extraLargePaddingHorizontal {
+  padding: 0 1.5rem;
+}
+
+//padding Vertical
+
+.tinyPaddingVertical {
+  padding: 0.5rem 0;
+}
+.smallPaddingVertical {
+  padding: 0.75rem 0;
+}
+.mediumPaddingVertical {
+  padding: 1rem 0;
+}
+.largePaddingVertical {
+  padding: 1.25rem 0;
+}
+.extraLargePaddingVertical {
+  padding: 1.5rem 0;
+}
+
+//padding Around
+
+.tinyPaddingAround {
+  padding: 0.5rem;
+}
+.smallPaddingAround {
+  padding: 0.75rem;
+}
+.mediumPaddingAround {
+  padding: 1rem;
+}
+.largePaddingAround {
+  padding: 1.25rem;
+}
+.extraLargePaddingAround {
+  padding: 1.5rem;
+}
+
+img{
+  height: auto;
+}
+// Responsive part starts
+@media(min-width: 768px){
+  .verticalAlign {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1024px) {
+  .sectionPadding{
+    padding: 50px 0 !important;
+  }
+  h1,
+  h1.ui.header {
+    font-size: 2.8rem;
+  }
+  h2,
+  h2.ui.header {
+    font-size: 2.4rem;
+  }
+}
+
+// Responsive part starts
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sectionPadding{
+    padding: 50px 0 !important;
+  }
+  h1,
+  h1.ui.header {
+    font-size: 2.4rem;
+  }
+  h2,
+  h2.ui.header {
+    font-size: 2.2rem;
+  }
+  h3,
+  h3.ui.header {
+    font-size: 1.2rem;
+  }
+  h4,
+  h4.ui.header {
+    font-size: 1.2rem;
+  }
+  h5,
+  h5.ui.header {
+    font-size: 1rem;
+  }
+}
+@media(max-width: 767px) {
+  .ui.button{
+    padding: 0.725rem 1.6rem !important;
+  }
+  .sectionPadding{
+    padding: 40px 0 !important;
+  }
+  .sectionHeading.alignCenter{
+    margin:0 auto 1.5rem;
+  }
+  h1,
+  h1.ui.header {
+    font-size: 2rem;
+  }
+  h2,
+  h2.ui.header {
+    font-size: 1.6rem;
+  }
+  h3,
+  h3.ui.header {
+    font-size: 1.2rem;
+  }
+  h4,
+  h4.ui.header {
+    font-size: 1.1rem;
+  }
+  h5,
+  h5.ui.header {
+    font-size: 1rem;
+  }
+}
